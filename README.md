@@ -45,9 +45,10 @@ npm install @delibrandev/utils@latest
 > **Uso:** import { funcion } from "@delibrandev/utils/src/function.js";
 
 **getRequiredKeys**
-Recibe un objeto para evaluar sus valores.
-Si el valor de la clave es "required" significa que debía contener un valor y no lo tiene.
-Devolverá todos los que cumplen esa condición.
+
+> Recibe un objeto para evaluar sus valores.
+> Si el valor de la clave es "required" significa que debía contener un valor y no lo tiene.
+> Devolverá todos los que cumplen esa condición.
 
 ```
 const obj = {
