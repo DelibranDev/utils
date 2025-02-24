@@ -1,12 +1,12 @@
 {
   "name": "@delibrandev/utils",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A collection of delibran utils.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
     "test": "echo \"Error: no tests\" && exit 1",
-    "build": "rollup -c && npm run generate-docs",
+    "build": "rollup -c",
     "generate-docs": "jsdoc src --destination docs",
     "customlogin": "npm login --scope=@delibrandev --registry=https://npm.pkg.github.com"
   },
@@ -26,7 +26,6 @@
   "devDependencies": {
     "@babel/preset-react": "^7.26.3",
     "@rollup/plugin-babel": "^6.0.4",
-    "jsdoc": "^4.0.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "rollup": "^4.34.8"

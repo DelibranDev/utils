@@ -66,11 +66,6 @@ export const parseDateAndHourToISO = (idDate, idHour) => {
   return `${day}T${hour}:${minute}:00.000Z`;
 };
 
-/**
- * Obtiene de un array un id, "categoryId" custom y genera "id" con el mismo valor.
- * @constructor
- * @param {array} array - Array
- */
 export function addIdKeyIfMissing(array) {
   if (!Array.isArray(array) || array.length === 0) return [];
 
@@ -107,11 +102,6 @@ export function sortArrayByCustomOrder(keysOrdered, array) {
   return orderedArray;
 }
 
-/**
- * Obtiene de un objeto las claves required y te devuelve las que no tienen valor
- * @constructor
- * @param {object} obj - Objeto con claves required y no required
- */
 export function getRequiredKeys(obj) {
   const dictionary = {
     identifier: " identificador",
