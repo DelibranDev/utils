@@ -1,12 +1,12 @@
 ## Instalación
 
-Instalar la última versión
+Última versión
 
 ```
 npm install @delibrandev/utils@latest
 ```
 
-## Estilos globales
+## Estilos
 
 ```
  --color-primary: #000;
@@ -29,13 +29,12 @@ npm install @delibrandev/utils@latest
 
 ## Componentes
 
-Uso: import { Componente } from "@delibrandev/utils";
+> **Uso:** import { Componente } from "@delibrandev/utils";
 
 **StateLabel**
 
 > Recibe un valor de estado y devuelve un label con un color y fondo
-
-- **Valores posibles:** "pending", "prepared", "paid", "delivered", "inPreparation", "inDelivery", "cancelled".
+> **Valores posibles:** "pending", "prepared", "paid", "delivered", "inPreparation", "inDelivery", "cancelled".
 
 ```
 <StateLabel state={state}/>
@@ -43,11 +42,12 @@ Uso: import { Componente } from "@delibrandev/utils";
 
 ## Funciones
 
-> Uso: import { funcion } from "@delibrandev/utils/src/function.js";
+> **Uso:** import { funcion } from "@delibrandev/utils/src/function.js";
 
 **getRequiredKeys**
-Recibe un objeto para evaluar antes de enviarlo sus valores.
-Si el valor de la clave es "required" significa que no fué completado y lo devolverá dentro de un array.
+Recibe un objeto para evaluar sus valores.
+Si el valor de la clave es "required" significa que debía contener un valor y no lo tiene.
+Devolverá todos los que cumplen esa condición.
 
 ```
 const obj = {
