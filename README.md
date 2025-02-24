@@ -59,3 +59,16 @@ const obj = {
 }
 getRequiredKeys(obj)
 ```
+
+**addIdKeyIfMissing**
+
+> Recibe un array con ids customs en sus objetos y genera la clave id en cada uno para normalizarlo.
+> Claves gestionadas: "categoryId", "productId", "catalogId", "discountId", "itemId", "itemGroupId", "optionId", "optionGroupId", "salesChannelId"
+
+```
+const categoryId = [{
+    categoryId: "0001",
+    name: "example"
+}]
+addIdKeyIfMissing(array)
+```
