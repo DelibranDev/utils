@@ -1,0 +1,40 @@
+{
+  "name": "@delibrandev/components",
+  "version": "1.0.0",
+  "description": "A collection of delibran components.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no tests\" && exit 1",
+    "build": "rollup -c",
+    "customlogin": "npm login --scope=@delibrandev --registry=https://npm.pkg.github.com",
+    "publish": "npm publish --registry=https://npm.pkg.github.com"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "reusable",
+    "inputs"
+  ],
+  "author": "delibrandev",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "rollup": "^2.79.1"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.26.3",
+    "@rollup/plugin-babel": "^6.0.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "rollup": "^4.34.8"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "rollup-plugin-postcss": "^4.0.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

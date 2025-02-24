@@ -1,0 +1,37 @@
+.state-label {
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 125px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.state-pending {
+    color: var(--color-pending);
+    background-color: var(--color-pending-background);
+}
+
+
+.state-prepared {
+    color: var(--color-success);
+    background-color: var(--color-success-background);
+}
+
+.state-pending {
+    color: var(--color-pending);
+    background-color: var(--color-pending-background);
+}
+
+.state-canceled{
+    color: var(--color-error);
+    background-color: var(--color-error-background);
+}
+
+.state-process{
+    color: var(--color-process);
+    background-color: var(--color-process-background);
+}
