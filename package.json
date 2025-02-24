@@ -1,7 +1,7 @@
 {
-  "name": "@delibrandev/components",
+  "name": "@delibrandev/utils",
   "version": "1.0.0",
-  "description": "A collection of delibran components.",
+  "description": "A collection of delibran utils.",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no tests\" && exit 1",
