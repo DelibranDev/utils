@@ -2,6 +2,10 @@ import React from "react";
 import "./style.css";
 
 export const StateLabel = ({ state }) => {
+  /*const dictionary = [
+    {pending: "Pendiente", value:"pending"},
+    {prepared: "Preparado", value:"ready"},
+  ];*/
   const Label = () => {
     switch (state) {
       case "pending":
