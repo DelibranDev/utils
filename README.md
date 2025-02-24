@@ -8,6 +8,8 @@ npm install @delibrandev/utils@latest
 
 ## Estilos
 
+**Uso en index.js del proyecto :** import "@delibrandev/utils/src/styles.css";
+
 ```
  --color-primary: #000;
  --color-primary-background: #ece9e4;
@@ -29,7 +31,7 @@ npm install @delibrandev/utils@latest
 
 ## Componentes
 
-> **Uso:** import { Componente } from "@delibrandev/utils";
+**Uso:** import { Componente } from "@delibrandev/utils";
 
 **StateLabel**
 
@@ -42,7 +44,7 @@ npm install @delibrandev/utils@latest
 
 ## Funciones
 
-> **Uso:** import { funcion } from "@delibrandev/utils/src/function.js";
+**Uso:** import { funcion } from "@delibrandev/utils/src/function.js";
 
 **getRequiredKeys**
 
