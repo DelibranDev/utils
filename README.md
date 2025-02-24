@@ -66,9 +66,9 @@ getRequiredKeys(obj)
 > Claves gestionadas: "categoryId", "productId", "catalogId", "discountId", "itemId", "itemGroupId", "optionId", "optionGroupId", "salesChannelId"
 
 ```
-const categoryId = [{
+const arr = [{
     categoryId: "0001",
     name: "example"
 }]
-addIdKeyIfMissing(array)
+addIdKeyIfMissing(arr)
 ```
