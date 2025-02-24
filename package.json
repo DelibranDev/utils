@@ -1,13 +1,14 @@
 {
   "name": "@delibrandev/utils",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "A collection of delibran utils.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
     "test": "echo \"Error: no tests\" && exit 1",
-    "build": "rollup -c",
-    "customlogin": "npm login --scope=@delibrandev --registry=https://npm.pkg.github.com",
-    "publish": "npm publish --registry=https://npm.pkg.github.com"
+    "build": "rollup -c && npm run generate-docs",
+    "generate-docs": "jsdoc src --destination docs",
+    "customlogin": "npm login --scope=@delibrandev --registry=https://npm.pkg.github.com"
   },
   "keywords": [
     "react",
@@ -16,7 +17,7 @@
     "inputs"
   ],
   "author": "delibrandev",
-  "license": "MIT",
+  "license": "ISC",
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.26.3",
     "@rollup/plugin-babel": "^6.0.4",
+    "jsdoc": "^4.0.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "rollup": "^4.34.8"
@@ -35,6 +37,10 @@
     "rollup-plugin-postcss": "^4.0.2"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@delibrandev:registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/delibrandev/utils.git"
   }
 }

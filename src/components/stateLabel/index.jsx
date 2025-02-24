@@ -1,5 +1,11 @@
+import React from "react";
 import "./style.css";
 
+/**
+ * Label personalizado con color y fondo.
+ * @constructor
+ * @param {string} state - Estado del label: "pending", "paid", "delivered"...
+ */
 export const StateLabel = ({ state }) => {
   const Label = () => {
     switch (state) {
