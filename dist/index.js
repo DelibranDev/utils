@@ -92,17 +92,11 @@ const parseDateAndHourToISO = (idDate, idHour) => {
   const minute = document.getElementById(idHour + "-minute").value;
   return `${day}T${hour}:${minute}:00.000Z`;
 };
-
-/**
- * Obtiene de un array un id, "categoryId" custom y genera "id" con el mismo valor.
- * @constructor
- * @param {array} array - Array
- */
 function addIdKeyIfMissing(array) {
   if (!Array.isArray(array) || array.length === 0) return [];
   return array?.map(item => {
     if (!item.id) {
-      const idKey = ["categoryId", "productId", "catalogId", "discountId", "itemId", "itemGroupId", "optionId", "optionGroupId", "salesChannelId"].find(key => item[key]);
+      const idKey = ["categoryId", "productId", "catalogId", "discountId", "itemId", "itemGroupId", "optionId", "optionGroupId", "orderId", "salesChannelId"].find(key => item[key]);
       if (idKey) {
         item.id = item[idKey];
       }
@@ -120,12 +114,6 @@ function sortArrayByCustomOrder(keysOrdered, array) {
   });
   return orderedArray;
 }
-
-/**
- * Obtiene de un objeto las claves required y te devuelve las que no tienen valor
- * @constructor
- * @param {object} obj - Objeto con claves required y no required
- */
 function getRequiredKeys(obj) {
   const dictionary = {
     identifier: " identificador",
@@ -2951,14 +2939,13 @@ var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 var css_248z = ".state-label {\r\n    padding: 2px 10px;\r\n    font-size: 0.75rem;\r\n    font-weight: bold;\r\n    border-radius: 5px;\r\n    width: 125px;\r\n    text-align: center;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.state-pending {\r\n    color: var(--color-pending);\r\n    background-color: var(--color-pending-background);\r\n}\r\n\r\n\r\n.state-prepared {\r\n    color: var(--color-success);\r\n    background-color: var(--color-success-background);\r\n}\r\n\r\n.state-pending {\r\n    color: var(--color-pending);\r\n    background-color: var(--color-pending-background);\r\n}\r\n\r\n.state-canceled{\r\n    color: var(--color-error);\r\n    background-color: var(--color-error-background);\r\n}\r\n\r\n.state-process{\r\n    color: var(--color-process);\r\n    background-color: var(--color-process-background);\r\n}";
 styleInject(css_248z);
 
-/**
- * Label personalizado con color y fondo.
- * @constructor
- * @param {string} state - Estado del label: "pending", "paid", "delivered"...
- */
 const StateLabel = ({
   state
 }) => {
+  /*const dictionary = [
+    {pending: "Pendiente", value:"pending"},
+    {prepared: "Preparado", value:"ready"},
+  ];*/
   const Label = () => {
     switch (state) {
       case "pending":

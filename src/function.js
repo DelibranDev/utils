@@ -80,8 +80,8 @@ export function addIdKeyIfMissing(array) {
         "itemGroupId",
         "optionId",
         "optionGroupId",
-        "salesChannelId",
         "orderId",
+        "salesChannelId",
       ].find((key) => item[key]);
 
       if (idKey) {
