@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 
 export const MAPS_API_KEY = "AIzaSyArOoqzUgxtt2rxD8v6MLPbXFMp4YPUIz4";

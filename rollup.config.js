@@ -4,6 +4,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import postcss from "rollup-plugin-postcss";
 
 export default {
+  external: ["react", "react-dom"],
   input: "src/index.js",
   output: [
     { file: "dist/index.js", format: "cjs" },
