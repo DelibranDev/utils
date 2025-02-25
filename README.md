@@ -42,6 +42,10 @@ npm install @delibrandev/utils@latest
 <StateLabel state={state}/>
 ```
 
+**Order components**
+
+> import { ClientDetails, OrderInfo, OrderNotes, OrderProducts, OrderResume, OrderTimeline } from "@delibrandev/utils";
+
 ## Funciones
 
 **Uso:** import { funcion } from "@delibrandev/utils/src/function.js";
