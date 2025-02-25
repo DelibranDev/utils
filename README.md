@@ -46,6 +46,15 @@ npm install @delibrandev/utils@latest
 
 > import { ClientDetails, OrderInfo, OrderNotes, OrderProducts, OrderResume, OrderTimeline } from "@delibrandev/utils";
 
+```
+<OrderInfo data={data} />
+<OrderProducts data={data} />
+<OrderResume data={data} />
+<OrderNotes data={data} />
+<ClientDetails data={data} />
+<OrderTimeline data={data} />
+```
+
 ## Funciones
 
 **Uso:** import { funcion } from "@delibrandev/utils/src/function.js";
