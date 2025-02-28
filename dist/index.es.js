@@ -1,4 +1,4 @@
-import * as React$1 from 'react';
+import * as React from 'react';
 import React__default, { useState, useEffect } from 'react';
 
 function styleInject(css, ref) {
@@ -284,18 +284,18 @@ const Select = ({
       option.function();
     }
   };
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default.createElement("div", {
     className: "selectContainer"
-  }, label !== null && /*#__PURE__*/React.createElement("div", {
+  }, label !== null && /*#__PURE__*/React__default.createElement("div", {
     className: "inputLabel"
-  }, label), label !== null && /*#__PURE__*/React.createElement("div", {
+  }, label), label !== null && /*#__PURE__*/React__default.createElement("div", {
     className: "inputDescription"
-  }, description), /*#__PURE__*/React.createElement("select", {
+  }, description), /*#__PURE__*/React__default.createElement("select", {
     className: "customSelect " + className,
     id: id,
     value: selected,
     onChange: handleOption
-  }, values?.map((v, i) => /*#__PURE__*/React.createElement("option", {
+  }, values?.map((v, i) => /*#__PURE__*/React__default.createElement("option", {
     key: i,
     value: v.id
   }, v.name))));
@@ -310,10 +310,10 @@ const Button = ({
   customClass = "customButtonColor1",
   action = () => null
 }) => {
-  return /*#__PURE__*/React$1.createElement("button", {
+  return /*#__PURE__*/React.createElement("button", {
     className: "customButton " + customClass,
     onClick: action
-  }, icon && icon, /*#__PURE__*/React$1.createElement("div", {
+  }, icon && icon, /*#__PURE__*/React.createElement("div", {
     className: "customButtonText"
   }, text));
 };

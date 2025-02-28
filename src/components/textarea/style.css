@@ -1,0 +1,24 @@
+.inputType2Container{
+    gap: 3px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inputLabel{
+    font-size: 0.7rem;
+    height: 15px;
+    font-weight: bold;
+}
+
+.inputDescription{
+    font-size: 0.6rem;
+    color: grey;
+}
+
+.customTextarea{
+    background-color: white;
+    border: 1px lightgrey solid;
+    border-radius: 5px;
+    height: 50px;
+}

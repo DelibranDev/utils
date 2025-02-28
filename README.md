@@ -42,6 +42,50 @@ npm install @delibrandev/utils@latest
 <StateLabel state={state}/>
 ```
 
+**TextEditor**
+
+> Recibe un valor en HTML
+
+Obtienes el valor: document.getElementById(editorId).innerHTML;
+
+```
+<TextEditor initialValue={policy.text} id={editorId}/>
+```
+
+**TextArea**
+
+> Textarea personalizado con título y descripción
+
+```
+<Textarea id={""} placeholder={""} classname={""} label={""} description={""} onChange={callback}/>
+```
+
+**Input**
+
+> Input personalizado con título, descripción y control de errores
+> **Valores posibles de validation:** "email", "dni", "nif", "telefono", "url", "number".
+
+```
+<Input id={""} type={""} placeholder={""} classname={""} icon={null} iconType={null} iconPositionRight={true} label={""} description={""} defaultValue={""} disabled={false} validation={null} onChange={callback}/>
+```
+
+**Button**
+
+> Button personalizado con icono
+
+```
+{<Button text={"Guardar"} icon={null} customClass={""} action={callback} />}
+```
+
+**Select**
+
+> Select personalizado con título, descripción
+> **Formato esperado:** [{ id: 0, name: "8:00" }].
+
+```
+<Select value={""} values={[]} callback={callback} id={""} label={""} description={""} classname={""} />
+```
+
 **Order components**
 
 > import { ClientDetails, OrderInfo, OrderNotes, OrderProducts, OrderResume, OrderTimeline } from "@delibrandev/utils";

@@ -4,6 +4,9 @@ export * from "./components/stateLabel";
 export * from "./components/mapLocation";
 export * from "./components/select";
 export * from "./components/button";
+export * from "./components/input";
+export * from "./components/textarea";
+export * from "./components/textEditor";
 // Order
 export * from "./components/order/clientDetails.jsx";
 export * from "./components/order/orderInfo.jsx";
@@ -13,7 +16,3 @@ export * from "./components/order/orderResume.jsx";
 export * from "./components/order/orderTimeline.jsx";
 // Datatable
 export * from "./components/datatable/index.jsx";
-/*export * from "./components/datatable/datatable.jsx";
-export * from "./components/datatable/actions.jsx";
-export * from "./components/datatable/sections.jsx";
-export * from "./components/datatable/pagination.jsx";*/

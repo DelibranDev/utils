@@ -1,6 +1,6 @@
 'use strict';
 
-var React$1 = require('react');
+var React = require('react');
 
 function _interopNamespaceDefault(e) {
   var n = Object.create(null);
@@ -19,7 +19,7 @@ function _interopNamespaceDefault(e) {
   return Object.freeze(n);
 }
 
-var React__namespace = /*#__PURE__*/_interopNamespaceDefault(React$1);
+var React__namespace = /*#__PURE__*/_interopNamespaceDefault(React);
 
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -160,38 +160,38 @@ const StateLabel = ({
   const Label = () => {
     switch (state) {
       case "pending":
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-pending"
         }, "Pendiente");
       case "prepared":
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-prepared"
         }, "Preparado");
       case "paid":
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-prepared"
         }, "Pagado");
       case "delivered":
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-delivered"
         }, "Entregado");
       case "inPreparation":
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-process"
         }, "En preparaci\xF3n");
       case "inDelivery":
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-process"
         }, "Enviando");
       case "cancelled":
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-canceled"
         }, "Cancelado");
       default:
-        return /*#__PURE__*/React$1.createElement("div", null, "-");
+        return /*#__PURE__*/React.createElement("div", null, "-");
     }
   };
-  return /*#__PURE__*/React$1.createElement(Label, null);
+  return /*#__PURE__*/React.createElement(Label, null);
 };
 
 const MAPS_API_KEY = "AIzaSyArOoqzUgxtt2rxD8v6MLPbXFMp4YPUIz4";
@@ -201,12 +201,12 @@ const MapLocation = ({
   address = null,
   height = "300px"
 }) => {
-  const [loc, setLoc] = React$1.useState({
+  const [loc, setLoc] = React.useState({
     lat,
     lon,
     address
   });
-  const [error, setError] = React$1.useState(null);
+  const [error, setError] = React.useState(null);
   const normalizeAddress = rawAddress => {
     return rawAddress.replace(/([a-zA-Z]+)(\d+)/g, "$1 $2").replace(/,/g, " ").replace(/\s+/g, "+");
   };
@@ -245,7 +245,7 @@ const MapLocation = ({
       setError("Error al conectar con el servidor de mapas");
     }
   };
-  React$1.useEffect(() => {
+  React.useEffect(() => {
     if (!lat && !lon && address) {
       getGeocode(address);
     } else {
@@ -259,11 +259,11 @@ const MapLocation = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address]);
   const googleMapsUrl = loc.lat && loc.lon ? `https://www.google.com/maps/embed/v1/place?key=${MAPS_API_KEY}&q=${loc.lat},${loc.lon}&zoom=15` : address ? `https://www.google.com/maps/embed/v1/place?key=${MAPS_API_KEY}&q=${encodeURIComponent(address)}&zoom=15` : null;
-  return /*#__PURE__*/React$1.createElement("div", null, error && !googleMapsUrl && /*#__PURE__*/React$1.createElement("p", {
+  return /*#__PURE__*/React.createElement("div", null, error && !googleMapsUrl && /*#__PURE__*/React.createElement("p", {
     style: {
       color: "red"
     }
-  }, error), googleMapsUrl ? /*#__PURE__*/React$1.createElement("iframe", {
+  }, error), googleMapsUrl ? /*#__PURE__*/React.createElement("iframe", {
     title: "mapLocation",
     width: "100%",
     height: "100%",
@@ -275,7 +275,7 @@ const MapLocation = ({
     },
     src: googleMapsUrl,
     allowFullScreen: true
-  }) : !error && /*#__PURE__*/React$1.createElement("p", null, "Cargando mapa..."));
+  }) : !error && /*#__PURE__*/React.createElement("p", null, "Cargando mapa..."));
 };
 
 var css_248z$3 = ".selectContainer{\r\n  gap: 3px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n  & .customSelect{\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n.customSelect{\r\n  height: 30px;\r\n  width: fit-content;\r\n  font-size: 0.7rem!important;\r\n  padding: 0 5px;\r\n  background-color: white;\r\n  border: 1px var(--color-terciary-2) solid;\r\n  border-radius: 5px;\r\n  & fieldset{\r\n    display: none;\r\n  }\r\n}\r\n\r\n.customSelectName{\r\n  margin-right: 10px;\r\n}\r\n\r\n.customSelectNameDropdown{\r\n  font-size: 0.9rem;\r\n}\r\n\r\n.dropdown-content {\r\n  display: none;\r\n  position: absolute;\r\n  background-color: white;\r\n  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);\r\n  border-radius: 5px;\r\n  overflow: hidden;\r\n  z-index: 1;\r\n}\r\n\r\n.dropdownSelect{\r\n    position: absolute;\r\n    background-color: white;\r\n    padding: 5px;\r\n    width: 141px;\r\n    border: 1px rgb(233 233 233) solid;\r\n    border-radius: 5px;\r\n    margin-top: 0px;\r\n}\r\n\r\n.selectOption{\r\n    cursor:pointer;\r\n}\r\n\r\n.slide-bottom {\r\n\t-webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\r\n\t        animation: slide-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\r\n}\r\n\r\n @-webkit-keyframes slide-bottom {\r\n    0% {\r\n      -webkit-transform: translateY(0);\r\n              transform: translateY(0);\r\n    }\r\n    100% {\r\n      -webkit-transform: translateY(5px);\r\n              transform: translateY(5px);\r\n    }\r\n  }\r\n  @keyframes slide-bottom {\r\n    0% {\r\n      -webkit-transform: translateY(0);\r\n              transform: translateY(0);\r\n    }\r\n    100% {\r\n      -webkit-transform: translateY(5px);\r\n              transform: translateY(5px);\r\n    }\r\n  }\r\n  \r\n  ";
@@ -291,8 +291,8 @@ const Select = ({
   description = null,
   id = null
 }) => {
-  const [selected, setSelected] = React$1.useState(value ? value : values[0].id);
-  const [visibility, changeVisibility] = React$1.useState(false);
+  const [selected, setSelected] = React.useState(value ? value : values[0].id);
+  const [visibility, changeVisibility] = React.useState(false);
   const handleOption = e => {
     const option = e.target.value;
     if (!isMenu) {
@@ -360,40 +360,40 @@ const ClientDetails = ({
 
   // Verificar si hay una dirección completa para pasar al componente MapLocation
   const fullAddress = getFullAddress();
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "client-details"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "client-details-container"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "client-details-header"
-  }, "Cliente"), /*#__PURE__*/React$1.createElement("div", {
+  }, "Cliente"), /*#__PURE__*/React.createElement("div", {
     className: "client-details-sub"
-  }, client.fullname), /*#__PURE__*/React$1.createElement("div", {
+  }, client.fullname), /*#__PURE__*/React.createElement("div", {
     className: "client-details-sub"
-  }, "0 pedidos")), /*#__PURE__*/React$1.createElement("div", {
+  }, "0 pedidos")), /*#__PURE__*/React.createElement("div", {
     className: "client-details-container"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "client-details-header"
-  }, "Informaci\xF3n de contacto"), /*#__PURE__*/React$1.createElement("div", {
+  }, "Informaci\xF3n de contacto"), /*#__PURE__*/React.createElement("div", {
     className: "client-details-sub"
-  }, client.email), /*#__PURE__*/React$1.createElement("div", {
+  }, client.email), /*#__PURE__*/React.createElement("div", {
     className: "client-details-sub"
-  }, client.phone)), /*#__PURE__*/React$1.createElement("div", {
+  }, client.phone)), /*#__PURE__*/React.createElement("div", {
     className: "client-details-container"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "client-details-header"
-  }, "Direcci\xF3n de env\xEDo"), /*#__PURE__*/React$1.createElement("div", {
+  }, "Direcci\xF3n de env\xEDo"), /*#__PURE__*/React.createElement("div", {
     className: "client-details-address"
-  }, fullAddress && /*#__PURE__*/React$1.createElement(MapLocation, {
+  }, fullAddress && /*#__PURE__*/React.createElement(MapLocation, {
     address: fullAddress,
     height: "100px"
-  }), /*#__PURE__*/React$1.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     className: "client-details-address-container"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "client-details-address-name"
-  }, address.name), /*#__PURE__*/React$1.createElement("div", {
+  }, address.name), /*#__PURE__*/React.createElement("div", {
     className: "client-details-header"
-  }, client.fullname), /*#__PURE__*/React$1.createElement("div", {
+  }, client.fullname), /*#__PURE__*/React.createElement("div", {
     className: "client-details-third"
   }, fullAddress)))));
 };
@@ -404,33 +404,33 @@ styleInject(css_248z$1);
 const OrderInfo = ({
   data
 }) => {
-  return /*#__PURE__*/React$1.createElement(React$1.Fragment, null, /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     className: "order-header"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "order-header-status"
-  }, /*#__PURE__*/React$1.createElement(StateLabel, {
+  }, /*#__PURE__*/React.createElement(StateLabel, {
     state: data.status
-  }), /*#__PURE__*/React$1.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     className: "order-number"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "order-label"
-  }, "No. Pedido"), /*#__PURE__*/React$1.createElement("div", {
+  }, "No. Pedido"), /*#__PURE__*/React.createElement("div", {
     className: "order-value"
-  }, data?.number))), /*#__PURE__*/React$1.createElement("div", {
+  }, data?.number))), /*#__PURE__*/React.createElement("div", {
     className: "order-header-time"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "order-label"
-  }, "Tiempo de preparaci\xF3n"), /*#__PURE__*/React$1.createElement("div", {
+  }, "Tiempo de preparaci\xF3n"), /*#__PURE__*/React.createElement("div", {
     className: "order-value"
-  }, "00:00:00"))), /*#__PURE__*/React$1.createElement("div", {
+  }, "00:00:00"))), /*#__PURE__*/React.createElement("div", {
     className: "order-header-2"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "order-info"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "order-info-time"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "order-label"
-  }, "Fecha del pedido"), /*#__PURE__*/React$1.createElement("div", {
+  }, "Fecha del pedido"), /*#__PURE__*/React.createElement("div", {
     className: "order-value"
   }, parseDate(data?.createdAt))))));
 };
@@ -439,81 +439,81 @@ const OrderNotes = ({
   data
 }) => {
   const notes = data?.notes?.toString();
-  return /*#__PURE__*/React$1.createElement(React$1.Fragment, null, /*#__PURE__*/React$1.createElement("div", null, /*#__PURE__*/React$1.createElement("b", null, "Notas")), /*#__PURE__*/React$1.createElement("div", null, notes === "" ? "Sin notas" : notes));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("b", null, "Notas")), /*#__PURE__*/React.createElement("div", null, notes === "" ? "Sin notas" : notes));
 };
 
 const OrderProducts = ({
   data
 }) => {
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "order-products"
-  }, (data.products || []).length > 0 && (data.products || []).map((product, index) => /*#__PURE__*/React$1.createElement("div", {
+  }, (data.products || []).length > 0 && (data.products || []).map((product, index) => /*#__PURE__*/React.createElement("div", {
     key: index,
     className: "order-products-item"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "order-product-left"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "order-product-image",
     style: {
       backgroundImage: `url('${product?.images[0]}')`
     }
-  }), /*#__PURE__*/React$1.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     className: "order-product-info"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "order-product-name"
-  }, product?.name), /*#__PURE__*/React$1.createElement("div", {
+  }, product?.name), /*#__PURE__*/React.createElement("div", {
     className: "order-product-ingredients"
-  }, product?.description || "Sin atributos"))), /*#__PURE__*/React$1.createElement("div", {
+  }, product?.description || "Sin atributos"))), /*#__PURE__*/React.createElement("div", {
     className: "order-product-total"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "order-product-quantity"
-  }, /*#__PURE__*/React$1.createElement("div", null, "x ", product?.quantity), /*#__PURE__*/React$1.createElement("div", null, "Descuento"), /*#__PURE__*/React$1.createElement("div", null, "Total")), /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, "x ", product?.quantity), /*#__PURE__*/React.createElement("div", null, "Descuento"), /*#__PURE__*/React.createElement("div", null, "Total")), /*#__PURE__*/React.createElement("div", {
     className: "order-product-price-container"
-  }, /*#__PURE__*/React$1.createElement("div", null, product?.price, " \u20AC"), /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, product?.price, " \u20AC"), /*#__PURE__*/React.createElement("div", {
     className: "order-product-price"
-  }, "0 \u20AC"), /*#__PURE__*/React$1.createElement("div", null, product?.price * product?.quantity, " \u20AC"))))));
+  }, "0 \u20AC"), /*#__PURE__*/React.createElement("div", null, product?.price * product?.quantity, " \u20AC"))))));
 };
 
 const OrderResume = ({
   data
 }) => {
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "pt-3"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-Header"
-  }, /*#__PURE__*/React$1.createElement("div", null, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-Header-title"
-  }, "No Factura"), /*#__PURE__*/React$1.createElement("div", {
+  }, "No Factura"), /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-Header-value"
-  }, data.number)), /*#__PURE__*/React$1.createElement("div", null, /*#__PURE__*/React$1.createElement("div", {
+  }, data.number)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-Header-title text-align-right"
-  }, "Canal de venta"), /*#__PURE__*/React$1.createElement("div", {
+  }, "Canal de venta"), /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-Header-value text-align-right"
-  }, data.paymentMethod))), /*#__PURE__*/React$1.createElement("div", {
+  }, data.paymentMethod))), /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-Body"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-Item"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-title"
-  }, "Subtotal"), /*#__PURE__*/React$1.createElement("div", {
+  }, "Subtotal"), /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-note"
-  }, (data.products || []).length > 0 && data.products.length, " art\xEDculos"), /*#__PURE__*/React$1.createElement("div", {
+  }, (data.products || []).length > 0 && data.products.length, " art\xEDculos"), /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-value"
-  }, data.total, " \u20AC")), /*#__PURE__*/React$1.createElement("div", {
+  }, data.total, " \u20AC")), /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-Item"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-title"
-  }, "Descuento"), /*#__PURE__*/React$1.createElement("div", {
+  }, "Descuento"), /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-note"
-  }), /*#__PURE__*/React$1.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-value"
-  }, "0,00 \u20AC")), /*#__PURE__*/React$1.createElement("div", {
+  }, "0,00 \u20AC")), /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-Separator"
-  }), /*#__PURE__*/React$1.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-Item"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-title"
-  }, "Total"), /*#__PURE__*/React$1.createElement("div", null), /*#__PURE__*/React$1.createElement("div", {
+  }, "Total"), /*#__PURE__*/React.createElement("div", null), /*#__PURE__*/React.createElement("div", {
     className: "invoiceResume-value"
   }, data.total, " \u20AC"))));
 };
@@ -566,19 +566,19 @@ const OrderTimeline = ({
 
     return events;
   }
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "timeline-container"
-  }, /*#__PURE__*/React$1.createElement("ul", {
+  }, /*#__PURE__*/React.createElement("ul", {
     className: "timeline"
-  }, orderLog && transformOrderLog(orderLog)?.map(timeline => /*#__PURE__*/React$1.createElement("li", null, /*#__PURE__*/React$1.createElement("div", {
+  }, orderLog && transformOrderLog(orderLog)?.map(timeline => /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("div", {
     className: "circleRounded"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "circle"
-  })), /*#__PURE__*/React$1.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
     className: "event"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "event-name"
-  }, timeline.name), /*#__PURE__*/React$1.createElement("div", {
+  }, timeline.name), /*#__PURE__*/React.createElement("div", {
     className: "event-date"
   }, timeline.date))))));
 };
@@ -592,13 +592,13 @@ const Pagination = ({
   handleMaxRows,
   handlePage
 }) => {
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "pagination"
-  }, maxRowsAvailable && /*#__PURE__*/React$1.createElement("div", {
+  }, maxRowsAvailable && /*#__PURE__*/React.createElement("div", {
     className: "paginationDropdown"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "paginationText"
-  }, "Mostrar"), /*#__PURE__*/React$1.createElement("div", null, /*#__PURE__*/React$1.createElement(Select, {
+  }, "Mostrar"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Select, {
     values: [{
       id: 0,
       name: "12"
@@ -607,12 +607,12 @@ const Pagination = ({
       name: "24"
     }],
     callback: handleMaxRows
-  })), /*#__PURE__*/React$1.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
     className: "paginationText"
-  }, "por p\xE1gina")), /*#__PURE__*/React$1.createElement("div", {
+  }, "por p\xE1gina")), /*#__PURE__*/React.createElement("div", {
     className: "paginationPages"
   }, configuration.pages?.map(p => {
-    return /*#__PURE__*/React$1.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       className: (configuration.indexStart + 12) / configuration.maxRows === p + 1 ? "pageBtn pageBtnActive" : "pageBtn",
       onClick: () => handlePage(p)
     }, p + 1);
@@ -629,39 +629,39 @@ const DatatableComponent = ({
   rowCallback = () => {},
   handleSelectRow = () => {}
 }) => {
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "desktopDatatable"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "table-container"
-  }, /*#__PURE__*/React$1.createElement("table", {
+  }, /*#__PURE__*/React.createElement("table", {
     cellSpacing: "0"
-  }, /*#__PURE__*/React$1.createElement("thead", null, /*#__PURE__*/React$1.createElement("tr", null, checkColumn && /*#__PURE__*/React$1.createElement("th", {
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, checkColumn && /*#__PURE__*/React.createElement("th", {
     className: "text-align-center",
     style: {
       width: "50px"
     }
-  }), data.length > 0 ? Object.keys(sortArrayByCustomOrder(customHeaders, data[0])).filter(field => field in customHeaders).map((field, index) => /*#__PURE__*/React$1.createElement("th", {
+  }), data.length > 0 ? Object.keys(sortArrayByCustomOrder(customHeaders, data[0])).filter(field => field in customHeaders).map((field, index) => /*#__PURE__*/React.createElement("th", {
     key: index,
     className: "text-align-center"
-  }, customHeaders[field])) : Object.values(customHeaders)?.map((value, index) => /*#__PURE__*/React$1.createElement("th", {
+  }, customHeaders[field])) : Object.values(customHeaders)?.map((value, index) => /*#__PURE__*/React.createElement("th", {
     key: index,
     className: "text-align-center"
-  }, value)))), /*#__PURE__*/React$1.createElement("tbody", {
+  }, value)))), /*#__PURE__*/React.createElement("tbody", {
     id: "datatableTBody"
-  }, rows.map((d, i) => /*#__PURE__*/React$1.createElement("tr", {
+  }, rows.map((d, i) => /*#__PURE__*/React.createElement("tr", {
     key: d.id || i,
     className: selectedRows.includes(d.id) ? "rowSelected" : ""
-  }, checkColumn && /*#__PURE__*/React$1.createElement("td", {
+  }, checkColumn && /*#__PURE__*/React.createElement("td", {
     className: "text-align-center",
     style: {
       width: "50px"
     }
-  }, /*#__PURE__*/React$1.createElement("input", {
+  }, /*#__PURE__*/React.createElement("input", {
     type: "checkbox",
     className: "custom-checkbox",
     onChange: e => handleSelectRow(d.id, e.target.checked),
     checked: selectedRows.includes(d.id)
-  })), Object.keys(sortArrayByCustomOrder(customHeaders, d)).filter(field => field in customHeaders).map((field, index) => /*#__PURE__*/React$1.createElement("td", {
+  })), Object.keys(sortArrayByCustomOrder(customHeaders, d)).filter(field => field in customHeaders).map((field, index) => /*#__PURE__*/React.createElement("td", {
     key: index,
     className: "text-align-center",
     onClick: typeof d[field] === "boolean" || d[field] === "PUBLISHED" || d[field] === "DRAFT" ? null : () => rowCallback(d)
@@ -673,10 +673,10 @@ const Sections = ({
   activeSection,
   handleSectionData
 }) => {
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "sectionsDatatable"
   }, sections && sections?.map((s, i) => {
-    return s.text !== null && /*#__PURE__*/React$1.createElement("div", {
+    return s.text !== null && /*#__PURE__*/React.createElement("div", {
       className: i === activeSection ? "selectedHorizontalMenu" : "",
       onClick: () => handleSectionData(i, s.callback)
     }, s.text);
@@ -690,7 +690,7 @@ var DefaultContext = {
   style: undefined,
   attr: undefined
 };
-var IconContext = React$1.createContext && /*#__PURE__*/React$1.createContext(DefaultContext);
+var IconContext = React.createContext && /*#__PURE__*/React.createContext(DefaultContext);
 
 var _excluded = ["attr", "size", "title"];
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -702,12 +702,12 @@ function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key i
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function Tree2Element(tree) {
-  return tree && tree.map((node, i) => /*#__PURE__*/React$1.createElement(node.tag, _objectSpread({
+  return tree && tree.map((node, i) => /*#__PURE__*/React.createElement(node.tag, _objectSpread({
     key: i
   }, node.attr), Tree2Element(node.child)));
 }
 function GenIcon(data) {
-  return props => /*#__PURE__*/React$1.createElement(IconBase, _extends({
+  return props => /*#__PURE__*/React.createElement(IconBase, _extends({
     attr: _objectSpread({}, data.attr)
   }, props), Tree2Element(data.child));
 }
@@ -723,7 +723,7 @@ function IconBase(props) {
     var className;
     if (conf.className) className = conf.className;
     if (props.className) className = (className ? className + " " : "") + props.className;
-    return /*#__PURE__*/React$1.createElement("svg", _extends({
+    return /*#__PURE__*/React.createElement("svg", _extends({
       stroke: "currentColor",
       fill: "currentColor",
       strokeWidth: "0"
@@ -735,9 +735,9 @@ function IconBase(props) {
       height: computedSize,
       width: computedSize,
       xmlns: "http://www.w3.org/2000/svg"
-    }), title && /*#__PURE__*/React$1.createElement("title", null, title), props.children);
+    }), title && /*#__PURE__*/React.createElement("title", null, title), props.children);
   };
-  return IconContext !== undefined ? /*#__PURE__*/React$1.createElement(IconContext.Consumer, null, conf => elem(conf)) : elem(DefaultContext);
+  return IconContext !== undefined ? /*#__PURE__*/React.createElement(IconContext.Consumer, null, conf => elem(conf)) : elem(DefaultContext);
 }
 
 // THIS FILE IS AUTO GENERATED
@@ -757,17 +757,17 @@ const Actions = ({
   const actions = [{
     id: "search",
     text: "Buscar",
-    icon: /*#__PURE__*/React$1.createElement(HiOutlineSearch, null),
+    icon: /*#__PURE__*/React.createElement(HiOutlineSearch, null),
     callback: () => console.log("Buscar action")
   }, {
     id: "filter",
     text: "Filtrar",
-    icon: /*#__PURE__*/React$1.createElement(HiOutlineSearch, null),
+    icon: /*#__PURE__*/React.createElement(HiOutlineSearch, null),
     callback: () => null
   }, {
     id: "order",
     text: "Ordenar",
-    icon: /*#__PURE__*/React$1.createElement(HiOutlineSearch, null),
+    icon: /*#__PURE__*/React.createElement(HiOutlineSearch, null),
     callback: () => null
   }, {
     id: "select",
@@ -778,13 +778,13 @@ const Actions = ({
   const actionsWithSelected = [{
     id: "clone",
     text: "Duplicar",
-    icon: /*#__PURE__*/React$1.createElement(HiOutlineSearch, null),
+    icon: /*#__PURE__*/React.createElement(HiOutlineSearch, null),
     callback: () => cloneCallback(selectedRows),
     customClass: "customButtonColor1"
   }, {
     id: "delete",
     text: "Eliminar",
-    icon: /*#__PURE__*/React$1.createElement(HiOutlineSearch, null),
+    icon: /*#__PURE__*/React.createElement(HiOutlineSearch, null),
     callback: () => deleteCallback(selectedRows),
     customClass: "customButtonColor1"
   }, {
@@ -800,15 +800,15 @@ const Actions = ({
   const availableActionsWithSelected = () => {
     return sections?.[activeSection]?.actionsWithSelect ? actionsWithSelected.filter(f => sections[activeSection].actionsWithSelect.includes(f.id)) : [];
   };
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "actionsDatatable"
-  }, activeSection && checkColumn ? availableActionsWithSelected().map((a, i) => /*#__PURE__*/React$1.createElement(Button, {
+  }, activeSection && checkColumn ? availableActionsWithSelected().map((a, i) => /*#__PURE__*/React.createElement(Button, {
     key: i,
     text: a.text,
     icon: a.icon,
     action: a.callback,
     customClass: a.customClass || ""
-  })) : availableActions().map((a, i) => /*#__PURE__*/React$1.createElement(Button, {
+  })) : availableActions().map((a, i) => /*#__PURE__*/React.createElement(Button, {
     key: i,
     text: a.text,
     icon: a.icon,
@@ -842,10 +842,10 @@ const Datatable = ({
 }) => {
   console.log("==== ( Datatable ) ====");
   console.log(data);
-  const [selectedRows, setSelectedRows] = React$1.useState(checkedRows && checkedRows.length > 0 ? checkedRows : []);
-  const [rows, setRows] = React$1.useState([]);
-  const [activeSection, setActiveSection] = React$1.useState(0);
-  const [configuration, updateConfiguration] = React$1.useState({
+  const [selectedRows, setSelectedRows] = React.useState(checkedRows && checkedRows.length > 0 ? checkedRows : []);
+  const [rows, setRows] = React.useState([]);
+  const [activeSection, setActiveSection] = React.useState(0);
+  const [configuration, updateConfiguration] = React.useState({
     maxRows: 12,
     indexStart: 0,
     pages: [0],
@@ -887,7 +887,7 @@ const Datatable = ({
       return updatedSelectedRows;
     });
   };
-  React$1.useEffect(() => {
+  React.useEffect(() => {
     const maxRowsInteger = parseInt(configuration.maxRows);
     let dataUpdated = data;
     //Filter
@@ -905,7 +905,7 @@ const Datatable = ({
     setRows(dataUpdated);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [configuration]);
-  React$1.useEffect(() => {
+  React.useEffect(() => {
     const maxRowsInteger = parseInt(configuration.maxRows);
     data && updateDatatableConfiguration({
       ...configuration,
@@ -914,21 +914,21 @@ const Datatable = ({
     data && setRows(data?.filter((f, index) => index > configuration.indexStart && index < configuration.indexStart + maxRowsInteger));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "datatable"
-  }, title !== "" && /*#__PURE__*/React$1.createElement("div", null, /*#__PURE__*/React$1.createElement("div", {
+  }, title !== "" && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "inputLabel"
-  }, title), /*#__PURE__*/React$1.createElement("div", {
+  }, title), /*#__PURE__*/React.createElement("div", {
     className: "inputDescription"
-  }, subtitle)), /*#__PURE__*/React$1.createElement("div", {
+  }, subtitle)), /*#__PURE__*/React.createElement("div", {
     className: "adminPanel"
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "headerDatatable"
-  }, /*#__PURE__*/React$1.createElement(Sections, {
+  }, /*#__PURE__*/React.createElement(Sections, {
     sections: sections,
     activeSection: activeSection,
     handleSectionData: handleSectionData
-  }), /*#__PURE__*/React$1.createElement(Actions, {
+  }), /*#__PURE__*/React.createElement(Actions, {
     checkColumn: checkColumn,
     activeSection: activeSection,
     sections: sections,
@@ -936,7 +936,7 @@ const Datatable = ({
     selectedRows: selectedRows,
     cloneCallback: cloneCallback,
     deleteCallback: deleteCallback
-  })), /*#__PURE__*/React$1.createElement(DatatableComponent, {
+  })), /*#__PURE__*/React.createElement(DatatableComponent, {
     checkColumn: checkColumn,
     data: data,
     customHeaders: customHeaders,
@@ -945,7 +945,7 @@ const Datatable = ({
     customData: customData,
     rowCallback: rowCallback,
     handleSelectRow: handleSelectRow
-  })), /*#__PURE__*/React$1.createElement(Pagination, {
+  })), /*#__PURE__*/React.createElement(Pagination, {
     configuration: configuration,
     maxRowsAvailable: false,
     handleMaxRows: handleMaxRows,
