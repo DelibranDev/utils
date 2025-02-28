@@ -1,4 +1,4 @@
-## Instalación
+## INSTALACIÓN
 
 Última versión
 
@@ -6,7 +6,7 @@
 npm install @delibrandev/utils@latest
 ```
 
-## Estilos
+## ESTILOS
 
 **Uso en index.js del proyecto :** import "@delibrandev/utils/src/styles.css";
 
@@ -29,7 +29,7 @@ npm install @delibrandev/utils@latest
  --color-process-background: rgb(0, 87, 255, 0.2);
 ```
 
-## Componentes
+## COMPONENTS
 
 **Uso:** import { Componente } from "@delibrandev/utils";
 
@@ -55,7 +55,57 @@ npm install @delibrandev/utils@latest
 <OrderTimeline data={data} />
 ```
 
-## Funciones
+**Datatable**
+
+> import { Datatable } from "@delibrandev/utils";
+
+```
+<Datatable
+            identificator={identificator}
+            title={""}
+            subtitle={""}
+            data={addIdKeyIfMissing(data)}
+            customHeaders={customHeaders}
+            customData={customData}
+            sections={sections}
+            checkColumn={checkColumn}
+            checkedRows={checkedRows}
+            handleCheckColumn={handleCheckColumn}
+            handleSelectedRows={handleSelectedRows}
+          />
+```
+
+Requiere:
+
+```
+const identificator = "unique-name-identificator";
+
+const checkColumn = useSelector((state) => state.aplicationConfig.userConfig.datatable.tables[identificator]?.checkColumn);
+
+const checkedRows = useSelector((state) => state.aplicationConfig.userConfig.datatable.tables[identificator]?.selectedRows);
+
+const handleCheckColumn = () => {
+    dispatch(updateDatatableCheckColumn({ table: identificator }));
+};
+
+const handleSelectedRows = (updatedSelectedRows = null) => {
+    dispatch(updateDatatableSelectedRows({ selectedRows: updatedSelectedRows, table: identificator }));
+};
+
+const sections = [
+    {text: null, callback: () => null, actions: ["search"], actionsWithSelect: []},
+];
+
+const customHeaders = {
+    name: "Nombre",
+};
+
+const customData = {
+    status: (data) => (data === "PUBLISHED" ? <Switch defaultChecked /> : <Switch />),
+};
+```
+
+## FUNCIONES
 
 **Uso:** import { funcion } from "@delibrandev/utils/src/function.js";
 
