@@ -96,7 +96,7 @@ Obtienes el valor: document.getElementById(editorId).innerHTML;
 
 **NoImage**
 
-> Si no existe la imagen (null, undefined o cualquier otro problema), debe cargarse el siguiente componente sustituyendo a la etiqueta <img>.
+> Si no existe la imagen (null, undefined o cualquier otro problema), debe cargarse el siguiente componente sustituyendo a la etiqueta img.
 
 ```
 <NoImage />
