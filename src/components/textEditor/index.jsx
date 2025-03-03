@@ -1,4 +1,5 @@
-import react, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import Editor from "react-simple-wysiwyg";
 
 export const TextEditor = ({ initialValue, id }) => {

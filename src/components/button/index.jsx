@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import "./style.css";
 
 export const Button = ({ text, icon = null, customClass = "customButtonColor1", action = () => null }) => {

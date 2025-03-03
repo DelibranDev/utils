@@ -86,6 +86,22 @@ Obtienes el valor: document.getElementById(editorId).innerHTML;
 <Select value={""} values={[]} callback={callback} id={""} label={""} description={""} classname={""} />
 ```
 
+**Checkbox**
+
+> Checkbox personalizado con descripción
+
+```
+<Checkbox text={text} clickEvent={()=>null} checked={false} className={""} />
+```
+
+**NoImage**
+
+> Si no existe la imagen (null, undefined o cualquier otro problema), debe cargarse el siguiente componente sustituyendo a la etiqueta <img>.
+
+```
+<NoImage />
+```
+
 **Order components**
 
 > import { ClientDetails, OrderInfo, OrderNotes, OrderProducts, OrderResume, OrderTimeline } from "@delibrandev/utils";

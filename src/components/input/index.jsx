@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import "./style.css";
 
@@ -9,8 +10,8 @@ export const Input = ({
   iconType = null,
   classname = "",
   iconPositionRight = true,
-  label,
-  description,
+  label = "",
+  description = "",
   defaultValue = "",
   disabled = false,
   validation = null,
