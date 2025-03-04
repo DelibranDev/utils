@@ -71,7 +71,7 @@ Obtienes el valor: document.getElementById(editorId).innerHTML;
 
 **Button**
 
-> Button personalizado con icono
+> **Clases posibles:** customButtonColor1, customButtonColor2, customButtonDisabled, customButtonSuccess, customButtonDanger
 
 ```
 {<Button text={"Guardar"} icon={null} customClass={""} action={callback} />}

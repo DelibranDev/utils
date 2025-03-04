@@ -51,7 +51,7 @@
     }
 }
 
-.customButtonGreen {
+.customButtonSuccess {
     
     background-color: var(--color-success);
     height: 25px;
@@ -62,7 +62,7 @@
     }
 }
 
-.customButtonRed {
+.customButtonDanger {
     background-color: var(--color-error);
     & .customButtonText{
         color: var(--color-secondary);
