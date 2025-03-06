@@ -115,6 +115,14 @@ Obtienes el valor: document.getElementById(editorId).innerHTML;
 <OrderTimeline data={data} />
 ```
 
+**PinPad**
+
+> Teclado numérico
+
+```
+<PinPad callback={() => null} inputText="Ingrese su pin" />
+```
+
 **Datatable**
 
 > import { Datatable } from "@delibrandev/utils";

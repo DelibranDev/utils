@@ -1,6 +1,10 @@
 .input-container{
     display: flex;
     align-items: center;
+    & input{
+        height: 30px;
+        width: 100%;
+    }
 }
 
 .inputType2Container{

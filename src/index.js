@@ -9,6 +9,7 @@ export * from "./components/textarea";
 export * from "./components/textEditor";
 export * from "./components/checkbox";
 export * from "./components/noImage";
+export * from "./components/pinPad";
 // Order
 export * from "./components/order/clientDetails.jsx";
 export * from "./components/order/orderInfo.jsx";

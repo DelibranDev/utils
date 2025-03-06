@@ -69,6 +69,11 @@ input[type="text"]:disabled{background-color:transparent; cursor:not-allowed;}
 /****** CUSTOM BUTTONS ********/
 button {
   cursor: pointer!important;
+  height: 30px;
+}
+input{
+  height: 30px;
+  width: 100%;
 }
 
 .button-1{

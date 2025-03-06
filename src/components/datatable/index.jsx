@@ -72,7 +72,7 @@ export const Datatable = ({
 
   useEffect(() => {
     const maxRowsInteger = parseInt(configuration.maxRows);
-    let dataUpdated = data.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
+    let dataUpdated = data.filter((item) => item.name?.toLowerCase().includes(search?.toLowerCase()));
     //Filter
     const filtersActive = configuration?.filterBy?.filter?.filter((f) => f.value !== "");
     if (filtersActive && filtersActive.length > 0) {
@@ -92,7 +92,7 @@ export const Datatable = ({
 
   useEffect(() => {
     const maxRowsInteger = parseInt(configuration.maxRows);
-    let dataUpdated = data.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
+    let dataUpdated = data.filter((item) => item.name?.toLowerCase().includes(search?.toLowerCase()));
     dataUpdated && updateDatatableConfiguration({ ...configuration, pages: Array.from(Array(parseInt(data.length / maxRowsInteger) + 1).keys()) });
     dataUpdated && setRows(data?.filter((f, index) => index > configuration.indexStart && index < configuration.indexStart + maxRowsInteger));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -100,7 +100,7 @@ export const Datatable = ({
 
   useEffect(() => {
     let dataUpdated = data;
-    dataUpdated = dataUpdated.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
+    dataUpdated = dataUpdated.filter((item) => item.name?.toLowerCase().includes(search?.toLowerCase()));
     setRows(dataUpdated);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);

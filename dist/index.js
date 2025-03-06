@@ -29,9 +29,9 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$8 = "@font-face {\r\n  font-family: 'DMSans';\r\n  src: local('DM Sans'), url(./fonts/DMSans/DMSans-Regular.ttf) format('truetype');\r\n}\r\n\r\n@font-face {\r\n  font-family: 'DMSans-SemiBold';\r\n  src: local('DM Sans SemiBold'), url(./fonts/DMSans/DMSans-SemiBold.ttf) format('truetype');\r\n}\r\n\r\n\r\n\r\n:root {\r\n  --color-primary: #000;\r\n  --color-primary-background: #ece9e4;\r\n  --color-primary-shadow: rgba(182, 182, 182, 0.2);\r\n  --color-secondary: #fff;\r\n  --color-secondary-background: #fefcfa;\r\n  --color-terciary: #979796;\r\n  --color-terciary-2: lightgrey;\r\n  --color-terciary-3: grey;\r\n  --color-success: #00C76C;\r\n  --color-success-background: rgb(0, 199, 108, 0.2);\r\n  --color-pending: #EB9E1A;\r\n  --color-pending-background: rgb(235, 158, 26, 0.2);\r\n  --color-error: #FF5757;\r\n  --color-error-background: rgb(255, 87, 87, 0.2);\r\n  --color-process: #0057FF;\r\n  --color-process-background: rgb(0, 87, 255, 0.2);\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  font-size: 1rem;\r\n  font-family: 'DMSans';\r\n  font-size: 0.8rem;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: var(--color-terciary);\r\n}\r\n\r\nhr{\r\n  border-top: 3px solid var(--color-primary-background);\r\n}\r\n\r\ntextarea:focus, input:focus{\r\n  outline: none;\r\n}\r\n\r\ninput[type=\"text\"], input[type=\"password\"]{\r\n  box-sizing: unset!important;\r\n  line-height: unset!important;\r\n}\r\n\r\ninput[type=\"text\"]:disabled{background-color:transparent; cursor:not-allowed;}\r\n\r\n.color-blue{\r\n  color: var(--color-process);\r\n}\r\n\r\n.MuiButtonBase-root{\r\n  color: var(--color-process)!important;\r\n}\r\n\r\n\r\n\r\n/****** CUSTOM BUTTONS ********/\r\n.button-1{\r\n  padding: 10px;\r\n  border-radius: 8px;\r\n  background-color: var(--color-primary);\r\n  color: var(--color-secondary);\r\n  border: 1px var(--color-secondary) solid;\r\n  width: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.button-2{\r\n  border-radius: 5px;\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  cursor: pointer;\r\n  height: 27px;\r\n  width: fit-content;\r\n}\r\n\r\n\r\n\r\n/*********************************/\r\n\r\n.adminPanel{\r\n  background: var(--color-secondary);\r\n  border: 1px solid var(--color-primary-background);\r\n  border-radius: 12px;\r\n  height: 100%;\r\n  width: auto;\r\n  padding: 15px;\r\n}\r\n\r\n.background-image {\r\n  background-color: var(--color-primary-background);\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n}\r\n\r\n.loginArea{\r\n  background-color: var(--color-primary-background);\r\n}\r\n\r\n.flex{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n}\r\n\r\n.flex-gap{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n  gap: 10px;\r\n}\r\n\r\n.flex-start{\r\n  display: inline-flex;\r\n  justify-content: flex-start;\r\n  width: 100%;\r\n}\r\n\r\n.flex-end{\r\n  display: inline-flex;\r\n  justify-content: flex-end;\r\n  padding: 4px;\r\n  gap: 5px;\r\n}\r\n\r\n.form {\r\n  display: flex;\r\n  gap: 10px;\r\n  flex-direction: column;\r\n}\r\n\r\n.w33{\r\n  width: 33%;\r\n}\r\n\r\n.w50{\r\n  width: 50%;\r\n}\r\n\r\n.w100{\r\n  width: 100%;\r\n}\r\n\r\n.h-100{\r\n  height: 100%;\r\n}\r\n\r\n.p-2{\r\n  padding: 2%;\r\n}\r\n\r\n.text-align-right{\r\n  text-align: right;\r\n}\r\n\r\n.text-align-left{\r\n  text-align: left;\r\n}\r\n\r\n.text-align-center{\r\n  text-align: center;\r\n}\r\n\r\n.text-overflow {\r\n  display: inline-block; /* O también block, según el diseño */\r\n  width: 100%; /* Ajusta el ancho según necesites */\r\n  white-space: nowrap; /* Evita que el texto haga saltos de línea */\r\n  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */\r\n  text-overflow: ellipsis; /* Muestra \"...\" cuando el texto es muy largo */\r\n}\r\n\r\n.fixIconButton{\r\n  padding: 4px 0px 4px 4px!important;\r\n  min-width: auto!important;\r\n}\r\n\r\n.buttonNoBorder{\r\n  border: 0px!important;\r\n}\r\n\r\n\r\n/************ CHECKBOX ************/\r\n.custom-checkbox {\r\n  /* Ocultar el diseño por defecto */\r\n  appearance: none;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n\r\n  /* Dimensiones */\r\n  width: 24px;\r\n  height: 24px;\r\n\r\n  /* Estilo base */\r\n  border: 2px solid var(--color-primary-background); /* Azul oscuro */\r\n  border-radius: 4px;\r\n  background-color: var(--color-secondary);\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n\r\n  /* Efecto al pasar el ratón */\r\n  transition: background-color 0.2s ease, border-color 0.2s ease;\r\n}\r\n\r\n.custom-checkbox:hover {\r\n  border-color: var(--color-process); /* Azul más oscuro */\r\n}\r\n\r\n.custom-checkbox:checked {\r\n  background-color: var(--color-process); /* Azul */\r\n  border-color: var(--color-process);\r\n\r\n  /* Añadir el check */\r\n  position: relative;\r\n}\r\n\r\n.custom-checkbox:checked::after {\r\n  content: \"\";\r\n  display: block;\r\n\r\n  /* Checkmark blanco */\r\n  width: 10px;\r\n  height: 5px;\r\n  border: solid var(--color-secondary);\r\n  border-width: 0 0 2px 2px;\r\n  transform: rotate(-45deg);\r\n  position: absolute;\r\n  top: 7px;\r\n  left: 6px;\r\n}\r\n\r\n\r\n\r\n/************ TOOLBAR ************/\r\n::-webkit-scrollbar {\r\n  width: 8px;\r\n  margin: 2px;\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--color-primary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n/**********************************/\r\n\r\n\r\n\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  \r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n  \r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n";
-var stylesheet="@font-face {\r\n  font-family: 'DMSans';\r\n  src: local('DM Sans'), url(./fonts/DMSans/DMSans-Regular.ttf) format('truetype');\r\n}\r\n\r\n@font-face {\r\n  font-family: 'DMSans-SemiBold';\r\n  src: local('DM Sans SemiBold'), url(./fonts/DMSans/DMSans-SemiBold.ttf) format('truetype');\r\n}\r\n\r\n\r\n\r\n:root {\r\n  --color-primary: #000;\r\n  --color-primary-background: #ece9e4;\r\n  --color-primary-shadow: rgba(182, 182, 182, 0.2);\r\n  --color-secondary: #fff;\r\n  --color-secondary-background: #fefcfa;\r\n  --color-terciary: #979796;\r\n  --color-terciary-2: lightgrey;\r\n  --color-terciary-3: grey;\r\n  --color-success: #00C76C;\r\n  --color-success-background: rgb(0, 199, 108, 0.2);\r\n  --color-pending: #EB9E1A;\r\n  --color-pending-background: rgb(235, 158, 26, 0.2);\r\n  --color-error: #FF5757;\r\n  --color-error-background: rgb(255, 87, 87, 0.2);\r\n  --color-process: #0057FF;\r\n  --color-process-background: rgb(0, 87, 255, 0.2);\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  font-size: 1rem;\r\n  font-family: 'DMSans';\r\n  font-size: 0.8rem;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: var(--color-terciary);\r\n}\r\n\r\nhr{\r\n  border-top: 3px solid var(--color-primary-background);\r\n}\r\n\r\ntextarea:focus, input:focus{\r\n  outline: none;\r\n}\r\n\r\ninput[type=\"text\"], input[type=\"password\"]{\r\n  box-sizing: unset!important;\r\n  line-height: unset!important;\r\n}\r\n\r\ninput[type=\"text\"]:disabled{background-color:transparent; cursor:not-allowed;}\r\n\r\n.color-blue{\r\n  color: var(--color-process);\r\n}\r\n\r\n.MuiButtonBase-root{\r\n  color: var(--color-process)!important;\r\n}\r\n\r\n\r\n\r\n/****** CUSTOM BUTTONS ********/\r\n.button-1{\r\n  padding: 10px;\r\n  border-radius: 8px;\r\n  background-color: var(--color-primary);\r\n  color: var(--color-secondary);\r\n  border: 1px var(--color-secondary) solid;\r\n  width: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.button-2{\r\n  border-radius: 5px;\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  cursor: pointer;\r\n  height: 27px;\r\n  width: fit-content;\r\n}\r\n\r\n\r\n\r\n/*********************************/\r\n\r\n.adminPanel{\r\n  background: var(--color-secondary);\r\n  border: 1px solid var(--color-primary-background);\r\n  border-radius: 12px;\r\n  height: 100%;\r\n  width: auto;\r\n  padding: 15px;\r\n}\r\n\r\n.background-image {\r\n  background-color: var(--color-primary-background);\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n}\r\n\r\n.loginArea{\r\n  background-color: var(--color-primary-background);\r\n}\r\n\r\n.flex{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n}\r\n\r\n.flex-gap{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n  gap: 10px;\r\n}\r\n\r\n.flex-start{\r\n  display: inline-flex;\r\n  justify-content: flex-start;\r\n  width: 100%;\r\n}\r\n\r\n.flex-end{\r\n  display: inline-flex;\r\n  justify-content: flex-end;\r\n  padding: 4px;\r\n  gap: 5px;\r\n}\r\n\r\n.form {\r\n  display: flex;\r\n  gap: 10px;\r\n  flex-direction: column;\r\n}\r\n\r\n.w33{\r\n  width: 33%;\r\n}\r\n\r\n.w50{\r\n  width: 50%;\r\n}\r\n\r\n.w100{\r\n  width: 100%;\r\n}\r\n\r\n.h-100{\r\n  height: 100%;\r\n}\r\n\r\n.p-2{\r\n  padding: 2%;\r\n}\r\n\r\n.text-align-right{\r\n  text-align: right;\r\n}\r\n\r\n.text-align-left{\r\n  text-align: left;\r\n}\r\n\r\n.text-align-center{\r\n  text-align: center;\r\n}\r\n\r\n.text-overflow {\r\n  display: inline-block; /* O también block, según el diseño */\r\n  width: 100%; /* Ajusta el ancho según necesites */\r\n  white-space: nowrap; /* Evita que el texto haga saltos de línea */\r\n  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */\r\n  text-overflow: ellipsis; /* Muestra \"...\" cuando el texto es muy largo */\r\n}\r\n\r\n.fixIconButton{\r\n  padding: 4px 0px 4px 4px!important;\r\n  min-width: auto!important;\r\n}\r\n\r\n.buttonNoBorder{\r\n  border: 0px!important;\r\n}\r\n\r\n\r\n/************ CHECKBOX ************/\r\n.custom-checkbox {\r\n  /* Ocultar el diseño por defecto */\r\n  appearance: none;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n\r\n  /* Dimensiones */\r\n  width: 24px;\r\n  height: 24px;\r\n\r\n  /* Estilo base */\r\n  border: 2px solid var(--color-primary-background); /* Azul oscuro */\r\n  border-radius: 4px;\r\n  background-color: var(--color-secondary);\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n\r\n  /* Efecto al pasar el ratón */\r\n  transition: background-color 0.2s ease, border-color 0.2s ease;\r\n}\r\n\r\n.custom-checkbox:hover {\r\n  border-color: var(--color-process); /* Azul más oscuro */\r\n}\r\n\r\n.custom-checkbox:checked {\r\n  background-color: var(--color-process); /* Azul */\r\n  border-color: var(--color-process);\r\n\r\n  /* Añadir el check */\r\n  position: relative;\r\n}\r\n\r\n.custom-checkbox:checked::after {\r\n  content: \"\";\r\n  display: block;\r\n\r\n  /* Checkmark blanco */\r\n  width: 10px;\r\n  height: 5px;\r\n  border: solid var(--color-secondary);\r\n  border-width: 0 0 2px 2px;\r\n  transform: rotate(-45deg);\r\n  position: absolute;\r\n  top: 7px;\r\n  left: 6px;\r\n}\r\n\r\n\r\n\r\n/************ TOOLBAR ************/\r\n::-webkit-scrollbar {\r\n  width: 8px;\r\n  margin: 2px;\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--color-primary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n/**********************************/\r\n\r\n\r\n\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  \r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n  \r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n";
-styleInject(css_248z$8);
+var css_248z$9 = "@font-face {\r\n  font-family: 'DMSans';\r\n  src: local('DM Sans'), url(./fonts/DMSans/DMSans-Regular.ttf) format('truetype');\r\n}\r\n\r\n@font-face {\r\n  font-family: 'DMSans-SemiBold';\r\n  src: local('DM Sans SemiBold'), url(./fonts/DMSans/DMSans-SemiBold.ttf) format('truetype');\r\n}\r\n\r\n\r\n\r\n:root {\r\n  --color-primary: #000;\r\n  --color-primary-background: #ece9e4;\r\n  --color-primary-shadow: rgba(182, 182, 182, 0.2);\r\n  --color-secondary: #fff;\r\n  --color-secondary-background: #fefcfa;\r\n  --color-terciary: #979796;\r\n  --color-terciary-2: lightgrey;\r\n  --color-terciary-3: grey;\r\n  --color-success: #00C76C;\r\n  --color-success-background: rgb(0, 199, 108, 0.2);\r\n  --color-pending: #EB9E1A;\r\n  --color-pending-background: rgb(235, 158, 26, 0.2);\r\n  --color-error: #FF5757;\r\n  --color-error-background: rgb(255, 87, 87, 0.2);\r\n  --color-process: #0057FF;\r\n  --color-process-background: rgb(0, 87, 255, 0.2);\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  font-size: 1rem;\r\n  font-family: 'DMSans';\r\n  font-size: 0.8rem;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: var(--color-terciary);\r\n}\r\n\r\nhr{\r\n  border-top: 3px solid var(--color-primary-background);\r\n}\r\n\r\ntextarea:focus, input:focus{\r\n  outline: none;\r\n}\r\n\r\ninput[type=\"text\"], input[type=\"password\"]{\r\n  box-sizing: unset!important;\r\n  line-height: unset!important;\r\n}\r\n\r\ninput[type=\"text\"]:disabled{background-color:transparent; cursor:not-allowed;}\r\n\r\n.color-blue{\r\n  color: var(--color-process);\r\n}\r\n\r\n.MuiButtonBase-root{\r\n  color: var(--color-process)!important;\r\n}\r\n\r\n\r\n\r\n/****** CUSTOM BUTTONS ********/\r\nbutton {\r\n  cursor: pointer!important;\r\n  height: 30px;\r\n}\r\ninput{\r\n  height: 30px;\r\n  width: 100%;\r\n}\r\n\r\n.button-1{\r\n  padding: 10px;\r\n  border-radius: 8px;\r\n  background-color: var(--color-primary);\r\n  color: var(--color-secondary);\r\n  border: 1px var(--color-secondary) solid;\r\n  width: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.button-2{\r\n  border-radius: 5px;\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  cursor: pointer;\r\n  height: 27px;\r\n  width: fit-content;\r\n}\r\n\r\n\r\n\r\n/*********************************/\r\n\r\n.adminPanel{\r\n  background: var(--color-secondary);\r\n  border: 1px solid var(--color-primary-background);\r\n  border-radius: 12px;\r\n  height: 100%;\r\n  width: auto;\r\n  padding: 15px;\r\n}\r\n\r\n.background-image {\r\n  background-color: var(--color-primary-background);\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n}\r\n\r\n.loginArea{\r\n  background-color: var(--color-primary-background);\r\n}\r\n\r\n.flex{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n}\r\n\r\n.flex-gap{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n  gap: 10px;\r\n}\r\n\r\n.flex-start{\r\n  display: inline-flex;\r\n  justify-content: flex-start;\r\n  width: 100%;\r\n}\r\n\r\n.flex-end{\r\n  display: inline-flex;\r\n  justify-content: flex-end;\r\n  padding: 4px;\r\n  gap: 5px;\r\n}\r\n\r\n.form {\r\n  display: flex;\r\n  gap: 10px;\r\n  flex-direction: column;\r\n}\r\n\r\n.w33{\r\n  width: 33%;\r\n}\r\n\r\n.w50{\r\n  width: 50%;\r\n}\r\n\r\n.w100{\r\n  width: 100%;\r\n}\r\n\r\n.h-100{\r\n  height: 100%;\r\n}\r\n\r\n.p-2{\r\n  padding: 2%;\r\n}\r\n\r\n.text-align-right{\r\n  text-align: right;\r\n}\r\n\r\n.text-align-left{\r\n  text-align: left;\r\n}\r\n\r\n.text-align-center{\r\n  text-align: center;\r\n}\r\n\r\n.text-overflow {\r\n  display: inline-block; /* O también block, según el diseño */\r\n  width: 100%; /* Ajusta el ancho según necesites */\r\n  white-space: nowrap; /* Evita que el texto haga saltos de línea */\r\n  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */\r\n  text-overflow: ellipsis; /* Muestra \"...\" cuando el texto es muy largo */\r\n}\r\n\r\n.fixIconButton{\r\n  padding: 4px 0px 4px 4px!important;\r\n  min-width: auto!important;\r\n}\r\n\r\n.buttonNoBorder{\r\n  border: 0px!important;\r\n}\r\n\r\n\r\n/************ CHECKBOX ************/\r\n.custom-checkbox {\r\n  /* Ocultar el diseño por defecto */\r\n  appearance: none;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n\r\n  /* Dimensiones */\r\n  width: 24px;\r\n  height: 24px;\r\n\r\n  /* Estilo base */\r\n  border: 2px solid var(--color-primary-background); /* Azul oscuro */\r\n  border-radius: 4px;\r\n  background-color: var(--color-secondary);\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n\r\n  /* Efecto al pasar el ratón */\r\n  transition: background-color 0.2s ease, border-color 0.2s ease;\r\n}\r\n\r\n.custom-checkbox:hover {\r\n  border-color: var(--color-process); /* Azul más oscuro */\r\n}\r\n\r\n.custom-checkbox:checked {\r\n  background-color: var(--color-process); /* Azul */\r\n  border-color: var(--color-process);\r\n\r\n  /* Añadir el check */\r\n  position: relative;\r\n}\r\n\r\n.custom-checkbox:checked::after {\r\n  content: \"\";\r\n  display: block;\r\n\r\n  /* Checkmark blanco */\r\n  width: 10px;\r\n  height: 5px;\r\n  border: solid var(--color-secondary);\r\n  border-width: 0 0 2px 2px;\r\n  transform: rotate(-45deg);\r\n  position: absolute;\r\n  top: 5px;\r\n  left: 5px;\r\n}\r\n\r\n\r\n\r\n/************ TOOLBAR ************/\r\n::-webkit-scrollbar {\r\n  width: 8px;\r\n  margin: 2px;\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--color-primary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n/**********************************/\r\n\r\n\r\n\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  \r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n  \r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n";
+var stylesheet="@font-face {\r\n  font-family: 'DMSans';\r\n  src: local('DM Sans'), url(./fonts/DMSans/DMSans-Regular.ttf) format('truetype');\r\n}\r\n\r\n@font-face {\r\n  font-family: 'DMSans-SemiBold';\r\n  src: local('DM Sans SemiBold'), url(./fonts/DMSans/DMSans-SemiBold.ttf) format('truetype');\r\n}\r\n\r\n\r\n\r\n:root {\r\n  --color-primary: #000;\r\n  --color-primary-background: #ece9e4;\r\n  --color-primary-shadow: rgba(182, 182, 182, 0.2);\r\n  --color-secondary: #fff;\r\n  --color-secondary-background: #fefcfa;\r\n  --color-terciary: #979796;\r\n  --color-terciary-2: lightgrey;\r\n  --color-terciary-3: grey;\r\n  --color-success: #00C76C;\r\n  --color-success-background: rgb(0, 199, 108, 0.2);\r\n  --color-pending: #EB9E1A;\r\n  --color-pending-background: rgb(235, 158, 26, 0.2);\r\n  --color-error: #FF5757;\r\n  --color-error-background: rgb(255, 87, 87, 0.2);\r\n  --color-process: #0057FF;\r\n  --color-process-background: rgb(0, 87, 255, 0.2);\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  font-size: 1rem;\r\n  font-family: 'DMSans';\r\n  font-size: 0.8rem;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: var(--color-terciary);\r\n}\r\n\r\nhr{\r\n  border-top: 3px solid var(--color-primary-background);\r\n}\r\n\r\ntextarea:focus, input:focus{\r\n  outline: none;\r\n}\r\n\r\ninput[type=\"text\"], input[type=\"password\"]{\r\n  box-sizing: unset!important;\r\n  line-height: unset!important;\r\n}\r\n\r\ninput[type=\"text\"]:disabled{background-color:transparent; cursor:not-allowed;}\r\n\r\n.color-blue{\r\n  color: var(--color-process);\r\n}\r\n\r\n.MuiButtonBase-root{\r\n  color: var(--color-process)!important;\r\n}\r\n\r\n\r\n\r\n/****** CUSTOM BUTTONS ********/\r\nbutton {\r\n  cursor: pointer!important;\r\n  height: 30px;\r\n}\r\ninput{\r\n  height: 30px;\r\n  width: 100%;\r\n}\r\n\r\n.button-1{\r\n  padding: 10px;\r\n  border-radius: 8px;\r\n  background-color: var(--color-primary);\r\n  color: var(--color-secondary);\r\n  border: 1px var(--color-secondary) solid;\r\n  width: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.button-2{\r\n  border-radius: 5px;\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  cursor: pointer;\r\n  height: 27px;\r\n  width: fit-content;\r\n}\r\n\r\n\r\n\r\n/*********************************/\r\n\r\n.adminPanel{\r\n  background: var(--color-secondary);\r\n  border: 1px solid var(--color-primary-background);\r\n  border-radius: 12px;\r\n  height: 100%;\r\n  width: auto;\r\n  padding: 15px;\r\n}\r\n\r\n.background-image {\r\n  background-color: var(--color-primary-background);\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n}\r\n\r\n.loginArea{\r\n  background-color: var(--color-primary-background);\r\n}\r\n\r\n.flex{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n}\r\n\r\n.flex-gap{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n  gap: 10px;\r\n}\r\n\r\n.flex-start{\r\n  display: inline-flex;\r\n  justify-content: flex-start;\r\n  width: 100%;\r\n}\r\n\r\n.flex-end{\r\n  display: inline-flex;\r\n  justify-content: flex-end;\r\n  padding: 4px;\r\n  gap: 5px;\r\n}\r\n\r\n.form {\r\n  display: flex;\r\n  gap: 10px;\r\n  flex-direction: column;\r\n}\r\n\r\n.w33{\r\n  width: 33%;\r\n}\r\n\r\n.w50{\r\n  width: 50%;\r\n}\r\n\r\n.w100{\r\n  width: 100%;\r\n}\r\n\r\n.h-100{\r\n  height: 100%;\r\n}\r\n\r\n.p-2{\r\n  padding: 2%;\r\n}\r\n\r\n.text-align-right{\r\n  text-align: right;\r\n}\r\n\r\n.text-align-left{\r\n  text-align: left;\r\n}\r\n\r\n.text-align-center{\r\n  text-align: center;\r\n}\r\n\r\n.text-overflow {\r\n  display: inline-block; /* O también block, según el diseño */\r\n  width: 100%; /* Ajusta el ancho según necesites */\r\n  white-space: nowrap; /* Evita que el texto haga saltos de línea */\r\n  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */\r\n  text-overflow: ellipsis; /* Muestra \"...\" cuando el texto es muy largo */\r\n}\r\n\r\n.fixIconButton{\r\n  padding: 4px 0px 4px 4px!important;\r\n  min-width: auto!important;\r\n}\r\n\r\n.buttonNoBorder{\r\n  border: 0px!important;\r\n}\r\n\r\n\r\n/************ CHECKBOX ************/\r\n.custom-checkbox {\r\n  /* Ocultar el diseño por defecto */\r\n  appearance: none;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n\r\n  /* Dimensiones */\r\n  width: 24px;\r\n  height: 24px;\r\n\r\n  /* Estilo base */\r\n  border: 2px solid var(--color-primary-background); /* Azul oscuro */\r\n  border-radius: 4px;\r\n  background-color: var(--color-secondary);\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n\r\n  /* Efecto al pasar el ratón */\r\n  transition: background-color 0.2s ease, border-color 0.2s ease;\r\n}\r\n\r\n.custom-checkbox:hover {\r\n  border-color: var(--color-process); /* Azul más oscuro */\r\n}\r\n\r\n.custom-checkbox:checked {\r\n  background-color: var(--color-process); /* Azul */\r\n  border-color: var(--color-process);\r\n\r\n  /* Añadir el check */\r\n  position: relative;\r\n}\r\n\r\n.custom-checkbox:checked::after {\r\n  content: \"\";\r\n  display: block;\r\n\r\n  /* Checkmark blanco */\r\n  width: 10px;\r\n  height: 5px;\r\n  border: solid var(--color-secondary);\r\n  border-width: 0 0 2px 2px;\r\n  transform: rotate(-45deg);\r\n  position: absolute;\r\n  top: 5px;\r\n  left: 5px;\r\n}\r\n\r\n\r\n\r\n/************ TOOLBAR ************/\r\n::-webkit-scrollbar {\r\n  width: 8px;\r\n  margin: 2px;\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--color-primary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n/**********************************/\r\n\r\n\r\n\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  \r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n  \r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n";
+styleInject(css_248z$9);
 
 const parseDate = value => {
   // Convertir la cadena de fecha en un objeto de fecha
@@ -128,8 +128,8 @@ function getRequiredKeys(obj) {
   return Object.keys(obj).filter(key => obj[key] === "required")?.map(key => dictionary[key] || key);
 }
 
-var css_248z$7 = ".state-label {\r\n    padding: 2px 10px;\r\n    font-size: 0.75rem;\r\n    font-weight: bold;\r\n    border-radius: 5px;\r\n    width: 125px;\r\n    text-align: center;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.state-pending {\r\n    color: var(--color-pending);\r\n    background-color: var(--color-pending-background);\r\n}\r\n\r\n\r\n.state-prepared {\r\n    color: var(--color-success);\r\n    background-color: var(--color-success-background);\r\n}\r\n\r\n.state-pending {\r\n    color: var(--color-pending);\r\n    background-color: var(--color-pending-background);\r\n}\r\n\r\n.state-canceled{\r\n    color: var(--color-error);\r\n    background-color: var(--color-error-background);\r\n}\r\n\r\n.state-process{\r\n    color: var(--color-process);\r\n    background-color: var(--color-process-background);\r\n}";
-styleInject(css_248z$7);
+var css_248z$8 = ".state-label {\r\n    padding: 2px 10px;\r\n    font-size: 0.75rem;\r\n    font-weight: bold;\r\n    border-radius: 5px;\r\n    width: 125px;\r\n    text-align: center;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.state-pending {\r\n    color: var(--color-pending);\r\n    background-color: var(--color-pending-background);\r\n}\r\n\r\n\r\n.state-prepared {\r\n    color: var(--color-success);\r\n    background-color: var(--color-success-background);\r\n}\r\n\r\n.state-pending {\r\n    color: var(--color-pending);\r\n    background-color: var(--color-pending-background);\r\n}\r\n\r\n.state-canceled{\r\n    color: var(--color-error);\r\n    background-color: var(--color-error-background);\r\n}\r\n\r\n.state-process{\r\n    color: var(--color-process);\r\n    background-color: var(--color-process-background);\r\n}";
+styleInject(css_248z$8);
 
 const StateLabel = ({
   state
@@ -259,8 +259,8 @@ const MapLocation = ({
   }) : !error && /*#__PURE__*/React$1.createElement("p", null, "Cargando mapa..."));
 };
 
-var css_248z$6 = ".selectContainer{\r\n  gap: 3px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n  & .customSelect{\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n.customSelect{\r\n  height: 30px;\r\n  width: fit-content;\r\n  font-size: 0.7rem!important;\r\n  padding: 0 5px;\r\n  background-color: white;\r\n  border: 1px var(--color-terciary-2) solid;\r\n  border-radius: 5px;\r\n  & fieldset{\r\n    display: none;\r\n  }\r\n}\r\n\r\n.customSelectName{\r\n  margin-right: 10px;\r\n}\r\n\r\n.customSelectNameDropdown{\r\n  font-size: 0.9rem;\r\n}\r\n\r\n.dropdown-content {\r\n  display: none;\r\n  position: absolute;\r\n  background-color: white;\r\n  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);\r\n  border-radius: 5px;\r\n  overflow: hidden;\r\n  z-index: 1;\r\n}\r\n\r\n.dropdownSelect{\r\n    position: absolute;\r\n    background-color: white;\r\n    padding: 5px;\r\n    width: 141px;\r\n    border: 1px rgb(233 233 233) solid;\r\n    border-radius: 5px;\r\n    margin-top: 0px;\r\n}\r\n\r\n.selectOption{\r\n    cursor:pointer;\r\n}\r\n\r\n.slide-bottom {\r\n\t-webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\r\n\t        animation: slide-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\r\n}\r\n\r\n @-webkit-keyframes slide-bottom {\r\n    0% {\r\n      -webkit-transform: translateY(0);\r\n              transform: translateY(0);\r\n    }\r\n    100% {\r\n      -webkit-transform: translateY(5px);\r\n              transform: translateY(5px);\r\n    }\r\n  }\r\n  @keyframes slide-bottom {\r\n    0% {\r\n      -webkit-transform: translateY(0);\r\n              transform: translateY(0);\r\n    }\r\n    100% {\r\n      -webkit-transform: translateY(5px);\r\n              transform: translateY(5px);\r\n    }\r\n  }\r\n  \r\n  ";
-styleInject(css_248z$6);
+var css_248z$7 = ".selectContainer{\r\n  gap: 3px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n  & .customSelect{\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n.customSelect{\r\n  height: 30px;\r\n  width: fit-content;\r\n  font-size: 0.7rem!important;\r\n  padding: 0 5px;\r\n  background-color: white;\r\n  border: 1px var(--color-terciary-2) solid;\r\n  border-radius: 5px;\r\n  & fieldset{\r\n    display: none;\r\n  }\r\n}\r\n\r\n.customSelectName{\r\n  margin-right: 10px;\r\n}\r\n\r\n.customSelectNameDropdown{\r\n  font-size: 0.9rem;\r\n}\r\n\r\n.dropdown-content {\r\n  display: none;\r\n  position: absolute;\r\n  background-color: white;\r\n  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);\r\n  border-radius: 5px;\r\n  overflow: hidden;\r\n  z-index: 1;\r\n}\r\n\r\n.dropdownSelect{\r\n    position: absolute;\r\n    background-color: white;\r\n    padding: 5px;\r\n    width: 141px;\r\n    border: 1px rgb(233 233 233) solid;\r\n    border-radius: 5px;\r\n    margin-top: 0px;\r\n}\r\n\r\n.selectOption{\r\n    cursor:pointer;\r\n}\r\n\r\n.slide-bottom {\r\n\t-webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\r\n\t        animation: slide-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\r\n}\r\n\r\n @-webkit-keyframes slide-bottom {\r\n    0% {\r\n      -webkit-transform: translateY(0);\r\n              transform: translateY(0);\r\n    }\r\n    100% {\r\n      -webkit-transform: translateY(5px);\r\n              transform: translateY(5px);\r\n    }\r\n  }\r\n  @keyframes slide-bottom {\r\n    0% {\r\n      -webkit-transform: translateY(0);\r\n              transform: translateY(0);\r\n    }\r\n    100% {\r\n      -webkit-transform: translateY(5px);\r\n              transform: translateY(5px);\r\n    }\r\n  }\r\n  \r\n  ";
+styleInject(css_248z$7);
 
 const Select = ({
   value = "",
@@ -302,8 +302,8 @@ const Select = ({
   }, v.name))));
 };
 
-var css_248z$5 = ".customButton {\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  font-size: 0.7rem;\r\n  padding: 0 12px;\r\n  border: 1px var(--color-terciary-2) solid;\r\n  border-radius: 5px;\r\n  height: 30px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  box-shadow: none;\r\n  text-transform: none;\r\n  align-items: center;\r\n  & svg {\r\n    padding-right: 5px;\r\n    font-size: 1.1rem;\r\n  }\r\n}\r\n\r\n.customButtonColor1 {\r\n  background-color: var(--color-secondary);\r\n  color: var(--color-primary);\r\n  & svg {\r\n    color: var(--color-primary);\r\n  }\r\n}\r\n\r\n.customButtonColor2 {\r\n  background-color: var(--color-primary);\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n  }\r\n  & svg {\r\n    color: var(--color-secondary);\r\n  }\r\n}\r\n\r\n.customButtonText {\r\n  margin-top: 1px;\r\n  color: var(--color-primary);\r\n  font-weight: 400;\r\n  white-space: nowrap;\r\n}\r\n\r\n.customButtonDisabled {\r\n  background-color: var(--color-terciary-2);\r\n  height: 25px;\r\n  & .customButtonText {\r\n    color: var(--color-terciary-3);\r\n    padding: 5px 20px;\r\n  }\r\n}\r\n\r\n.customButtonSuccess {\r\n  background-color: var(--color-success);\r\n  height: 25px;\r\n\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n    padding: 5px 20px;\r\n  }\r\n}\r\n\r\n.customButtonDanger {\r\n  background-color: var(--color-error);\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n  }\r\n}\r\n\r\n.justify-center{\r\n    justify-content: center;\r\n}\r\n";
-styleInject(css_248z$5);
+var css_248z$6 = ".customButton {\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  font-size: 0.7rem;\r\n  padding: 0 12px;\r\n  border: 1px var(--color-terciary-2) solid;\r\n  border-radius: 5px;\r\n  height: 30px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  box-shadow: none;\r\n  text-transform: none;\r\n  align-items: center;\r\n  & svg {\r\n    padding-right: 5px;\r\n    font-size: 1.1rem;\r\n  }\r\n}\r\n\r\n.customButtonColor1 {\r\n  background-color: var(--color-secondary);\r\n  color: var(--color-primary);\r\n  & svg {\r\n    color: var(--color-primary);\r\n  }\r\n}\r\n\r\n.customButtonColor2 {\r\n  background-color: var(--color-primary);\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n  }\r\n  & svg {\r\n    color: var(--color-secondary);\r\n  }\r\n}\r\n\r\n.customButtonText {\r\n  margin-top: 1px;\r\n  color: var(--color-primary);\r\n  font-weight: 400;\r\n  white-space: nowrap;\r\n}\r\n\r\n.customButtonDisabled {\r\n  background-color: var(--color-terciary-2);\r\n  height: 25px;\r\n  & .customButtonText {\r\n    color: var(--color-terciary-3);\r\n    padding: 5px 20px;\r\n  }\r\n}\r\n\r\n.customButtonSuccess {\r\n  background-color: var(--color-success);\r\n  height: 25px;\r\n\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n    padding: 5px 20px;\r\n  }\r\n}\r\n\r\n.customButtonDanger {\r\n  background-color: var(--color-error);\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n  }\r\n}\r\n\r\n.justify-center{\r\n    justify-content: center;\r\n}\r\n";
+styleInject(css_248z$6);
 
 const Button = ({
   text,
@@ -319,8 +319,8 @@ const Button = ({
   }, text));
 };
 
-var css_248z$4 = ".input-container{\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.inputType2Container{\r\n    gap: 3px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: 100%;\r\n}\r\n\r\n.inputLabel{\r\n    font-size: 0.7rem;\r\n    height: 15px;\r\n    font-weight: bold;\r\n}\r\n\r\n.inputDescription{\r\n    font-size: 0.6rem;\r\n    color: grey;\r\n}\r\n\r\n.inputType2{\r\n    background-color: white;\r\n    border: 1px lightgrey solid;\r\n    border-radius: 5px;\r\n    height: 25px;\r\n}\r\n\r\ninput[type=\"date\"] {\r\n    background-color: white;\r\n    border: 1px lightgrey solid;\r\n    border-radius: 5px;\r\n    height: 30px;\r\n}\r\n\r\n.validationFail{\r\n    border: 1px darkred solid;\r\n}\r\n\r\n.validationFailMessage{\r\n    font-size: 0.6rem;\r\n    color: darkred;\r\n}\r\n\r\n.inputRight{\r\n    margin-left: -20px;\r\n    color: var(--color-terciary-3);\r\n}";
-styleInject(css_248z$4);
+var css_248z$5 = ".input-container{\r\n    display: flex;\r\n    align-items: center;\r\n    & input{\r\n        height: 30px;\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n.inputType2Container{\r\n    gap: 3px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: 100%;\r\n}\r\n\r\n.inputLabel{\r\n    font-size: 0.7rem;\r\n    height: 15px;\r\n    font-weight: bold;\r\n}\r\n\r\n.inputDescription{\r\n    font-size: 0.6rem;\r\n    color: grey;\r\n}\r\n\r\n.inputType2{\r\n    background-color: white;\r\n    border: 1px lightgrey solid;\r\n    border-radius: 5px;\r\n    height: 25px;\r\n}\r\n\r\ninput[type=\"date\"] {\r\n    background-color: white;\r\n    border: 1px lightgrey solid;\r\n    border-radius: 5px;\r\n    height: 30px;\r\n}\r\n\r\n.validationFail{\r\n    border: 1px darkred solid;\r\n}\r\n\r\n.validationFailMessage{\r\n    font-size: 0.6rem;\r\n    color: darkred;\r\n}\r\n\r\n.inputRight{\r\n    margin-left: -20px;\r\n    color: var(--color-terciary-3);\r\n}";
+styleInject(css_248z$5);
 
 const Input = ({
   id,
@@ -335,7 +335,8 @@ const Input = ({
   defaultValue = "",
   disabled = false,
   validation = null,
-  onChange = () => null
+  onChange = () => null,
+  onWritting = () => null
 }) => {
   const [inputType, setInputType] = React$1.useState(type);
   const [validationControl, setValidationControl] = React$1.useState(true);
@@ -390,7 +391,8 @@ const Input = ({
     className: `inputType2 ${classname + inputSpaceAtStart} ${!validationControl && "validationFail"} `,
     onBlur: handleValidation,
     defaultValue: defaultValue,
-    disabled: disabled
+    disabled: disabled,
+    onChange: e => onWritting(e.target.value)
   }), /*#__PURE__*/React$1.createElement("div", {
     className: classIcon + iconAction,
     onClick: handleIcon
@@ -399,8 +401,8 @@ const Input = ({
   }, "El valor introducido no es v\xE1lido."));
 };
 
-var css_248z$3 = ".inputType2Container{\r\n    gap: 3px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: 100%;\r\n}\r\n\r\n.inputLabel{\r\n    font-size: 0.7rem;\r\n    height: 15px;\r\n    font-weight: bold;\r\n}\r\n\r\n.inputDescription{\r\n    font-size: 0.6rem;\r\n    color: grey;\r\n}\r\n\r\n.customTextarea{\r\n    background-color: white;\r\n    border: 1px lightgrey solid;\r\n    border-radius: 5px;\r\n    height: 50px;\r\n}";
-styleInject(css_248z$3);
+var css_248z$4 = ".inputType2Container{\r\n    gap: 3px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: 100%;\r\n}\r\n\r\n.inputLabel{\r\n    font-size: 0.7rem;\r\n    height: 15px;\r\n    font-weight: bold;\r\n}\r\n\r\n.inputDescription{\r\n    font-size: 0.6rem;\r\n    color: grey;\r\n}\r\n\r\n.customTextarea{\r\n    background-color: white;\r\n    border: 1px lightgrey solid;\r\n    border-radius: 5px;\r\n    height: 50px;\r\n}";
+styleInject(css_248z$4);
 
 const Textarea = ({
   id,
@@ -895,13 +897,81 @@ function IoImageOutline (props) {
   return GenIcon({"attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"rect","attr":{"width":"416","height":"352","x":"48","y":"80","fill":"none","strokeLinejoin":"round","strokeWidth":"32","rx":"48","ry":"48"},"child":[]},{"tag":"circle","attr":{"cx":"336","cy":"176","r":"32","fill":"none","strokeMiterlimit":"10","strokeWidth":"32"},"child":[]},{"tag":"path","attr":{"fill":"none","strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":"32","d":"m304 335.79-90.66-90.49a32 32 0 0 0-43.87-1.3L48 352m176 80 123.34-123.34a32 32 0 0 1 43.11-2L464 368"},"child":[]}]})(props);
 }
 
-var css_248z$2 = ".noImage{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background-color: var(--color-primary-background);\r\n    color: var(--color-terciary-3);\r\n    height: 100%;\r\n    font-size: 1.5rem;\r\n}";
-styleInject(css_248z$2);
+var css_248z$3 = ".noImage{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background-color: var(--color-primary-background);\r\n    color: var(--color-terciary-3);\r\n    height: 100%;\r\n    font-size: 1.5rem;\r\n}";
+styleInject(css_248z$3);
 
 const NoImage = () => {
   return /*#__PURE__*/React.createElement("div", {
     className: "noImage"
   }, /*#__PURE__*/React.createElement(IoImageOutline, null));
+};
+
+// THIS FILE IS AUTO GENERATED
+function RiCheckFill (props) {
+  return GenIcon({"attr":{"viewBox":"0 0 24 24","fill":"currentColor"},"child":[{"tag":"path","attr":{"d":"M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"},"child":[]}]})(props);
+}function RiCloseFill (props) {
+  return GenIcon({"attr":{"viewBox":"0 0 24 24","fill":"currentColor"},"child":[{"tag":"path","attr":{"d":"M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"},"child":[]}]})(props);
+}function RiDeleteBack2Line (props) {
+  return GenIcon({"attr":{"viewBox":"0 0 24 24","fill":"currentColor"},"child":[{"tag":"path","attr":{"d":"M6.53451 3H20.9993C21.5516 3 21.9993 3.44772 21.9993 4V20C21.9993 20.5523 21.5516 21 20.9993 21H6.53451C6.20015 21 5.88792 20.8329 5.70246 20.5547L0.369122 12.5547C0.145189 12.2188 0.145189 11.7812 0.369122 11.4453L5.70246 3.4453C5.88792 3.1671 6.20015 3 6.53451 3ZM7.06969 5L2.40302 12L7.06969 19H19.9993V5H7.06969ZM12.9993 10.5858L15.8277 7.75736L17.242 9.17157L14.4135 12L17.242 14.8284L15.8277 16.2426L12.9993 13.4142L10.1709 16.2426L8.75668 14.8284L11.5851 12L8.75668 9.17157L10.1709 7.75736L12.9993 10.5858Z"},"child":[]}]})(props);
+}
+
+var css_248z$2 = "\r\n.pinList{\r\n    display: flex;\r\n    justify-content: center;\r\n    flex-wrap: wrap;\r\n    margin-top: 20px;\r\n    gap: 15px;\r\n}\r\n\r\n.cardPin{\r\n    display: flex;\r\n    justify-content: center;\r\n    flex-basis: calc(33.333% - 20px);\r\n    background-color: white;\r\n    padding: 5px;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n    & .pinDigit{\r\n        font-size: 1.5rem;\r\n    }\r\n}\r\n\r\n.areaPin{\r\n    margin: 0 auto;\r\n}\r\n\r\n\r\n.inputPwd{\r\n  margin-top: 10px;\r\n  width: 370px;\r\n  height: 36px;\r\n  font-size: 1.5rem;\r\n  text-align: center;\r\n  background: #ffffff;\r\n  border-radius: 5px;\r\n  margin: 0px;\r\n}\r\n\r\n.pinNumberButton{\r\n  background-color:black;\r\n  color: white;\r\n}\r\n\r\n.pinNotNumberButton .pinDigit{\r\n  font-size: 2.3rem;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin: -5px;\r\n}\r\n\r\n.pinLabel{\r\n  margin: 10px 0px 15px 0px;\r\n  font-weight: bold;\r\n}\r\n\r\n /* 600px or less */\r\n @media (max-width: 600px) {\r\n  .areaPin{\r\n    width: 80vw;\r\n  }\r\n  .inputPwd{\r\n    width: 72vw;\r\n  }\r\n}";
+styleInject(css_248z$2);
+
+const PinPad = ({
+  callback,
+  inputText
+}) => {
+  const [pinValue, setPinValue] = React$1.useState("");
+  const pinList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", /*#__PURE__*/React$1.createElement(RiCloseFill, {
+    color: "var(--color-error)"
+  }), "0", /*#__PURE__*/React$1.createElement(RiCheckFill, {
+    color: "var(--color-success)"
+  })];
+  const handlePin = async () => {
+    callback(pinValue);
+    setPinValue("");
+  };
+  const handleDigit = (id, pin) => {
+    if (id < 9 || pin === 10) setPinValue(pinValue + pin);
+    if (id === 9) setPinValue("");
+    if (id === 11) handlePin();
+    if (id === 12) setPinValue(pinValue.slice(0, -1));
+  };
+  const CardPin = ({
+    pin,
+    id
+  }) => {
+    return /*#__PURE__*/React$1.createElement("div", {
+      className: `cardPin ${!isNaN(pin) ? "pinNumberButton" : "pinNotNumberButton"}`,
+      onClick: () => handleDigit(id, pin)
+    }, /*#__PURE__*/React$1.createElement("div", {
+      className: "pinDigit"
+    }, pin));
+  };
+  return /*#__PURE__*/React$1.createElement("div", {
+    className: "areaPin"
+  }, /*#__PURE__*/React$1.createElement("div", {
+    className: "loginArea"
+  }, /*#__PURE__*/React$1.createElement("div", {
+    className: "containerSide"
+  }, /*#__PURE__*/React$1.createElement("div", {
+    className: "pinLabel"
+  }, inputText), /*#__PURE__*/React$1.createElement("div", {
+    className: "flex-gap"
+  }, /*#__PURE__*/React$1.createElement("div", {
+    className: "inputPwd"
+  }, "●".repeat(pinValue.length)), /*#__PURE__*/React$1.createElement("div", {
+    className: `cardPin pinNotNumberButton`,
+    onClick: () => handleDigit(12, null)
+  }, /*#__PURE__*/React$1.createElement("div", {
+    className: "pinDigit"
+  }, /*#__PURE__*/React$1.createElement(RiDeleteBack2Line, null)))), /*#__PURE__*/React$1.createElement("div", {
+    className: "pinList"
+  }, pinList?.map((pin, id) => /*#__PURE__*/React$1.createElement(CardPin, {
+    pin: pin,
+    id: id
+  }))))));
 };
 
 const ClientDetails = ({
@@ -1149,7 +1219,7 @@ const OrderTimeline = ({
   }, timeline.date))))));
 };
 
-var css_248z = ".datatable{\r\n    height: fit-content;\r\n    width: 100%;\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 20px;\r\n    & .adminPanel{\r\n        flex-grow: 1;\r\n        align-self: stretch;\r\n        position: relative;\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n    }\r\n}\r\n\r\n\r\n.headerDatatable{\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.sectionsDatatable{\r\n    width: 100%;\r\n    justify-content: flex-start;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    cursor: pointer;\r\n    padding: 10px;\r\n    & div{\r\n        padding: 5px;\r\n    }\r\n}\r\n\r\n.selectedHorizontalMenu{\r\n  color: var(--color-primary);\r\n  font-weight: 700;\r\n  border-bottom: 2px var(--color-primary) solid;\r\n}\r\n\r\n.actionsDatatable{\r\n    display: flex;\r\n    width: 100%;\r\n    justify-content: end;\r\n    gap: 5px;\r\n    padding: 10px;\r\n}\r\n\r\n.pagination{\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 30px;\r\n}\r\n\r\n.paginationDropdown{\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n}\r\n\r\n.paginationText{\r\n    margin-top: 3px;\r\n}\r\n\r\n.paginationPages{\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n    padding-right: 5px;\r\n}\r\n\r\n.pageBtn{\r\n    padding: 4px 9px;\r\n    background-color: white;\r\n    border-radius: 5px;\r\n    margin-left: 3px; \r\n    cursor: pointer;\r\n}\r\n\r\n.pageBtnActive{\r\n    border: 1px #0057FF solid;\r\n}\r\n\r\n.selectMaxRows{\r\n    margin: 0px 10px;\r\n}\r\n\r\n\r\n.rowTableMobile {\r\n    padding: 5px 10px;\r\n    line-height: 1.8;\r\n}\r\n\r\n.table-image{\r\n    width: 80px;\r\n    height: 50px;\r\n}\r\n\r\n.desktopDatatable {\r\n    display: flex;\r\n    align-items: center;\r\n    flex-grow: 1;\r\n    align-self: stretch;\r\n    height: 100%; /* Ensures the div fills the available height */\r\n  }\r\n  \r\n  .table-container {\r\n    display: flex;\r\n    height: 100%; /* Ensures the container takes up the full height of the parent */\r\n  }\r\n  \r\n  table {\r\n    color: rgba(32, 32, 32, 1);\r\n    width: 100%;\r\n    height: fit-content;\r\n    margin: 10px;\r\n    border-radius: 10px;\r\n    border: 1px #ebebeb solid;\r\n    border-collapse: unset!important;\r\n  }\r\n\r\n  thead{\r\n    display: flex;\r\n    height: 40px;\r\n    align-items: center;\r\n    border-bottom: 1px #ebebeb solid!important;\r\n  }\r\n\r\n  tbody{\r\n    display: block;\r\n    height: 100%; /* Ensures tbody takes up the full height of the table */\r\n  }\r\n\r\n  tbody td{\r\n    cursor: pointer;\r\n    height: 50px;\r\n  }\r\n  tbody td.checkboxtd {\r\n    cursor: default;\r\n}\r\n  \r\n  thead th, tbody td {\r\n    padding: 5px;\r\n    text-align: left;\r\n  }\r\n  \r\n  \r\n  tbody tr:nth-child(odd) {\r\n    background-color: #F5F5F5;\r\n  }\r\n  \r\n  thead tr, tbody tr {\r\n    display: table; /* Ensures tr display as table-row within tbody */\r\n    width: 100%;\r\n    table-layout: fixed; /* Ensures each row respects the table's fixed layout */\r\n  }\r\n\r\n  .rowSelected{\r\n    background-color: #e8e8e8!important;\r\n  }\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n  .headerDatatable{\r\n        flex-wrap: wrap;\r\n  }\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  \r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n\r\n}";
+var css_248z = ".datatable{\r\n    height: fit-content;\r\n    width: 100%;\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 20px;\r\n    & .adminPanel{\r\n        width: auto;\r\n        flex-grow: 1;\r\n        align-self: stretch;\r\n        position: relative;\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n    }\r\n}\r\n\r\n\r\n.headerDatatable{\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.sectionsDatatable{\r\n    width: 100%;\r\n    justify-content: flex-start;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    cursor: pointer;\r\n    padding: 10px;\r\n    & div{\r\n        padding: 5px;\r\n    }\r\n}\r\n\r\n.selectedHorizontalMenu{\r\n  color: var(--color-primary);\r\n  font-weight: 700;\r\n  border-bottom: 2px var(--color-primary) solid;\r\n}\r\n\r\n.actionsDatatable{\r\n    display: flex;\r\n    width: 100%;\r\n    justify-content: end;\r\n    gap: 5px;\r\n    padding: 10px;\r\n}\r\n\r\n.pagination{\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 30px;\r\n}\r\n\r\n.paginationDropdown{\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n}\r\n\r\n.paginationText{\r\n    margin-top: 3px;\r\n}\r\n\r\n.paginationPages{\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n    padding-right: 5px;\r\n}\r\n\r\n.pageBtn{\r\n    padding: 4px 9px;\r\n    background-color: white;\r\n    border-radius: 5px;\r\n    margin-left: 3px; \r\n    cursor: pointer;\r\n}\r\n\r\n.pageBtnActive{\r\n    border: 1px #0057FF solid;\r\n}\r\n\r\n.selectMaxRows{\r\n    margin: 0px 10px;\r\n}\r\n\r\n\r\n.rowTableMobile {\r\n    padding: 5px 10px;\r\n    line-height: 1.8;\r\n}\r\n\r\n.table-image{\r\n    width: 80px;\r\n    height: 50px;\r\n}\r\n\r\n.desktopDatatable {\r\n    display: flex;\r\n    align-items: center;\r\n    flex-grow: 1;\r\n    align-self: stretch;\r\n    height: 100%; /* Ensures the div fills the available height */\r\n  }\r\n  \r\n  .table-container {\r\n    display: flex;\r\n    height: 100%; /* Ensures the container takes up the full height of the parent */\r\n  }\r\n  \r\n  table {\r\n    color: rgba(32, 32, 32, 1);\r\n    width: 100%;\r\n    height: fit-content;\r\n    margin: 10px;\r\n    border-radius: 10px;\r\n    border: 1px #ebebeb solid;\r\n    border-collapse: unset!important;\r\n  }\r\n\r\n  thead{\r\n    display: flex;\r\n    height: 40px;\r\n    align-items: center;\r\n    border-bottom: 1px #ebebeb solid!important;\r\n  }\r\n\r\n  tbody{\r\n    display: block;\r\n    height: 100%; /* Ensures tbody takes up the full height of the table */\r\n  }\r\n\r\n  tbody td{\r\n    cursor: pointer;\r\n    height: 50px;\r\n  }\r\n  tbody td.checkboxtd {\r\n    cursor: default;\r\n}\r\n  \r\n  thead th, tbody td {\r\n    padding: 5px;\r\n    text-align: left;\r\n  }\r\n  \r\n  \r\n  tbody tr:nth-child(odd) {\r\n    background-color: #F5F5F5;\r\n  }\r\n  \r\n  thead tr, tbody tr {\r\n    display: table; /* Ensures tr display as table-row within tbody */\r\n    width: 100%;\r\n    table-layout: fixed; /* Ensures each row respects the table's fixed layout */\r\n  }\r\n\r\n  .rowSelected{\r\n    background-color: #e8e8e8!important;\r\n  }\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n  .headerDatatable{\r\n        flex-wrap: wrap;\r\n  }\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  \r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n\r\n}";
 styleInject(css_248z);
 
 const Pagination = ({
@@ -1193,7 +1263,8 @@ const DatatableComponent = ({
   selectedRows = [],
   customData = {},
   rowCallback = () => {},
-  handleSelectRow = () => {}
+  handleSelectRow = () => {},
+  handleSelectAllRow = () => {}
 }) => {
   return /*#__PURE__*/React$1.createElement("div", {
     className: "desktopDatatable"
@@ -1206,7 +1277,11 @@ const DatatableComponent = ({
     style: {
       width: "50px"
     }
-  }), data.length > 0 ? Object.keys(sortArrayByCustomOrder(customHeaders, data[0])).filter(field => field in customHeaders).map((field, index) => /*#__PURE__*/React$1.createElement("th", {
+  }, /*#__PURE__*/React$1.createElement("input", {
+    type: "checkbox",
+    className: "custom-checkbox",
+    onChange: e => handleSelectAllRow(e.target.checked)
+  })), data.length > 0 ? Object.keys(sortArrayByCustomOrder(customHeaders, data[0])).filter(field => field in customHeaders).map((field, index) => /*#__PURE__*/React$1.createElement("th", {
     key: index,
     className: "text-align-center"
   }, customHeaders[field])) : Object.values(customHeaders)?.map((value, index) => /*#__PURE__*/React$1.createElement("th", {
@@ -1261,7 +1336,8 @@ const Actions = ({
   handleCheckColumn = () => {},
   selectedRows = [],
   cloneCallback = () => {},
-  deleteCallback = () => {}
+  deleteCallback = () => {},
+  setSearch
 }) => {
   const actions = [{
     id: "search",
@@ -1303,6 +1379,9 @@ const Actions = ({
     callback: handleCheckColumn,
     customClass: "customButtonColor2"
   }];
+  const handleSearch = e => {
+    setSearch(e);
+  };
   const availableActions = () => {
     return sections?.[activeSection]?.actions ? actions.filter(f => sections[activeSection].actions.includes(f.id)) : [];
   };
@@ -1311,17 +1390,31 @@ const Actions = ({
   };
   return /*#__PURE__*/React$1.createElement("div", {
     className: "actionsDatatable"
-  }, activeSection && checkColumn ? availableActionsWithSelected().map((a, i) => /*#__PURE__*/React$1.createElement(Button, {
+  }, console.log(availableActions()), activeSection && checkColumn ? availableActionsWithSelected().map((a, i) => /*#__PURE__*/React$1.createElement(Button, {
     key: i,
     text: a.text,
     icon: a.icon,
     action: a.callback,
     customClass: a.customClass || ""
-  })) : availableActions().map((a, i) => /*#__PURE__*/React$1.createElement(Button, {
+  })) : availableActions().filter(f => f.id !== "search").map((a, i) => /*#__PURE__*/React$1.createElement(Button, {
     key: i,
     text: a.text,
     icon: a.icon,
     action: a.callback
+  })), availableActions().some(obj => obj.id === "search") && /*#__PURE__*/React$1.createElement("div", null, /*#__PURE__*/React$1.createElement(Input, {
+    id: "",
+    type: "",
+    placeholder: "Buscar",
+    classname: "text-align-right",
+    icon: null,
+    iconType: null,
+    iconPositionRight: true,
+    label: "",
+    description: "",
+    defaultValue: "",
+    disabled: false,
+    validation: null,
+    onWritting: handleSearch
   })));
 };
 
@@ -1349,8 +1442,6 @@ const Datatable = ({
   checkColumn,
   checkedRows
 }) => {
-  console.log("==== ( Datatable ) ====");
-  console.log(data);
   const [selectedRows, setSelectedRows] = React$1.useState(checkedRows && checkedRows.length > 0 ? checkedRows : []);
   const [rows, setRows] = React$1.useState([]);
   const [activeSection, setActiveSection] = React$1.useState(0);
@@ -1363,6 +1454,7 @@ const Datatable = ({
       filter: []
     }
   });
+  const [search, setSearch] = React$1.useState("");
   const handleMaxRows = value => {
     updateDatatableConfiguration({
       ...configuration,
@@ -1398,7 +1490,7 @@ const Datatable = ({
   };
   React$1.useEffect(() => {
     const maxRowsInteger = parseInt(configuration.maxRows);
-    let dataUpdated = data;
+    let dataUpdated = data.filter(item => item.name?.toLowerCase().includes(search?.toLowerCase()));
     //Filter
     const filtersActive = configuration?.filterBy?.filter?.filter(f => f.value !== "");
     if (filtersActive && filtersActive.length > 0) {
@@ -1416,13 +1508,20 @@ const Datatable = ({
   }, [configuration]);
   React$1.useEffect(() => {
     const maxRowsInteger = parseInt(configuration.maxRows);
-    data && updateDatatableConfiguration({
+    let dataUpdated = data.filter(item => item.name?.toLowerCase().includes(search?.toLowerCase()));
+    dataUpdated && updateDatatableConfiguration({
       ...configuration,
       pages: Array.from(Array(parseInt(data.length / maxRowsInteger) + 1).keys())
     });
-    data && setRows(data?.filter((f, index) => index > configuration.indexStart && index < configuration.indexStart + maxRowsInteger));
+    dataUpdated && setRows(data?.filter((f, index) => index > configuration.indexStart && index < configuration.indexStart + maxRowsInteger));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
+  React$1.useEffect(() => {
+    let dataUpdated = data;
+    dataUpdated = dataUpdated.filter(item => item.name?.toLowerCase().includes(search?.toLowerCase()));
+    setRows(dataUpdated);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search]);
   return /*#__PURE__*/React$1.createElement("div", {
     className: "datatable"
   }, title !== "" && /*#__PURE__*/React$1.createElement("div", null, /*#__PURE__*/React$1.createElement("div", {
@@ -1444,7 +1543,8 @@ const Datatable = ({
     handleCheckColumn: handleCheckColumn,
     selectedRows: selectedRows,
     cloneCallback: cloneCallback,
-    deleteCallback: deleteCallback
+    deleteCallback: deleteCallback,
+    setSearch: setSearch
   })), /*#__PURE__*/React$1.createElement(DatatableComponent, {
     checkColumn: checkColumn,
     data: data,
@@ -1475,6 +1575,7 @@ exports.OrderNotes = OrderNotes;
 exports.OrderProducts = OrderProducts;
 exports.OrderResume = OrderResume;
 exports.OrderTimeline = OrderTimeline;
+exports.PinPad = PinPad;
 exports.Select = Select;
 exports.StateLabel = StateLabel;
 exports.TextEditor = TextEditor;
