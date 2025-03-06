@@ -16,6 +16,7 @@ export const Input = ({
   disabled = false,
   validation = null,
   onChange = () => null,
+  onWritting = () => null,
 }) => {
   const [inputType, setInputType] = useState(type);
   const [validationControl, setValidationControl] = useState(true);
@@ -78,6 +79,7 @@ export const Input = ({
           onBlur={handleValidation}
           defaultValue={defaultValue}
           disabled={disabled}
+          onChange={(e) => onWritting(e.target.value)}
         />
         <div className={classIcon + iconAction} onClick={handleIcon}>
           {icon}

@@ -8,7 +8,7 @@
     align-items: center;
     gap: 20px;
     & .adminPanel{
-        width: 100%;
+        width: auto;
         flex-grow: 1;
         align-self: stretch;
         position: relative;

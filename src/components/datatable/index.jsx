@@ -32,12 +32,11 @@ export const Datatable = ({
   checkColumn,
   checkedRows,
 }) => {
-  console.log("==== ( Datatable ) ====");
-  console.log(data);
   const [selectedRows, setSelectedRows] = useState(checkedRows && checkedRows.length > 0 ? checkedRows : []);
   const [rows, setRows] = useState([]);
   const [activeSection, setActiveSection] = useState(0);
   const [configuration, updateConfiguration] = useState({ maxRows: 12, indexStart: 0, pages: [0], filterBy: { section: "", filter: [] } });
+  const [search, setSearch] = useState("");
 
   const handleMaxRows = (value) => {
     updateDatatableConfiguration({ ...configuration, maxRows: value });
@@ -73,7 +72,7 @@ export const Datatable = ({
 
   useEffect(() => {
     const maxRowsInteger = parseInt(configuration.maxRows);
-    let dataUpdated = data;
+    let dataUpdated = data.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
     //Filter
     const filtersActive = configuration?.filterBy?.filter?.filter((f) => f.value !== "");
     if (filtersActive && filtersActive.length > 0) {
@@ -86,16 +85,25 @@ export const Datatable = ({
     dataUpdated = dataUpdated?.filter((f, index) => index > configuration.indexStart - 1 && index < configuration.indexStart + maxRowsInteger);
     var tbody = document.getElementById("datatableTBody");
     tbody.scrollTop = 0;
+
     setRows(dataUpdated);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [configuration]);
 
   useEffect(() => {
     const maxRowsInteger = parseInt(configuration.maxRows);
-    data && updateDatatableConfiguration({ ...configuration, pages: Array.from(Array(parseInt(data.length / maxRowsInteger) + 1).keys()) });
-    data && setRows(data?.filter((f, index) => index > configuration.indexStart && index < configuration.indexStart + maxRowsInteger));
+    let dataUpdated = data.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
+    dataUpdated && updateDatatableConfiguration({ ...configuration, pages: Array.from(Array(parseInt(data.length / maxRowsInteger) + 1).keys()) });
+    dataUpdated && setRows(data?.filter((f, index) => index > configuration.indexStart && index < configuration.indexStart + maxRowsInteger));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
+
+  useEffect(() => {
+    let dataUpdated = data;
+    dataUpdated = dataUpdated.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
+    setRows(dataUpdated);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search]);
 
   return (
     <div className="datatable">
@@ -116,6 +124,7 @@ export const Datatable = ({
             selectedRows={selectedRows}
             cloneCallback={cloneCallback}
             deleteCallback={deleteCallback}
+            setSearch={setSearch}
           />
         </div>
         <DatatableComponent
