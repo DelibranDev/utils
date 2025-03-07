@@ -123,6 +123,14 @@ Obtienes el valor: document.getElementById(editorId).innerHTML;
 <PinPad callback={() => null} inputText="Ingrese su pin" />
 ```
 
+**CardList**
+
+> Listado de tarjetas (usado en usuarios, equipos.. en login), se espera en el array el campo "fullname" o "name".
+
+```
+<CardList callback={() => null} data={userList} title={"Seleccione el usuario"} icon={<LuUser />}/>
+```
+
 **Datatable**
 
 > import { Datatable } from "@delibrandev/utils";

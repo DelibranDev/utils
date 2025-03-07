@@ -201,6 +201,13 @@ input{
 }
 
 
+.ellipsis {
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden; /* Oculta el texto que sobresale */
+  text-overflow: ellipsis; /* Muestra los puntos suspensivos (...) */
+  width: 75px; /* Ajusta el ancho según tus necesidades */
+}
+
 /************ CHECKBOX ************/
 .custom-checkbox {
   /* Ocultar el diseño por defecto */
