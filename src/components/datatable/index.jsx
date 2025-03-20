@@ -32,6 +32,7 @@ export const Datatable = ({
   checkColumn,
   checkedRows,
 }) => {
+  console.log("Datatable > data: ", data);
   const [selectedRows, setSelectedRows] = useState(checkedRows && checkedRows.length > 0 ? checkedRows : []);
   const [rows, setRows] = useState([]);
   const [activeSection, setActiveSection] = useState(0);
@@ -70,9 +71,32 @@ export const Datatable = ({
     });
   };
 
+  /*const handleSearch = (data) => {
+    console.log("Datatable > handleSearch > data, search ", data, search);
+    let dataUpdated = data;
+    if (search !== "") {
+      dataUpdated = data.filter((item) => item.name?.toLowerCase().includes(search?.toLowerCase()));
+    }
+    return dataUpdated;
+  };*/
+  const handleSearch = (data) => {
+    console.log("Datatable > handleSearch > data, search ", data, search);
+    let dataUpdated = data;
+    if (search !== "") {
+      const searchLower = search.toLowerCase();
+      dataUpdated = data.filter(
+        (item) =>
+          item.name?.toLowerCase().includes(searchLower) ||
+          item.number?.toString().toLowerCase().includes(searchLower) ||
+          item.Customer?.fullname?.toLowerCase().includes(searchLower)
+      );
+    }
+    return dataUpdated;
+  };
+
   useEffect(() => {
     const maxRowsInteger = parseInt(configuration.maxRows);
-    let dataUpdated = data.filter((item) => item.name?.toLowerCase().includes(search?.toLowerCase()));
+    let dataUpdated = handleSearch(data);
     //Filter
     const filtersActive = configuration?.filterBy?.filter?.filter((f) => f.value !== "");
     if (filtersActive && filtersActive.length > 0) {
@@ -85,22 +109,20 @@ export const Datatable = ({
     dataUpdated = dataUpdated?.filter((f, index) => index > configuration.indexStart - 1 && index < configuration.indexStart + maxRowsInteger);
     var tbody = document.getElementById("datatableTBody");
     tbody.scrollTop = 0;
-
     setRows(dataUpdated);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [configuration]);
 
   useEffect(() => {
     const maxRowsInteger = parseInt(configuration.maxRows);
-    let dataUpdated = data.filter((item) => item.name?.toLowerCase().includes(search?.toLowerCase()));
+    let dataUpdated = handleSearch(data);
     dataUpdated && updateDatatableConfiguration({ ...configuration, pages: Array.from(Array(parseInt(data.length / maxRowsInteger) + 1).keys()) });
     dataUpdated && setRows(data?.filter((f, index) => index > configuration.indexStart && index < configuration.indexStart + maxRowsInteger));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   useEffect(() => {
-    let dataUpdated = data;
-    dataUpdated = dataUpdated.filter((item) => item.name?.toLowerCase().includes(search?.toLowerCase()));
+    let dataUpdated = handleSearch(data);
     setRows(dataUpdated);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);

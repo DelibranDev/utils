@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./style.css";
 
 export const Select = ({ value = "", values, isMenu = false, className = "", callback = null, label = null, description = null, id = null }) => {
-  const [selected, setSelected] = useState(value ? value : values[0].id);
+  const [selected, setSelected] = useState(value ?? (Array.isArray(values) && values.length > 0 ? values[0].id : ""));
   const [visibility, changeVisibility] = useState(false);
 
   const handleOption = (e) => {

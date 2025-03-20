@@ -1,3 +1,4 @@
+import React from "react";
 import { IoImageOutline } from "react-icons/io5";
 import "./style.css";
 

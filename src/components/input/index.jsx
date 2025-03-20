@@ -17,6 +17,8 @@ export const Input = ({
   validation = null,
   onChange = () => null,
   onWritting = () => null,
+  suggestions = [],
+  suggestionsCallback = () => null,
 }) => {
   const [inputType, setInputType] = useState(type);
   const [validationControl, setValidationControl] = useState(true);
@@ -67,25 +69,37 @@ export const Input = ({
   };
 
   return (
-    <div className="inputType2Container">
-      {label !== "" && <div className="inputLabel">{label}</div>}
-      {description !== "" && <div className="inputDescription">{description}</div>}
-      <div className="input-container">
-        <input
-          id={id}
-          type={inputType}
-          placeholder={placeholder}
-          className={`inputType2 ${classname + inputSpaceAtStart} ${!validationControl && "validationFail"} `}
-          onBlur={handleValidation}
-          defaultValue={defaultValue}
-          disabled={disabled}
-          onChange={(e) => onWritting(e.target.value)}
-        />
-        <div className={classIcon + iconAction} onClick={handleIcon}>
-          {icon}
+    <>
+      <div className="inputType2Container">
+        {label !== "" && <div className="inputLabel">{label}</div>}
+        {description !== "" && <div className="inputDescription">{description}</div>}
+        <div className="input-container">
+          <input
+            id={id}
+            type={inputType}
+            placeholder={placeholder}
+            className={`inputType2 ${classname + inputSpaceAtStart} ${!validationControl && "validationFail"} `}
+            onBlur={handleValidation}
+            defaultValue={defaultValue}
+            disabled={disabled}
+            onChange={(e) => onWritting(e.target.value)}
+          />
+          <div className={classIcon + iconAction} onClick={handleIcon}>
+            {icon}
+          </div>
         </div>
+        {!validationControl && <div className="validationFailMessage">El valor introducido no es válido.</div>}
       </div>
-      {!validationControl && <div className="validationFailMessage">El valor introducido no es válido.</div>}
-    </div>
+      {suggestions.length > 0 && (
+        <div className="suggestContainer">
+          {suggestions?.map((suggest) => (
+            <div className="suggest" onClick={() => suggestionsCallback(suggest)}>
+              <div className="suggest-name">{suggest?.fullname || ""}</div>
+              <div className="suggest-info">{suggest?.phone || ""}</div>
+            </div>
+          ))}
+        </div>
+      )}
+    </>
   );
 };

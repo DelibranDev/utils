@@ -117,3 +117,39 @@ export function getRequiredKeys(obj) {
     .filter((key) => obj[key] === "required")
     ?.map((key) => dictionary[key] || key);
 }
+
+export const handleImage = (e, uniqueClassLabel) => {
+  const label = e.target.parentElement;
+  const file = e.target.files[0];
+
+  console.log("=== handleImage ===");
+  console.log(e);
+  console.log(label);
+  console.log(uniqueClassLabel);
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      // Establece la imagen como fondo del label
+      label.style.color = "white"; // Cambia el color del texto si es necesario
+      const elements = document.getElementsByClassName(uniqueClassLabel);
+      console.log(elements);
+      if (elements.length > 0) {
+        elements[0].style.backgroundImage = `url(${e.target.result})`;
+      }
+    };
+    reader.readAsDataURL(file); // Leer el archivo original como una URL base64
+  }
+};
+
+export const getFullAddress = (address) => {
+  const { street, zipCode, city, country } = address;
+  let fullAddress = "";
+
+  if (street) fullAddress += street;
+  if (zipCode) fullAddress += ` ${zipCode}`;
+  if (city) fullAddress += `, ${city}`;
+  if (country) fullAddress += `, ${country}`;
+
+  return fullAddress.trim();
+};

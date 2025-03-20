@@ -147,7 +147,7 @@
 
   tbody td{
     cursor: pointer;
-    height: 50px;
+    height: 42px;
   }
   tbody td.checkboxtd {
     cursor: default;

@@ -65,8 +65,18 @@ Obtienes el valor: document.getElementById(editorId).innerHTML;
 > Input personalizado con título, descripción y control de errores
 > **Valores posibles de validation:** "email", "dni", "nif", "telefono", "url", "number".
 
+> Revisar suggestions y suggestionsCallback como se usa en TPV > commander > order > header
+
 ```
-<Input id={""} type={""} placeholder={""} classname={""} icon={null} iconType={null} iconPositionRight={true} label={""} description={""} defaultValue={""} disabled={false} validation={null} onChange={callback}/>
+<Input id={""} type={""} placeholder={""} classname={""} icon={null} iconType={null} iconPositionRight={true} label={""} description={""} defaultValue={""} disabled={false} validation={null} onChange={callback} suggestions={suggestions} suggestionsCallback={handleSuggestion}/>
+```
+
+**Input Image**
+
+> Input que maneja imágenes con un fondo personalizado
+
+```
+<InputImage uniqueId={"logo-ticket"} className={"product-image-featured"} image={null} />
 ```
 
 **Button**
@@ -104,7 +114,9 @@ Obtienes el valor: document.getElementById(editorId).innerHTML;
 
 **Order components**
 
-> import { ClientDetails, OrderInfo, OrderNotes, OrderProducts, OrderResume, OrderTimeline } from "@delibrandev/utils";
+> import { ClientDetails, OrderInfo, OrderNotes, OrderProducts, OrderResume, OrderTimeline, OrderShoppingCart } from "@delibrandev/utils";
+
+> CartActions debe pasarse desde los componentes del propio proyecto por ahora.
 
 ```
 <OrderInfo data={data} />
@@ -113,6 +125,7 @@ Obtienes el valor: document.getElementById(editorId).innerHTML;
 <OrderNotes data={data} />
 <ClientDetails data={data} />
 <OrderTimeline data={data} />
+<OrderShoppingCart data={data} CartActions={CartActions} />
 ```
 
 **PinPad**

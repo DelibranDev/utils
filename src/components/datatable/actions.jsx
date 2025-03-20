@@ -14,7 +14,7 @@ export const Actions = ({
   setSearch,
 }) => {
   const actions = [
-    { id: "search", text: "Buscar", icon: <HiOutlineSearch />, callback: () => console.log("Buscar action") },
+    { id: "search", text: "Buscar", icon: <HiOutlineSearch />, callback: () => null },
     { id: "filter", text: "Filtrar", icon: <HiOutlineSearch />, callback: () => null },
     { id: "order", text: "Ordenar", icon: <HiOutlineSearch />, callback: () => null },
     { id: "select", text: "Seleccionar", icon: "", callback: handleCheckColumn },
@@ -42,7 +42,6 @@ export const Actions = ({
 
   return (
     <div className="actionsDatatable">
-      {console.log(availableActions())}
       {activeSection && checkColumn
         ? availableActionsWithSelected().map((a, i) => (
             <Button key={i} text={a.text} icon={a.icon} action={a.callback} customClass={a.customClass || ""} />

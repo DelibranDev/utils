@@ -1,3 +1,5 @@
+import React from "react";
+
 export function Checkbox({ text, clickEvent, checked, className }) {
   return (
     <div className={className}>

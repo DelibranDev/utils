@@ -14,6 +14,8 @@ export const StateLabel = ({ state }) => {
         return <div className="state-label state-prepared">Preparado</div>;
       case "paid":
         return <div className="state-label state-prepared">Pagado</div>;
+      case "active":
+        return <div className="state-label state-prepared">Activo</div>;
       case "delivered":
         return <div className="state-label state-delivered">Entregado</div>;
       case "inPreparation":
@@ -22,6 +24,8 @@ export const StateLabel = ({ state }) => {
         return <div className="state-label state-process">Enviando</div>;
       case "cancelled":
         return <div className="state-label state-canceled">Cancelado</div>;
+      case "inactive":
+        return <div className="state-label state-canceled">Inactivo</div>;
 
       default:
         return <div>-</div>;

@@ -12,6 +12,8 @@ export const DatatableComponent = ({
   handleSelectRow = () => {},
   handleSelectAllRow = () => {},
 }) => {
+  console.log("DatatableComponent > data: ", data);
+  console.log("DatatableComponent > rows: ", rows);
   return (
     <div className="desktopDatatable">
       <div className="table-container">

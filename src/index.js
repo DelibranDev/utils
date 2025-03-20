@@ -11,6 +11,7 @@ export * from "./components/checkbox";
 export * from "./components/noImage";
 export * from "./components/pinPad";
 export * from "./components/cardList";
+export * from "./components/inputImage";
 // Order
 export * from "./components/order/clientDetails.jsx";
 export * from "./components/order/orderInfo.jsx";
@@ -18,5 +19,6 @@ export * from "./components/order/orderNotes.jsx";
 export * from "./components/order/orderProducts.jsx";
 export * from "./components/order/orderResume.jsx";
 export * from "./components/order/orderTimeline.jsx";
+export * from "./components/order/orderShoppingCart.jsx";
 // Datatable
 export * from "./components/datatable/index.jsx";

@@ -47,6 +47,8 @@
     flex-direction: column;
     gap: 5px;
     margin-top: 15px;
+    height: calc(100vh - 455px); /* FIX TPV 10-03-2025 */
+    overflow-y: auto;  /* FIX TPV 11-03-2025 */
 
     & .order-products-item {
         display: flex;
@@ -157,5 +159,91 @@
 
     & .client-details-address-container{
         width: 80%;
+    }
+}
+
+
+
+
+/*   ORDER SHOPPING CART  */
+.product-cart{
+    border: 1px lightgrey solid;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+   
+    /*border-radius: 10px;*/
+    box-sizing: border-box;
+
+    & .product-image{
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        /*border-radius: 10px;*/
+    }
+
+    & .background-image{
+        background-color: #f1f1f1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    & .product-cart-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+        flex-grow: 1;
+        padding: 10px;
+        width: 90%;
+    }
+
+    & .product-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0px;
+        line-height: 1rem;
+    }
+    
+    & .product-name {
+        font-weight: bold;
+        font-size: 0.9rem;
+        /*white-space: nowrap;*/ /* Evita que el texto ocupe varias líneas */
+        overflow: hidden; /* Oculta el texto que exceda los límites */
+        text-overflow: ellipsis; /* Muestra puntos suspensivos (...) si el texto es demasiado largo */
+    }
+    
+    & .product-description {
+        color: grey;
+        font-size: 0.75rem;
+        /*white-space: nowrap;*/ /* Evita saltos de línea */
+        overflow: hidden; /* Oculta el texto excedente */
+        text-overflow: ellipsis; /* Agrega puntos suspensivos para indicar truncamiento */
+    }
+    
+    & .product-details-bottom {
+        display: flex;
+        justify-content: space-between; /* Espaciado uniforme entre los elementos */
+        align-items: center;
+        gap: 5px; /* Espaciado entre el precio y las acciones */
+    }
+    
+    & .product-actions{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    
+        & svg{
+            cursor: pointer;
+            min-width: 1.5rem; /* Limita el tamaño de los íconos */
+            min-height: 1.5rem;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: lightgrey;
+        }
     }
 }
