@@ -1,7 +1,13 @@
 import React from "react";
 import { Button } from "./../button";
 
-export const OrderResume = ({ data, callbackPrintTicket = () => null, callbackCreateInvoice = () => null, callbackPrintInvoice = () => null }) => {
+export const OrderResume = ({
+  data,
+  callbackPrintTicket = () => null,
+  callbackCreateInvoice = () => null,
+  callbackPrintInvoice = () => null,
+  canCreateInvoice = true,
+}) => {
   return (
     <div className="pt-3">
       <div className="invoiceResume-Header">
@@ -38,9 +44,7 @@ export const OrderResume = ({ data, callbackPrintTicket = () => null, callbackCr
             <div>
               <Button text={"Imprimir ticket"} icon={null} customClass={"w-100"} action={callbackPrintTicket} />
             </div>
-            <div>
-              <Button text={"Crear factura"} icon={null} customClass={"w-100"} action={callbackCreateInvoice} />
-            </div>
+            <div>{canCreateInvoice && <Button text={"Crear factura"} icon={null} customClass={"w-100"} action={callbackCreateInvoice} />}</div>
           </div>
         ) : (
           <div style={{ paddingTop: "15px" }}>

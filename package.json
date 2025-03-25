@@ -1,6 +1,6 @@
 {
   "name": "@delibrandev/utils",
-  "version": "1.0.63",
+  "version": "1.0.78",
   "description": "A collection of delibran utils.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -33,6 +33,7 @@
   "dependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
+    "crypto-js": "^4.2.0",
     "react-icons": "^5.5.0",
     "react-simple-wysiwyg": "^3.2.0",
     "rollup-plugin-postcss": "^4.0.2"

@@ -42,7 +42,7 @@ export const Actions = ({
 
   return (
     <div className="actionsDatatable">
-      {activeSection && checkColumn
+      {checkColumn
         ? availableActionsWithSelected().map((a, i) => (
             <Button key={i} text={a.text} icon={a.icon} action={a.callback} customClass={a.customClass || ""} />
           ))

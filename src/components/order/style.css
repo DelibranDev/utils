@@ -47,7 +47,7 @@
     flex-direction: column;
     gap: 5px;
     margin-top: 15px;
-    height: calc(100vh - 455px); /* FIX TPV 10-03-2025 */
+    height: calc(100vh - 485px); /* FIX TPV 23-03-2025 */
     overflow-y: auto;  /* FIX TPV 11-03-2025 */
 
     & .order-products-item {

@@ -1,3 +1,6 @@
+import CryptoJS from "crypto-js";
+const SECRET = process.env.REACT_APP_JWT_SECRET;
+
 export const parseDate = (value) => {
   // Convertir la cadena de fecha en un objeto de fecha
   var fecha = new Date(value);
@@ -66,7 +69,7 @@ export const parseDateAndHourToISO = (idDate, idHour) => {
   return `${day}T${hour}:${minute}:00.000Z`;
 };
 
-export function addIdKeyIfMissing(array) {
+export function addIdKeyIfMissing(array, key = null) {
   if (!Array.isArray(array) || array.length === 0) return [];
 
   return array?.map((item) => {
@@ -88,6 +91,8 @@ export function addIdKeyIfMissing(array) {
       if (idKey) {
         item.id = item[idKey];
       }
+
+      if (key !== null) item.id = item[key];
     }
     return item;
   });
@@ -153,3 +158,43 @@ export const getFullAddress = (address) => {
 
   return fullAddress.trim();
 };
+
+// Función para cifrar con AES
+function cifrarAES(texto) {
+  return CryptoJS.AES.encrypt(texto, SECRET).toString();
+}
+
+// Función para descifrar con AES
+function descifrarAES(textoCifrado) {
+  const bytes = CryptoJS.AES.decrypt(textoCifrado, SECRET);
+  return bytes.toString(CryptoJS.enc.Utf8);
+}
+
+// Función para guardar datos de login en localStorage con cifrado AES
+const keyLoginData = "lgdt";
+export function saveLoginLS(datos) {
+  if (typeof datos === "object" && datos !== null) {
+    const datosCifrados = cifrarAES(JSON.stringify(datos));
+    localStorage.setItem(keyLoginData, datosCifrados);
+  } else {
+    console.error("El argumento debe ser un objeto válido.");
+  }
+}
+
+// Función para leer datos de login desde localStorage con descifrado AES
+export function readLoginLS() {
+  const datosCifrados = localStorage.getItem(keyLoginData);
+  if (!datosCifrados) return null;
+
+  try {
+    return JSON.parse(descifrarAES(datosCifrados));
+  } catch (error) {
+    console.error("Error al descifrar los datos:", error);
+    return null;
+  }
+}
+
+//Función para borrar el login
+export function removeLoginLS() {
+  localStorage.removeItem(keyLoginData);
+}
