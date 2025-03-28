@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export const StateLabel = ({ state }) => {
+export const StateLabel = ({ state, text = null }) => {
   /*const dictionary = [
     {pending: "Pendiente", value:"pending"},
     {prepared: "Preparado", value:"ready"},
@@ -9,23 +9,23 @@ export const StateLabel = ({ state }) => {
   const Label = () => {
     switch (state) {
       case "pending":
-        return <div className="state-label state-pending">Pendiente</div>;
+        return <div className="state-label state-pending">{text || "Pendiente"}</div>;
       case "prepared":
-        return <div className="state-label state-prepared">Preparado</div>;
+        return <div className="state-label state-prepared">{text || "Preparado"}</div>;
       case "paid":
-        return <div className="state-label state-prepared">Pagado</div>;
+        return <div className="state-label state-prepared">{text || "Pagado"}</div>;
       case "active":
-        return <div className="state-label state-prepared">Activo</div>;
+        return <div className="state-label state-prepared">{text || "Activo"}</div>;
       case "delivered":
-        return <div className="state-label state-delivered">Entregado</div>;
+        return <div className="state-label state-delivered">{text || "Entregado"}</div>;
       case "inPreparation":
-        return <div className="state-label state-process">En preparación</div>;
+        return <div className="state-label state-process">{text || "En preparación"}</div>;
       case "inDelivery":
-        return <div className="state-label state-process">Enviando</div>;
+        return <div className="state-label state-process">{text || "Enviando"}</div>;
       case "cancelled":
-        return <div className="state-label state-canceled">Cancelado</div>;
+        return <div className="state-label state-canceled">{text || "Cancelado"}</div>;
       case "inactive":
-        return <div className="state-label state-canceled">Inactivo</div>;
+        return <div className="state-label state-canceled">{text || "Inactivo"}</div>;
 
       default:
         return <div>-</div>;

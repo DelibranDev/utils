@@ -36,10 +36,10 @@ npm install @delibrandev/utils@latest
 **StateLabel**
 
 > Recibe un valor de estado y devuelve un label con un color y fondo
-> **Valores posibles:** "pending", "prepared", "paid", "delivered", "inPreparation", "inDelivery", "cancelled".
+> **Valores posibles:** "pending", "prepared", "paid", "delivered", "inPreparation", "inDelivery", "cancelled". Text no es obligatorio, si se le pasa se usará como texto.
 
 ```
-<StateLabel state={state}/>
+<StateLabel state={state} text={""}/>
 ```
 
 **TextEditor**
@@ -223,4 +223,13 @@ const arr = [{
     name: "example"
 }]
 addIdKeyIfMissing(arr)
+```
+
+**translateMessage**
+
+> Recibe un mensaje y lo traduce si lo encuentra en el diccionario, sino lo devuelve tal cual.
+
+```
+translateMessage(cadena)
+Devolverá siendo el type (error|warning|success|normal): { called: true, title: "Error", message: cadena, type: "error" };
 ```

@@ -222,6 +222,13 @@ input[type="radio"] {
   width: 75px; /* Ajusta el ancho según tus necesidades */
 }
 
+.appVersion{
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  font-size: 0.5rem;
+}
+
 /************ CHECKBOX ************/
 .custom-checkbox {
   /* Ocultar el diseño por defecto */
@@ -274,9 +281,10 @@ input[type="radio"] {
 
 
 
-/************ TOOLBAR ************/
+/************ ScrollBar ************/
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;  /* Para el scrollbar vertical */
+  height: 5px; /* Para el scrollbar horizontal */
   margin: 2px;
   border-radius: 5px;
   border: 3px solid var(--color-secondary);

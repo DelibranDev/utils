@@ -1,4 +1,5 @@
 import CryptoJS from "crypto-js";
+import { messages } from "./translations";
 const SECRET = process.env.REACT_APP_JWT_SECRET;
 
 export const parseDate = (value) => {
@@ -197,4 +198,28 @@ export function readLoginLS() {
 //Función para borrar el login
 export function removeLoginLS() {
   localStorage.removeItem(keyLoginData);
+}
+
+// TRADUCTOR
+export function translateMessage(cadena) {
+  // Verificar si la entrada es un string
+  if (typeof cadena !== "string") {
+    return ""; // Si no es un string, devolver un string vacío
+  }
+
+  // Verificar si la cadena está en el listado de messages
+  if (messages.hasOwnProperty(cadena)) {
+    cadena = messages[cadena]; // Usamos la traducción al español
+  }
+
+  // Condiciones para decidir el tipo y el título
+  if (/missing|not|error|failed|bad|invalid/i.test(cadena)) {
+    return { called: true, title: "Error", message: cadena, type: "error" };
+  } else if (/required|already/i.test(cadena)) {
+    return { called: true, title: "Aviso", message: cadena, type: "warning" };
+  } else if (/successfully/i.test(cadena)) {
+    return { called: true, title: "Correcto", message: cadena, type: "success" };
+  } else {
+    return { called: true, title: "Notificación", message: cadena, type: "normal" };
+  }
 }

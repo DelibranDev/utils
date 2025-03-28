@@ -27,8 +27,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$b = "@font-face {\r\n  font-family: 'DMSans';\r\n  src: local('DM Sans'), url(./fonts/DMSans/DMSans-Regular.ttf) format('truetype');\r\n}\r\n\r\n@font-face {\r\n  font-family: 'DMSans-SemiBold';\r\n  src: local('DM Sans SemiBold'), url(./fonts/DMSans/DMSans-SemiBold.ttf) format('truetype');\r\n}\r\n\r\n\r\n\r\n:root {\r\n  --color-primary: #000;\r\n  --color-primary-background: #ece9e4;\r\n  --color-primary-shadow: rgba(182, 182, 182, 0.2);\r\n  --color-secondary: #fff;\r\n  --color-secondary-background: #fefcfa;\r\n  --color-terciary: #979796;\r\n  --color-terciary-2: lightgrey;\r\n  --color-terciary-3: grey;\r\n  --color-success: #00C76C;\r\n  --color-success-background: rgb(0, 199, 108, 0.2);\r\n  --color-pending: #EB9E1A;\r\n  --color-pending-background: rgb(235, 158, 26, 0.2);\r\n  --color-error: #FF5757;\r\n  --color-error-background: rgb(255, 87, 87, 0.2);\r\n  --color-process: #0057FF;\r\n  --color-process-background: rgb(0, 87, 255, 0.2);\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  font-size: 1rem;\r\n  font-family: 'DMSans';\r\n  font-size: 0.8rem;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: var(--color-terciary);\r\n}\r\n\r\nhr{\r\n  border-top: 3px solid var(--color-primary-background);\r\n}\r\n\r\ntextarea:focus, input:focus{\r\n  outline: none;\r\n}\r\n\r\ninput[type=\"text\"], input[type=\"password\"]{\r\n  box-sizing: unset!important;\r\n  line-height: unset!important;\r\n  padding-left: 5px;\r\n}\r\n\r\ninput[type=\"text\"]:disabled{background-color:transparent; cursor:not-allowed;}\r\n\r\nbutton {\r\n  cursor: pointer!important;\r\n  height: 30px;\r\n}\r\ninput{\r\n  height: 30px;\r\n  width: 100%;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n  width: 28px;\r\n  height: 28px;\r\n}\r\n\r\n.color-blue{\r\n  color: var(--color-process);\r\n}\r\n\r\n.MuiButtonBase-root{\r\n  color: var(--color-process)!important;\r\n}\r\n\r\n\r\n\r\n/****** CUSTOM BUTTONS ********/\r\n\r\n\r\n.button-1{\r\n  padding: 10px;\r\n  border-radius: 8px;\r\n  background-color: var(--color-primary);\r\n  color: var(--color-secondary);\r\n  border: 1px var(--color-secondary) solid;\r\n  width: 100%;\r\n  cursor: pointer;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.button-2{\r\n  border-radius: 5px;\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  cursor: pointer;\r\n  height: 27px;\r\n  width: fit-content;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n\r\n\r\n/*********************************/\r\n\r\n.adminPanel{\r\n  background: var(--color-secondary);\r\n  border: 1px solid var(--color-primary-background);\r\n  border-radius: 12px;\r\n  height: 100%;\r\n  width: auto;\r\n  padding: 15px;\r\n}\r\n\r\n.background-image {\r\n  background-color: var(--color-primary-background);\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n}\r\n\r\n.loginArea{\r\n  background-color: var(--color-primary-background);\r\n}\r\n\r\n.flex{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n}\r\n\r\n.flex-gap{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n  gap: 10px;\r\n}\r\n\r\n.flex-start{\r\n  display: inline-flex;\r\n  justify-content: flex-start;\r\n  width: 100%;\r\n}\r\n\r\n.flex-end{\r\n  display: inline-flex;\r\n  justify-content: flex-end;\r\n  padding: 4px;\r\n  gap: 5px;\r\n}\r\n\r\n.form {\r\n  display: flex;\r\n  gap: 10px;\r\n  flex-direction: column;\r\n}\r\n\r\n.w33{\r\n  width: 33%;\r\n}\r\n\r\n.w50{\r\n  width: 50%;\r\n}\r\n\r\n.w100{\r\n  width: 100%;\r\n}\r\n\r\n.h-100{\r\n  height: 100%;\r\n}\r\n\r\n.p-2{\r\n  padding: 2%;\r\n}\r\n\r\n.text-align-right{\r\n  text-align: right;\r\n}\r\n\r\n.text-align-left{\r\n  text-align: left;\r\n}\r\n\r\n.text-align-center{\r\n  text-align: center;\r\n}\r\n\r\n.text-overflow {\r\n  display: inline-block; /* O también block, según el diseño */\r\n  width: 100%; /* Ajusta el ancho según necesites */\r\n  white-space: nowrap; /* Evita que el texto haga saltos de línea */\r\n  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */\r\n  text-overflow: ellipsis; /* Muestra \"...\" cuando el texto es muy largo */\r\n}\r\n\r\n.fixIconButton{\r\n  padding: 4px 0px 4px 4px!important;\r\n  min-width: auto!important;\r\n}\r\n\r\n.buttonNoBorder{\r\n  border: 0px!important;\r\n}\r\n\r\n\r\n.ellipsis {\r\n  white-space: nowrap; /* Evita que el texto se divida en varias líneas */\r\n  overflow: hidden; /* Oculta el texto que sobresale */\r\n  text-overflow: ellipsis; /* Muestra los puntos suspensivos (...) */\r\n  width: 75px; /* Ajusta el ancho según tus necesidades */\r\n}\r\n\r\n/************ CHECKBOX ************/\r\n.custom-checkbox {\r\n  /* Ocultar el diseño por defecto */\r\n  appearance: none;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n\r\n  /* Dimensiones */\r\n  width: 24px;\r\n  height: 24px;\r\n\r\n  /* Estilo base */\r\n  border: 2px solid var(--color-primary-background); /* Azul oscuro */\r\n  border-radius: 4px;\r\n  background-color: var(--color-secondary);\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n\r\n  /* Efecto al pasar el ratón */\r\n  transition: background-color 0.2s ease, border-color 0.2s ease;\r\n}\r\n\r\n.custom-checkbox:hover {\r\n  border-color: var(--color-process); /* Azul más oscuro */\r\n}\r\n\r\n.custom-checkbox:checked {\r\n  background-color: var(--color-process); /* Azul */\r\n  border-color: var(--color-process);\r\n\r\n  /* Añadir el check */\r\n  position: relative;\r\n}\r\n\r\n.custom-checkbox:checked::after {\r\n  content: \"\";\r\n  display: block;\r\n\r\n  /* Checkmark blanco */\r\n  width: 10px;\r\n  height: 5px;\r\n  border: solid var(--color-secondary);\r\n  border-width: 0 0 2px 2px;\r\n  transform: rotate(-45deg);\r\n  position: absolute;\r\n  top: 5px;\r\n  left: 5px;\r\n}\r\n\r\n\r\n\r\n/************ TOOLBAR ************/\r\n::-webkit-scrollbar {\r\n  width: 8px;\r\n  margin: 2px;\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--color-primary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n/**********************************/\r\n\r\n\r\n\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  \r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n  \r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n";
-var stylesheet="@font-face {\r\n  font-family: 'DMSans';\r\n  src: local('DM Sans'), url(./fonts/DMSans/DMSans-Regular.ttf) format('truetype');\r\n}\r\n\r\n@font-face {\r\n  font-family: 'DMSans-SemiBold';\r\n  src: local('DM Sans SemiBold'), url(./fonts/DMSans/DMSans-SemiBold.ttf) format('truetype');\r\n}\r\n\r\n\r\n\r\n:root {\r\n  --color-primary: #000;\r\n  --color-primary-background: #ece9e4;\r\n  --color-primary-shadow: rgba(182, 182, 182, 0.2);\r\n  --color-secondary: #fff;\r\n  --color-secondary-background: #fefcfa;\r\n  --color-terciary: #979796;\r\n  --color-terciary-2: lightgrey;\r\n  --color-terciary-3: grey;\r\n  --color-success: #00C76C;\r\n  --color-success-background: rgb(0, 199, 108, 0.2);\r\n  --color-pending: #EB9E1A;\r\n  --color-pending-background: rgb(235, 158, 26, 0.2);\r\n  --color-error: #FF5757;\r\n  --color-error-background: rgb(255, 87, 87, 0.2);\r\n  --color-process: #0057FF;\r\n  --color-process-background: rgb(0, 87, 255, 0.2);\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  font-size: 1rem;\r\n  font-family: 'DMSans';\r\n  font-size: 0.8rem;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: var(--color-terciary);\r\n}\r\n\r\nhr{\r\n  border-top: 3px solid var(--color-primary-background);\r\n}\r\n\r\ntextarea:focus, input:focus{\r\n  outline: none;\r\n}\r\n\r\ninput[type=\"text\"], input[type=\"password\"]{\r\n  box-sizing: unset!important;\r\n  line-height: unset!important;\r\n  padding-left: 5px;\r\n}\r\n\r\ninput[type=\"text\"]:disabled{background-color:transparent; cursor:not-allowed;}\r\n\r\nbutton {\r\n  cursor: pointer!important;\r\n  height: 30px;\r\n}\r\ninput{\r\n  height: 30px;\r\n  width: 100%;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n  width: 28px;\r\n  height: 28px;\r\n}\r\n\r\n.color-blue{\r\n  color: var(--color-process);\r\n}\r\n\r\n.MuiButtonBase-root{\r\n  color: var(--color-process)!important;\r\n}\r\n\r\n\r\n\r\n/****** CUSTOM BUTTONS ********/\r\n\r\n\r\n.button-1{\r\n  padding: 10px;\r\n  border-radius: 8px;\r\n  background-color: var(--color-primary);\r\n  color: var(--color-secondary);\r\n  border: 1px var(--color-secondary) solid;\r\n  width: 100%;\r\n  cursor: pointer;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.button-2{\r\n  border-radius: 5px;\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  cursor: pointer;\r\n  height: 27px;\r\n  width: fit-content;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n\r\n\r\n/*********************************/\r\n\r\n.adminPanel{\r\n  background: var(--color-secondary);\r\n  border: 1px solid var(--color-primary-background);\r\n  border-radius: 12px;\r\n  height: 100%;\r\n  width: auto;\r\n  padding: 15px;\r\n}\r\n\r\n.background-image {\r\n  background-color: var(--color-primary-background);\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n}\r\n\r\n.loginArea{\r\n  background-color: var(--color-primary-background);\r\n}\r\n\r\n.flex{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n}\r\n\r\n.flex-gap{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n  gap: 10px;\r\n}\r\n\r\n.flex-start{\r\n  display: inline-flex;\r\n  justify-content: flex-start;\r\n  width: 100%;\r\n}\r\n\r\n.flex-end{\r\n  display: inline-flex;\r\n  justify-content: flex-end;\r\n  padding: 4px;\r\n  gap: 5px;\r\n}\r\n\r\n.form {\r\n  display: flex;\r\n  gap: 10px;\r\n  flex-direction: column;\r\n}\r\n\r\n.w33{\r\n  width: 33%;\r\n}\r\n\r\n.w50{\r\n  width: 50%;\r\n}\r\n\r\n.w100{\r\n  width: 100%;\r\n}\r\n\r\n.h-100{\r\n  height: 100%;\r\n}\r\n\r\n.p-2{\r\n  padding: 2%;\r\n}\r\n\r\n.text-align-right{\r\n  text-align: right;\r\n}\r\n\r\n.text-align-left{\r\n  text-align: left;\r\n}\r\n\r\n.text-align-center{\r\n  text-align: center;\r\n}\r\n\r\n.text-overflow {\r\n  display: inline-block; /* O también block, según el diseño */\r\n  width: 100%; /* Ajusta el ancho según necesites */\r\n  white-space: nowrap; /* Evita que el texto haga saltos de línea */\r\n  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */\r\n  text-overflow: ellipsis; /* Muestra \"...\" cuando el texto es muy largo */\r\n}\r\n\r\n.fixIconButton{\r\n  padding: 4px 0px 4px 4px!important;\r\n  min-width: auto!important;\r\n}\r\n\r\n.buttonNoBorder{\r\n  border: 0px!important;\r\n}\r\n\r\n\r\n.ellipsis {\r\n  white-space: nowrap; /* Evita que el texto se divida en varias líneas */\r\n  overflow: hidden; /* Oculta el texto que sobresale */\r\n  text-overflow: ellipsis; /* Muestra los puntos suspensivos (...) */\r\n  width: 75px; /* Ajusta el ancho según tus necesidades */\r\n}\r\n\r\n/************ CHECKBOX ************/\r\n.custom-checkbox {\r\n  /* Ocultar el diseño por defecto */\r\n  appearance: none;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n\r\n  /* Dimensiones */\r\n  width: 24px;\r\n  height: 24px;\r\n\r\n  /* Estilo base */\r\n  border: 2px solid var(--color-primary-background); /* Azul oscuro */\r\n  border-radius: 4px;\r\n  background-color: var(--color-secondary);\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n\r\n  /* Efecto al pasar el ratón */\r\n  transition: background-color 0.2s ease, border-color 0.2s ease;\r\n}\r\n\r\n.custom-checkbox:hover {\r\n  border-color: var(--color-process); /* Azul más oscuro */\r\n}\r\n\r\n.custom-checkbox:checked {\r\n  background-color: var(--color-process); /* Azul */\r\n  border-color: var(--color-process);\r\n\r\n  /* Añadir el check */\r\n  position: relative;\r\n}\r\n\r\n.custom-checkbox:checked::after {\r\n  content: \"\";\r\n  display: block;\r\n\r\n  /* Checkmark blanco */\r\n  width: 10px;\r\n  height: 5px;\r\n  border: solid var(--color-secondary);\r\n  border-width: 0 0 2px 2px;\r\n  transform: rotate(-45deg);\r\n  position: absolute;\r\n  top: 5px;\r\n  left: 5px;\r\n}\r\n\r\n\r\n\r\n/************ TOOLBAR ************/\r\n::-webkit-scrollbar {\r\n  width: 8px;\r\n  margin: 2px;\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--color-primary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n/**********************************/\r\n\r\n\r\n\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  \r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n  \r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n";
+var css_248z$b = "@font-face {\r\n  font-family: 'DMSans';\r\n  src: local('DM Sans'), url(./fonts/DMSans/DMSans-Regular.ttf) format('truetype');\r\n}\r\n\r\n@font-face {\r\n  font-family: 'DMSans-SemiBold';\r\n  src: local('DM Sans SemiBold'), url(./fonts/DMSans/DMSans-SemiBold.ttf) format('truetype');\r\n}\r\n\r\n\r\n\r\n:root {\r\n  --color-primary: #000;\r\n  --color-primary-background: #ece9e4;\r\n  --color-primary-shadow: rgba(182, 182, 182, 0.2);\r\n  --color-secondary: #fff;\r\n  --color-secondary-background: #fefcfa;\r\n  --color-terciary: #979796;\r\n  --color-terciary-2: lightgrey;\r\n  --color-terciary-3: grey;\r\n  --color-success: #00C76C;\r\n  --color-success-background: rgb(0, 199, 108, 0.2);\r\n  --color-pending: #EB9E1A;\r\n  --color-pending-background: rgb(235, 158, 26, 0.2);\r\n  --color-error: #FF5757;\r\n  --color-error-background: rgb(255, 87, 87, 0.2);\r\n  --color-process: #0057FF;\r\n  --color-process-background: rgb(0, 87, 255, 0.2);\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  font-size: 1rem;\r\n  font-family: 'DMSans';\r\n  font-size: 0.8rem;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: var(--color-terciary);\r\n}\r\n\r\nhr{\r\n  border-top: 3px solid var(--color-primary-background);\r\n}\r\n\r\ntextarea:focus, input:focus{\r\n  outline: none;\r\n}\r\n\r\ninput[type=\"text\"], input[type=\"password\"]{\r\n  box-sizing: unset!important;\r\n  line-height: unset!important;\r\n  padding-left: 5px;\r\n}\r\n\r\ninput[type=\"text\"]:disabled{background-color:transparent; cursor:not-allowed;}\r\n\r\nbutton {\r\n  cursor: pointer!important;\r\n  height: 30px;\r\n}\r\ninput{\r\n  height: 30px;\r\n  width: 100%;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n  width: 28px;\r\n  height: 28px;\r\n}\r\n\r\n.color-blue{\r\n  color: var(--color-process);\r\n}\r\n\r\n.MuiButtonBase-root{\r\n  color: var(--color-process)!important;\r\n}\r\n\r\n\r\n\r\n/****** CUSTOM BUTTONS ********/\r\n\r\n\r\n.button-1{\r\n  padding: 10px;\r\n  border-radius: 8px;\r\n  background-color: var(--color-primary);\r\n  color: var(--color-secondary);\r\n  border: 1px var(--color-secondary) solid;\r\n  width: 100%;\r\n  cursor: pointer;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.button-2{\r\n  border-radius: 5px;\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  cursor: pointer;\r\n  height: 27px;\r\n  width: fit-content;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n\r\n\r\n/*********************************/\r\n\r\n.adminPanel{\r\n  background: var(--color-secondary);\r\n  border: 1px solid var(--color-primary-background);\r\n  border-radius: 12px;\r\n  height: 100%;\r\n  width: auto;\r\n  padding: 15px;\r\n}\r\n\r\n.background-image {\r\n  background-color: var(--color-primary-background);\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n}\r\n\r\n.loginArea{\r\n  background-color: var(--color-primary-background);\r\n}\r\n\r\n.flex{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n}\r\n\r\n.flex-gap{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n  gap: 10px;\r\n}\r\n\r\n.flex-start{\r\n  display: inline-flex;\r\n  justify-content: flex-start;\r\n  width: 100%;\r\n}\r\n\r\n.flex-end{\r\n  display: inline-flex;\r\n  justify-content: flex-end;\r\n  padding: 4px;\r\n  gap: 5px;\r\n}\r\n\r\n.form {\r\n  display: flex;\r\n  gap: 10px;\r\n  flex-direction: column;\r\n}\r\n\r\n.w33{\r\n  width: 33%;\r\n}\r\n\r\n.w50{\r\n  width: 50%;\r\n}\r\n\r\n.w100{\r\n  width: 100%;\r\n}\r\n\r\n.h-100{\r\n  height: 100%;\r\n}\r\n\r\n.p-2{\r\n  padding: 2%;\r\n}\r\n\r\n.text-align-right{\r\n  text-align: right;\r\n}\r\n\r\n.text-align-left{\r\n  text-align: left;\r\n}\r\n\r\n.text-align-center{\r\n  text-align: center;\r\n}\r\n\r\n.text-overflow {\r\n  display: inline-block; /* O también block, según el diseño */\r\n  width: 100%; /* Ajusta el ancho según necesites */\r\n  white-space: nowrap; /* Evita que el texto haga saltos de línea */\r\n  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */\r\n  text-overflow: ellipsis; /* Muestra \"...\" cuando el texto es muy largo */\r\n}\r\n\r\n.fixIconButton{\r\n  padding: 4px 0px 4px 4px!important;\r\n  min-width: auto!important;\r\n}\r\n\r\n.buttonNoBorder{\r\n  border: 0px!important;\r\n}\r\n\r\n\r\n.ellipsis {\r\n  white-space: nowrap; /* Evita que el texto se divida en varias líneas */\r\n  overflow: hidden; /* Oculta el texto que sobresale */\r\n  text-overflow: ellipsis; /* Muestra los puntos suspensivos (...) */\r\n  width: 75px; /* Ajusta el ancho según tus necesidades */\r\n}\r\n\r\n.appVersion{\r\n  position: absolute;\r\n  bottom: 1px;\r\n  right: 1px;\r\n  font-size: 0.5rem;\r\n}\r\n\r\n/************ CHECKBOX ************/\r\n.custom-checkbox {\r\n  /* Ocultar el diseño por defecto */\r\n  appearance: none;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n\r\n  /* Dimensiones */\r\n  width: 24px;\r\n  height: 24px;\r\n\r\n  /* Estilo base */\r\n  border: 2px solid var(--color-primary-background); /* Azul oscuro */\r\n  border-radius: 4px;\r\n  background-color: var(--color-secondary);\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n\r\n  /* Efecto al pasar el ratón */\r\n  transition: background-color 0.2s ease, border-color 0.2s ease;\r\n}\r\n\r\n.custom-checkbox:hover {\r\n  border-color: var(--color-process); /* Azul más oscuro */\r\n}\r\n\r\n.custom-checkbox:checked {\r\n  background-color: var(--color-process); /* Azul */\r\n  border-color: var(--color-process);\r\n\r\n  /* Añadir el check */\r\n  position: relative;\r\n}\r\n\r\n.custom-checkbox:checked::after {\r\n  content: \"\";\r\n  display: block;\r\n\r\n  /* Checkmark blanco */\r\n  width: 10px;\r\n  height: 5px;\r\n  border: solid var(--color-secondary);\r\n  border-width: 0 0 2px 2px;\r\n  transform: rotate(-45deg);\r\n  position: absolute;\r\n  top: 5px;\r\n  left: 5px;\r\n}\r\n\r\n\r\n\r\n/************ ScrollBar ************/\r\n::-webkit-scrollbar {\r\n  width: 5px;  /* Para el scrollbar vertical */\r\n  height: 5px; /* Para el scrollbar horizontal */\r\n  margin: 2px;\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--color-primary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n/**********************************/\r\n\r\n\r\n\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  \r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n  \r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n";
+var stylesheet="@font-face {\r\n  font-family: 'DMSans';\r\n  src: local('DM Sans'), url(./fonts/DMSans/DMSans-Regular.ttf) format('truetype');\r\n}\r\n\r\n@font-face {\r\n  font-family: 'DMSans-SemiBold';\r\n  src: local('DM Sans SemiBold'), url(./fonts/DMSans/DMSans-SemiBold.ttf) format('truetype');\r\n}\r\n\r\n\r\n\r\n:root {\r\n  --color-primary: #000;\r\n  --color-primary-background: #ece9e4;\r\n  --color-primary-shadow: rgba(182, 182, 182, 0.2);\r\n  --color-secondary: #fff;\r\n  --color-secondary-background: #fefcfa;\r\n  --color-terciary: #979796;\r\n  --color-terciary-2: lightgrey;\r\n  --color-terciary-3: grey;\r\n  --color-success: #00C76C;\r\n  --color-success-background: rgb(0, 199, 108, 0.2);\r\n  --color-pending: #EB9E1A;\r\n  --color-pending-background: rgb(235, 158, 26, 0.2);\r\n  --color-error: #FF5757;\r\n  --color-error-background: rgb(255, 87, 87, 0.2);\r\n  --color-process: #0057FF;\r\n  --color-process-background: rgb(0, 87, 255, 0.2);\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  font-size: 1rem;\r\n  font-family: 'DMSans';\r\n  font-size: 0.8rem;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: var(--color-terciary);\r\n}\r\n\r\nhr{\r\n  border-top: 3px solid var(--color-primary-background);\r\n}\r\n\r\ntextarea:focus, input:focus{\r\n  outline: none;\r\n}\r\n\r\ninput[type=\"text\"], input[type=\"password\"]{\r\n  box-sizing: unset!important;\r\n  line-height: unset!important;\r\n  padding-left: 5px;\r\n}\r\n\r\ninput[type=\"text\"]:disabled{background-color:transparent; cursor:not-allowed;}\r\n\r\nbutton {\r\n  cursor: pointer!important;\r\n  height: 30px;\r\n}\r\ninput{\r\n  height: 30px;\r\n  width: 100%;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n  width: 28px;\r\n  height: 28px;\r\n}\r\n\r\n.color-blue{\r\n  color: var(--color-process);\r\n}\r\n\r\n.MuiButtonBase-root{\r\n  color: var(--color-process)!important;\r\n}\r\n\r\n\r\n\r\n/****** CUSTOM BUTTONS ********/\r\n\r\n\r\n.button-1{\r\n  padding: 10px;\r\n  border-radius: 8px;\r\n  background-color: var(--color-primary);\r\n  color: var(--color-secondary);\r\n  border: 1px var(--color-secondary) solid;\r\n  width: 100%;\r\n  cursor: pointer;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.button-2{\r\n  border-radius: 5px;\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  cursor: pointer;\r\n  height: 27px;\r\n  width: fit-content;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n\r\n\r\n/*********************************/\r\n\r\n.adminPanel{\r\n  background: var(--color-secondary);\r\n  border: 1px solid var(--color-primary-background);\r\n  border-radius: 12px;\r\n  height: 100%;\r\n  width: auto;\r\n  padding: 15px;\r\n}\r\n\r\n.background-image {\r\n  background-color: var(--color-primary-background);\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n}\r\n\r\n.loginArea{\r\n  background-color: var(--color-primary-background);\r\n}\r\n\r\n.flex{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n}\r\n\r\n.flex-gap{\r\n  display: inline-flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n  gap: 10px;\r\n}\r\n\r\n.flex-start{\r\n  display: inline-flex;\r\n  justify-content: flex-start;\r\n  width: 100%;\r\n}\r\n\r\n.flex-end{\r\n  display: inline-flex;\r\n  justify-content: flex-end;\r\n  padding: 4px;\r\n  gap: 5px;\r\n}\r\n\r\n.form {\r\n  display: flex;\r\n  gap: 10px;\r\n  flex-direction: column;\r\n}\r\n\r\n.w33{\r\n  width: 33%;\r\n}\r\n\r\n.w50{\r\n  width: 50%;\r\n}\r\n\r\n.w100{\r\n  width: 100%;\r\n}\r\n\r\n.h-100{\r\n  height: 100%;\r\n}\r\n\r\n.p-2{\r\n  padding: 2%;\r\n}\r\n\r\n.text-align-right{\r\n  text-align: right;\r\n}\r\n\r\n.text-align-left{\r\n  text-align: left;\r\n}\r\n\r\n.text-align-center{\r\n  text-align: center;\r\n}\r\n\r\n.text-overflow {\r\n  display: inline-block; /* O también block, según el diseño */\r\n  width: 100%; /* Ajusta el ancho según necesites */\r\n  white-space: nowrap; /* Evita que el texto haga saltos de línea */\r\n  overflow: hidden; /* Oculta el texto que no cabe en el contenedor */\r\n  text-overflow: ellipsis; /* Muestra \"...\" cuando el texto es muy largo */\r\n}\r\n\r\n.fixIconButton{\r\n  padding: 4px 0px 4px 4px!important;\r\n  min-width: auto!important;\r\n}\r\n\r\n.buttonNoBorder{\r\n  border: 0px!important;\r\n}\r\n\r\n\r\n.ellipsis {\r\n  white-space: nowrap; /* Evita que el texto se divida en varias líneas */\r\n  overflow: hidden; /* Oculta el texto que sobresale */\r\n  text-overflow: ellipsis; /* Muestra los puntos suspensivos (...) */\r\n  width: 75px; /* Ajusta el ancho según tus necesidades */\r\n}\r\n\r\n.appVersion{\r\n  position: absolute;\r\n  bottom: 1px;\r\n  right: 1px;\r\n  font-size: 0.5rem;\r\n}\r\n\r\n/************ CHECKBOX ************/\r\n.custom-checkbox {\r\n  /* Ocultar el diseño por defecto */\r\n  appearance: none;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n\r\n  /* Dimensiones */\r\n  width: 24px;\r\n  height: 24px;\r\n\r\n  /* Estilo base */\r\n  border: 2px solid var(--color-primary-background); /* Azul oscuro */\r\n  border-radius: 4px;\r\n  background-color: var(--color-secondary);\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n\r\n  /* Efecto al pasar el ratón */\r\n  transition: background-color 0.2s ease, border-color 0.2s ease;\r\n}\r\n\r\n.custom-checkbox:hover {\r\n  border-color: var(--color-process); /* Azul más oscuro */\r\n}\r\n\r\n.custom-checkbox:checked {\r\n  background-color: var(--color-process); /* Azul */\r\n  border-color: var(--color-process);\r\n\r\n  /* Añadir el check */\r\n  position: relative;\r\n}\r\n\r\n.custom-checkbox:checked::after {\r\n  content: \"\";\r\n  display: block;\r\n\r\n  /* Checkmark blanco */\r\n  width: 10px;\r\n  height: 5px;\r\n  border: solid var(--color-secondary);\r\n  border-width: 0 0 2px 2px;\r\n  transform: rotate(-45deg);\r\n  position: absolute;\r\n  top: 5px;\r\n  left: 5px;\r\n}\r\n\r\n\r\n\r\n/************ ScrollBar ************/\r\n::-webkit-scrollbar {\r\n  width: 5px;  /* Para el scrollbar vertical */\r\n  height: 5px; /* Para el scrollbar horizontal */\r\n  margin: 2px;\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--color-primary);\r\n  border-radius: 5px;\r\n  border: 1px solid var(--color-secondary);\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  background: var(--color-terciary);\r\n  border-radius: 5px;\r\n  border: 3px solid var(--color-secondary);\r\n}\r\n/**********************************/\r\n\r\n\r\n\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  \r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n  \r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n";
 styleInject(css_248z$b);
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -7543,6 +7543,465 @@ function requireCryptoJs () {
 var cryptoJsExports = requireCryptoJs();
 var CryptoJS = /*@__PURE__*/getDefaultExportFromCjs(cryptoJsExports);
 
+// Listado de cadenas y sus traducciones
+const messages = {
+  "Missing session parameters": "Faltan parámetros de sesión",
+  "Missing order identifier": "Falta el identificador de pedido",
+  "Order details not found": "Detalles del pedido no encontrados",
+  "Missing required parameter (orderId)": "Falta el parámetro requerido (orderId)",
+  "There was an error processing the payment": "Hubo un error al procesar el pago",
+  "orderId is required": "orderId es requerido",
+  "There was an error creating the invoice": "Hubo un error al crear la factura",
+  "No products found": "No se encontraron productos",
+  "OptionGroup not found": "No se encontró el grupo de opciones",
+  "Option name already exists": "El nombre de la opción ya existe",
+  "Failed to create Option": "Error al crear la opción",
+  "OptionGroup name already exists": "El nombre del grupo de opciones ya existe",
+  "Failed to create OptionGroup": "Error al crear el grupo de opciones",
+  "Missing params": "Faltan parámetros",
+  "User not found": "Usuario no encontrado",
+  "Order payment processed successfully": "Pago de pedido procesado con éxito",
+  "Invoice created successfully": "Factura creada con éxito",
+  "Catalogs deleted successfully": "Catálogos eliminados con éxito",
+  "User created successfully": "Usuario creado con éxito",
+  "Category created successfully": "Categoría creada con éxito",
+  "Category updated successfully": "Categoría actualizada con éxito",
+  "Categories retrieved successfully": "Categorías recuperadas con éxito",
+  "Filtered orders fetched successfully": "Órdenes filtradas obtenidas con éxito",
+  "Statistics not found": "Estadísticas no encontradas",
+  "Bad request": "Solicitud incorrecta",
+  "Failed to create category": "Error al crear la categoría",
+  "Category does not exist": "La categoría no existe",
+  "Failed to update category": "Error al actualizar la categoría",
+  "Internal server error": "Error interno del servidor",
+  "Categories added to discount successfully": "Categorías añadidas al descuento con éxito",
+  "Categories removed from discount successfully": "Categorías eliminadas del descuento con éxito",
+  "Discount status toggled successfully": "Estado del descuento cambiado con éxito",
+  "Discount deleted successfully": "Descuento eliminado con éxito",
+  "Discount created successfully": "Descuento creado con éxito",
+  "Printer not found or failed to update": "Impresora no encontrada o falló al actualizar",
+  "Printer not found or failed to delete": "Impresora no encontrada o falló al eliminar",
+  "Printer not found or failed to print": "Impresora no encontrada o falló al imprimir",
+  "Missing identifier": "Falta identificador",
+  "Invalid email": "Correo electrónico inválido",
+  "Invalid phone number": "Número de teléfono inválido",
+  "Error updating the sales channel": "Error al actualizar el canal de ventas",
+  "Login successful (Customer)": "Inicio de sesión exitoso (Cliente)",
+  "Login successful": "Inicio de sesión exitoso",
+  "Logged out": "Sesión cerrada",
+  "Business hours deleted successfully": "Horas de negocio eliminadas con éxito",
+  "Catalog created successfully": "Catálogo creado con éxito",
+  "Catalog fetched successfully": "Catálogo recuperado con éxito",
+  "Catalogs fetched successfully": "Catálogos recuperados con éxito",
+  "Catalog updated successfully": "Catálogo actualizado con éxito",
+  "Catalog deleted successfully": "Catálogo eliminado con éxito",
+  "Catalogs deleted successfully": "Catálogos eliminados con éxito",
+  "Products added successfully to catalog": "Productos añadidos con éxito al catálogo",
+  "Catalog products updated successfully": "Productos del catálogo actualizados con éxito",
+  "Products status toggled successfully": "Estado de los productos cambiado con éxito",
+  "Products fetched successfully": "Productos recuperados con éxito",
+  "Category retrieved successfully": "Categoría recuperada con éxito",
+  "Category deleted successfully": "Categoría eliminada con éxito",
+  "Products added to category successfully": "Productos añadidos a la categoría con éxito",
+  "Products removed from category successfully": "Productos eliminados de la categoría con éxito",
+  "Category products updated successfully": "Productos de la categoría actualizados con éxito",
+  "Categories deleted successfully": "Categorías eliminadas con éxito",
+  "Corporation created successfully": "Corporación creada con éxito",
+  "Corporation updated successfully": "Corporación actualizada con éxito",
+  "Corporation deleted successfully": "Corporación eliminada con éxito",
+  "Maintenance message updated successfully": "Mensaje de mantenimiento actualizado con éxito",
+  "Active invoicing status toggled successfully": "Estado de facturación activado con éxito",
+  "Invoices prefixes updated successfully": "Prefijos de factura actualizados con éxito",
+  "Invoices number formats updated successfully": "Formatos de números de factura actualizados con éxito",
+  "Corporation data deleted successfully": "Datos de la corporación eliminados con éxito",
+  "Abandon shopping cart time updated successfully": "Tiempo de abandono del carrito de compras actualizado con éxito",
+  "Design configuration updated successfully": "Configuración de diseño actualizada con éxito",
+  "Customer created successfully": "Cliente creado con éxito",
+  "Customer retrieved successfully": "Cliente recuperado con éxito",
+  "Customers retrieved successfully": "Clientes recuperados con éxito",
+  "Customer updated successfully": "Cliente actualizado con éxito",
+  "Customer deleted successfully": "Cliente eliminado con éxito",
+  "Customers fetched successfully": "Clientes recuperados con éxito",
+  "Password changed successfully": "Contraseña cambiada con éxito",
+  "Shipping address added successfully": "Dirección de envío añadida con éxito",
+  "Billing address added successfully": "Dirección de facturación añadida con éxito",
+  "Verification message sent successfully": "Mensaje de verificación enviado con éxito",
+  "User verified successfully": "Usuario verificado con éxito",
+  "Data not found or an error occurred": "Datos no encontrados o ocurrió un error",
+  "Customer information": "Información del cliente",
+  "Discount updated successfully": "Descuento actualizado con éxito",
+  "Discount deleted successfully": "Descuento eliminado con éxito",
+  "Discount retrieved successfully": "Descuento recuperado con éxito",
+  "Discounts retrieved successfully": "Descuentos recuperados con éxito",
+  "Categories added to discount successfully": "Categorías añadidas al descuento con éxito",
+  "Categories removed from discount successfully": "Categorías eliminadas del descuento con éxito",
+  "Orders added to discount successfully": "Órdenes añadidas al descuento con éxito",
+  "Discounts deleted successfully": "Descuentos eliminados con éxito",
+  "Discounts filtered successfully": "Descuentos filtrados con éxito",
+  "Invoice created successfully": "Factura creada con éxito",
+  "Item group created successfully": "Grupo de artículos creado con éxito",
+  "No item groups found for this product": "No se encontraron grupos de artículos para este producto",
+  "Item groups by product": "Grupos de artículos por producto",
+  "Item group updated successfully": "Grupo de artículos actualizado con éxito",
+  "Item group deleted successfully": "Grupo de artículos eliminado con éxito",
+  "Item groups deleted successfully": "Grupos de artículos eliminados con éxito",
+  "Items deleted from group successfully": "Artículos eliminados del grupo con éxito",
+  "Item updated successfully": "Artículo actualizado con éxito",
+  "Item deleted successfully": "Artículo eliminado con éxito",
+  "Items found": "Artículos encontrados",
+  "Corporation items": "Artículos de la corporación",
+  "ItemGroup items": "Artículos del grupo de artículos",
+  "LegalPolicies deleted successfully": "Políticas legales eliminadas con éxito",
+  "Code found": "Código encontrado",
+  "Valid code. Login successful.": "Código válido. Inicio de sesión exitoso.",
+  "Option created successfully": "Opción creada con éxito",
+  "Get Options": "Obtener opciones",
+  "Option updated successfully": "Opción actualizada con éxito",
+  "Order error reported successfully": "Error de pedido reportado con éxito",
+  "Configurations retrieved successfully": "Configuraciones recuperadas con éxito",
+  "Order manager configuration deleted successfully": "Configuración del gestor de pedidos eliminada con éxito",
+  "Order manager configuration selected successfully": "Configuración del gestor de pedidos seleccionada con éxito",
+  "No categories found": "No se encontraron categorías",
+  "No sales channels found": "No se encontraron canales de ventas",
+  "Sales channels fetched successfully": "Canales de ventas recuperados con éxito",
+  "Customer orders fetched successfully": "Órdenes de clientes recuperadas con éxito",
+  "Order logs fetched successfully": "Registros de órdenes recuperados con éxito",
+  "Orders not found": "Órdenes no encontradas",
+  "Filtered orders fetched successfully": "Órdenes filtradas recuperadas con éxito",
+  "Order details fetched successfully": "Detalles de la orden recuperados con éxito",
+  "Orders statistics fetched successfully": "Estadísticas de órdenes recuperadas con éxito",
+  "Order made successfully": "Orden realizada con éxito",
+  "Assigned orders": "Órdenes asignadas",
+  "Orders ready for delivery": "Órdenes listas para entrega",
+  "Order put in delivery successfully": "Orden puesta en entrega con éxito",
+  "Order delivery finalized successfully": "Entrega de orden finalizada con éxito",
+  "KDS Orders": "Órdenes KDS",
+  "Note added to the order successfully": "Nota añadida a la orden con éxito",
+  "Order updated successfully": "Orden actualizada con éxito",
+  "Order payment process initiated successfully": "Proceso de pago de la orden iniciado con éxito",
+  "Order status updated successfully": "Estado de la orden actualizado con éxito",
+  "Payment method deleted successfully": "Método de pago eliminado con éxito",
+  "Platform retrieved successfully": "Plataforma recuperada con éxito",
+  "Platform updated successfully": "Plataforma actualizada con éxito",
+  "Access granted": "Acceso concedido",
+  "Point of Sale configuration deleted successfully": "Configuración del punto de venta eliminada con éxito",
+  "User removed successfully from configuration": "Usuario eliminado con éxito de la configuración",
+  "User assigned successfully to configuration": "Usuario asignado con éxito a la configuración",
+  "Point of sale configuration selected successfully": "Configuración del punto de venta seleccionada con éxito",
+  "Point of sale configurations deleted successfully": "Configuraciones del punto de venta eliminadas con éxito",
+  "Printer created successfully": "Impresora creada con éxito",
+  "Printers retrieved successfully": "Impresoras recuperadas con éxito",
+  "Printer retrieved successfully": "Impresora recuperada con éxito",
+  "Printer updated successfully": "Impresora actualizada con éxito",
+  "Printer deleted successfully": "Impresora eliminada con éxito",
+  "Order printed successfully": "Orden impresa con éxito",
+  "New order printed successfully": "Nueva orden impresa con éxito",
+  "Products not found for the corporation": "Productos no encontrados para la corporación",
+  "Product information fetched successfully": "Información del producto obtenida con éxito",
+  "Product data fetched successfully": "Datos del producto obtenidos con éxito",
+  "Product created successfully": "Producto creado con éxito",
+  "Product deleted successfully": "Producto eliminado con éxito",
+  "Product updated successfully": "Producto actualizado con éxito",
+  "Corporation products fetched successfully": "Productos de la corporación obtenidos con éxito",
+  "Catalogs added to the product successfully": "Catálogos añadidos al producto con éxito",
+  "Catalogs set to the product successfully": "Catálogos asignados al producto con éxito",
+  "Categories added to the product successfully": "Categorías añadidas al producto con éxito",
+  "Categories set to the product successfully": "Categorías asignadas al producto con éxito",
+  "Allergens fetched successfully": "Alergógenos obtenidos con éxito",
+  "Option group added to the product successfully": "Grupo de opciones añadido al producto con éxito",
+  "Items groups added to the product successfully": "Grupos de artículos añadidos al producto con éxito",
+  "Products imported successfully": "Productos importados con éxito",
+  "Item group added to the product successfully": "Grupo de artículos añadido al producto con éxito",
+  "Allergens added to the product successfully": "Alergógenos añadidos al producto con éxito",
+  "Allergens removed from the product successfully": "Alergógenos eliminados del producto con éxito",
+  "Product variants": "Variantes de producto",
+  "Product variants deleted successfully": "Variantes de producto eliminadas con éxito",
+  "Sales channel updated successfully": "Canal de ventas actualizado con éxito",
+  "Active status toggled successfully": "Estado activo cambiado con éxito",
+  "Sales channel created successfully": "Canal de ventas creado con éxito",
+  "Sales channel deleted successfully": "Canal de ventas eliminado con éxito",
+  "Sales channels deleted successfully": "Canales de ventas eliminados con éxito",
+  "Catalog added to sales channel successfully": "Catálogo añadido al canal de ventas con éxito",
+  "Shipping method deleted successfully": "Método de envío eliminado con éxito",
+  "Customer shopping cart": "Carrito de compras del cliente",
+  "All products removed from the cart": "Todos los productos eliminados del carrito",
+  "Abandoned shopping cart": "Carrito de compras abandonado",
+  "Abandoned shopping carts deleted successfully": "Carritos de compras abandonados eliminados con éxito",
+  "Reminder sent successfully": "Recordatorio enviado con éxito",
+  "Product quantity in cart updated successfully": "Cantidad de producto en el carrito actualizada con éxito",
+  "Note added to the cart successfully": "Nota añadida al carrito con éxito",
+  "Special closed day deleted successfully": "Día cerrado especial eliminado con éxito",
+  "Statistics fetched successfully": "Estadísticas obtenidas con éxito",
+  "Code sent successfully": "Código enviado con éxito",
+  "Email sent successfully": "Correo electrónico enviado con éxito",
+  "Password reset successfully": "Contraseña restablecida con éxito",
+  "User created successfully": "Usuario creado con éxito",
+  "User retrieved successfully": "Usuario recuperado con éxito",
+  "User updated successfully": "Usuario actualizado con éxito",
+  "User deleted successfully": "Usuario eliminado con éxito",
+  "All users suspended successfully": "Todos los usuarios suspendidos con éxito",
+  "Customers fetched successfully": "Clientes obtenidos con éxito",
+  "Password successfully reset": "Contraseña restablecida con éxito",
+  "Password reset email sent successfully": "Correo electrónico de restablecimiento de contraseña enviado con éxito",
+  "Owner information updated successfully": "Información del propietario actualizada con éxito",
+  "Corporation owner info fetched successfully": "Información del propietario de la corporación obtenida con éxito",
+  "Corporation users fetched successfully": "Usuarios de la corporación obtenidos con éxito",
+  "Login successful": "Inicio de sesión exitoso",
+  "Permissions added to user successfully": "Permisos añadidos al usuario con éxito",
+  "Permissions removed from user successfully": "Permisos eliminados del usuario con éxito",
+  "Users with delivery access": "Usuarios con acceso a la entrega",
+  "Variant status toggled successfully": "Estado de la variante cambiado con éxito",
+  "Variant retrieved successfully": "Variante recuperada con éxito",
+  "Variant updated successfully": "Variante actualizada con éxito",
+  "Payment captured": "Pago capturado",
+  "Logged out successfully": "Cierre de sesión exitoso",
+  "Missing required data (email or password)": "Faltan datos requeridos (correo electrónico o contraseña)",
+  "Invalid customer password": "Contraseña de cliente inválida",
+  "Invalid email or password": "Correo electrónico o contraseña inválidos",
+  "Missing required data (userId or pin)": "Faltan datos requeridos (userId o pin)",
+  "The user doesn't exist": "El usuario no existe",
+  "PIN is not active": "El PIN no está activo",
+  "The pin isn't correct": "El PIN no es correcto",
+  "Missing session data (corporationId)": "Faltan datos de sesión (corporationId)",
+  "There was an error encoding the password": "Hubo un error al codificar la contraseña",
+  "There was an error in the registering process": "Hubo un error en el proceso de registro",
+  "Error while logging out": "Error al cerrar sesión",
+  "Missing session data": "Faltan datos de sesión",
+  "Failed to create business hours": "No se pudo crear el horario de atención",
+  "Sales channel not found": "Canal de ventas no encontrado",
+  "Business hours not found": "Horario de atención no encontrado",
+  "Missing session data": "Faltan datos de sesión",
+  "Missing params": "Faltan parámetros",
+  "Business hours not found or failed to update": "Horario de atención no encontrado o falló al actualizar",
+  "Sales channel not found": "Canal de ventas no encontrado",
+  "Business hours not found or failed to delete": "Horario de atención no encontrado o falló al eliminar",
+  "Missing session parameters (corporationId)": "Faltan parámetros de sesión (corporationId)",
+  "Missing required params (name)": "Faltan parámetros requeridos (nombre)",
+  "Error creating catalog": "Error al crear el catálogo",
+  "Missing catalog ID": "Falta el ID del catálogo",
+  "Catalog not found": "Catálogo no encontrado",
+  "No catalogs found": "No se encontraron catálogos",
+  "Missing required parameter (catalogId)": "Falta el parámetro requerido (catalogId)",
+  "Error updating catalog": "Error al actualizar el catálogo",
+  "Error deleting catalog": "Error al eliminar el catálogo",
+  "Missing session parameters": "Faltan parámetros de sesión",
+  "Missing required catalog ids": "Faltan IDs de catálogo requeridos",
+  "Error deleting the catalogs": "Error al eliminar los catálogos",
+  "Error adding products to catalog": "Error al añadir productos al catálogo",
+  "Missing or invalid parameters": "Faltan o parámetros inválidos",
+  "Error updating catalog products": "Error al actualizar productos del catálogo",
+  "Error toggling products status": "Error al cambiar el estado de los productos",
+  "Error removing products from catalog": "Error al eliminar productos del catálogo",
+  "No catalogs found for this corporation": "No se encontraron catálogos para esta corporación",
+  "Error toggling catalog active status": "Error al cambiar el estado activo del catálogo",
+  "No products found": "No se encontraron productos",
+  "Failed to create category": "No se pudo crear la categoría",
+  "Missing params (categoryId)": "Faltan parámetros (categoryId)",
+  "Category not found": "Categoría no encontrada",
+  "Category does not exist": "La categoría no existe",
+  "Failed to update category": "No se pudo actualizar la categoría",
+  "Failed to delete category": "No se pudo eliminar la categoría",
+  "No categories found": "No se encontraron categorías",
+  "Category does not exist": "La categoría no existe",
+  "Error updating category products": "Error al actualizar los productos de la categoría",
+  "No categories were deleted": "No se eliminaron categorías",
+  "No categories found": "No se encontraron categorías",
+  "Error toggling category active status": "Error al cambiar el estado activo de la categoría",
+  "Missing params (productId, categoryId)": "Faltan parámetros (productId, categoryId)",
+  "Failed to toggle category active status": "No se pudo cambiar el estado activo de la categoría",
+  "Failed to create Corporation": "No se pudo crear la corporación",
+  "Corporation not found": "Corporación no encontrada",
+  "Failed to update Corporation": "No se pudo actualizar la corporación",
+  "Failed to delete Corporation": "No se pudo eliminar la corporación",
+  "Missing corporation identifier": "Falta el identificador de la corporación",
+  "Active shop status toggled successfully": "Estado activo de la tienda cambiado con éxito",
+  "Missing session parameter (corporationId)": "Falta el parámetro de sesión (corporationId)",
+  "Missing required parameter (message)": "Falta el parámetro requerido (mensaje)",
+  "Prefixes cannot be equal": "Los prefijos no pueden ser iguales",
+  "Error updating invoices prefixes": "Error al actualizar los prefijos de las facturas",
+  "Missing session parameter (corporationId)": "Falta el parámetro de sesión (corporationId)",
+  "Missing parameter (corporationId)": "Falta el parámetro (corporationId)",
+  "Error deleting corporation data": "Error al eliminar los datos de la corporación",
+  "Missing session data (corporationId)": "Faltan datos de sesión (corporationId)",
+  "Missing params (email)": "Faltan parámetros (correo electrónico)",
+  "Failed to create customer": "No se pudo crear el cliente",
+  "Missing customer identifier": "Falta el identificador del cliente",
+  "Customer not found": "Cliente no encontrado",
+  "Customers not found": "No se encontraron clientes",
+  "Customer not exist": "El cliente no existe",
+  "Failed to update customer": "No se pudo actualizar el cliente",
+  "Failed to delete customer": "No se pudo eliminar el cliente",
+  "Invalid pagination parameters": "Parámetros de paginación inválidos",
+  "There was an error fetching the customers": "Hubo un error al obtener los clientes",
+  "Missing passwords": "Faltan contraseñas",
+  "Error changing the password": "Error al cambiar la contraseña",
+  "Customer not found (addresses, billingAddresses)": "Cliente no encontrado (direcciones, direcciones de facturación)",
+  "Failed to add shipping address": "No se pudo añadir la dirección de envío",
+  "Failed to delete shipping address": "No se pudo eliminar la dirección de envío",
+  "Failed to update shipping address": "No se pudo actualizar la dirección de envío",
+  "Failed to add billing address": "No se pudo añadir la dirección de facturación",
+  "Failed to delete billing address": "No se pudo eliminar la dirección de facturación",
+  "Failed to update billing address": "No se pudo actualizar la dirección de facturación",
+  "User not found": "Usuario no encontrado",
+  "Error sending the message": "Error al enviar el mensaje",
+  "Missing code": "Falta el código",
+  "The code is not valid": "El código no es válido",
+  "Error verifying the customer": "Error al verificar al cliente",
+  "Filter data is required": "Se requieren datos de filtro",
+  "Missing session corporationId": "Falta el corporationId en la sesión",
+  "Missing required data (phone)": "Faltan datos requeridos (teléfono)",
+  "Failed to create discount": "No se pudo crear el descuento",
+  "Missing identifier (discountId)": "Falta el identificador (discountId)",
+  "Failed to update discount": "No se pudo actualizar el descuento",
+  "Failed to delete discount": "No se pudo eliminar el descuento",
+  "Discount not found": "Descuento no encontrado",
+  "No discounts found": "No se encontraron descuentos",
+  "Failed to add categories to discount": "No se pudieron añadir categorías al descuento",
+  "Failed to remove categories from discount": "No se pudieron eliminar categorías del descuento",
+  "Failed to add orders to discount": "No se pudieron añadir pedidos al descuento",
+  "No discounts were deleted": "No se eliminaron descuentos",
+  "Missing discount ID": "Falta el ID del descuento",
+  "Failed to toggle discount status": "No se pudo cambiar el estado del descuento",
+  "Missing session corporationId": "Falta el corporationId en la sesión",
+  "No discounts found": "No se encontraron descuentos",
+  "Missing orderId": "Falta el orderId",
+  "There was an error creating the invoice": "Hubo un error al crear la factura",
+  "Missing required or session fields": "Faltan campos requeridos o de sesión",
+  "ItemGroup name already exists": "El nombre del ItemGroup ya existe",
+  "Failed to create ItemGroup": "No se pudo crear el ItemGroup",
+  "Failed to add Items to ItemGroup": "No se pudieron añadir artículos al ItemGroup",
+  "Missing required session fields": "Faltan campos de sesión requeridos",
+  "Product not found": "Producto no encontrado",
+  "Failed to update Items in ItemGroup": "No se pudieron actualizar los artículos en el ItemGroup",
+  "You cannot add more items than the maxItems": "No puedes añadir más artículos que los maxItems",
+  "Missing required fields": "Faltan campos requeridos",
+  "ItemGroup not found": "ItemGroup no encontrado",
+  "Failed to delete ItemGroup": "No se pudo eliminar el ItemGroup",
+  "Failed to delete ItemGroups": "Falló al eliminar los grupos de artículos",
+  "Missing required or session fields": "Faltan campos requeridos o de sesión",
+  "ItemGroup not found": "Grupo de artículos no encontrado",
+  "Item name already exists": "El nombre del artículo ya existe",
+  "Failed to create Item": "Falló al crear el artículo",
+  "Failed to delete all Items": "Falló al eliminar todos los artículos",
+  "Failed to update Item": "Falló al actualizar el artículo",
+  "Failed to delete Item": "Falló al eliminar el artículo",
+  "Missing session fields": "Faltan campos de sesión",
+  "Missing required fields": "Faltan campos requeridos",
+  "Product not found": "Producto no encontrado",
+  "No Items found": "No se encontraron artículos",
+  "Missing params": "Faltan parámetros",
+  "Failed to create LegalPolicies": "Falló al crear las políticas legales",
+  "LegalPolicies not found": "Políticas legales no encontradas",
+  "LegalPolicies not exist": "Las políticas legales no existen",
+  "Failed to update LegalPolicies": "Falló al actualizar las políticas legales",
+  "No LegalPolicies found for this corporation": "No se encontraron políticas legales para esta corporación",
+  "Code not found": "Código no encontrado",
+  "Missing data: req.body.code": "Faltan datos: req.body.code",
+  "Invalid code": "Código inválido",
+  "Invalid email": "Correo electrónico inválido",
+  "OptionGroup name already exists": "El nombre del grupo de opciones ya existe",
+  "Failed to create OptionGroup": "Falló al crear el grupo de opciones",
+  "OptionGroup not found": "Grupo de opciones no encontrado",
+  "Failed to update OptionGroup": "Falló al actualizar el grupo de opciones",
+  "Option name already exists": "El nombre de la opción ya existe",
+  "Failed to create Option": "Falló al crear la opción",
+  "Option not found": "Opción no encontrada",
+  "OptionGroup not found": "Grupo de opciones no encontrado",
+  "Option name already exists in this group": "El nombre de la opción ya existe en este grupo",
+  "Failed to update Option": "Falló al actualizar la opción",
+  "Missing required fields: note or orderId": "Faltan campos requeridos: nota o orderId",
+  "Failed to create order manager configuration": "Falló al crear la configuración del gestor de pedidos",
+  "Order manager configuration not found": "Configuración del gestor de pedidos no encontrada",
+  "No configurations found for this corporation": "No se encontraron configuraciones para esta corporación",
+  "User not found or already assigned": "Usuario no encontrado o ya asignado",
+  "User not found or failed to remove": "Usuario no encontrado o falló al eliminar",
+  "Order manager configuration not found": "Configuración del gestor de pedidos no encontrada",
+  "Missing customer identifier": "Falta el identificador del cliente",
+  "User orders not found": "Pedidos del usuario no encontrados",
+  "Missing order identifier": "Falta el identificador del pedido",
+  "Order logs not found": "Registros de pedidos no encontrados",
+  "Invalid pagination parameters": "Parámetros de paginación inválidos",
+  "Order details not found": "Detalles del pedido no encontrados",
+  "Statistics not found": "Estadísticas no encontradas",
+  "Missing required data shippingMethod": "Faltan datos requeridos: shippingMethod",
+  "Shipping method not found": "Método de envío no encontrado",
+  "Address is required": "La dirección es requerida",
+  "Missing session parameter customerId": "Falta el parámetro de sesión customerId",
+  "Missing session parameter userId": "Falta el parámetro de sesión userId",
+  "Default sales channel not found": "Canal de ventas predeterminado no encontrado",
+  "Customer not found": "Cliente no encontrado",
+  "Missing shopping cart ID": "Falta el ID del carrito de compras",
+  "There was an error making the order": "Hubo un error al realizar el pedido",
+  "There was an error sending the PDF": "Hubo un error al enviar el PDF",
+  "No orders assigned for the user": "No hay pedidos asignados para el usuario",
+  "There aren't orders ready for deliver": "No hay pedidos listos para entregar",
+  "Missing required data (orderId)": "Faltan datos requeridos (orderId)",
+  "Failed to finalize the order delivery": "Falló al finalizar la entrega del pedido",
+  "Orders not found": "Pedidos no encontrados",
+  "Missing required data (note)": "Faltan datos requeridos (nota)",
+  "There was an error updating the order": "Hubo un error al actualizar el pedido",
+  "Corporation not found": "Corporación no encontrada",
+  "Payment method not found": "Método de pago no encontrado",
+  "Failed to update order payment status": "Falló al actualizar el estado de pago del pedido",
+  "Missing required info (orderId or status)": "Falta información requerida (orderId o status)",
+  "Failed to update order status": "Falló al actualizar el estado del pedido",
+  "Invalid status": "Estado inválido",
+  "Missing params": "Faltan parámetros",
+  "Payment method not found or failed to update": "Método de pago no encontrado o falló al actualizar",
+  "Payment method not found or failed to delete": "Método de pago no encontrado o falló al eliminar",
+  "Could not change payment method status": "No se pudo cambiar el estado del método de pago",
+  "Platform not found": "Plataforma no encontrada",
+  "Missing platform ID": "Falta el ID de la plataforma",
+  "Missing subdomain": "Falta el subdominio",
+  "Subdomain already exists": "El subdominio ya existe",
+  "No data to update or deactivate": "No hay datos para actualizar o desactivar",
+  "Failed to update platform": "Falló al actualizar la plataforma",
+  "Incorrect password": "Contraseña incorrecta",
+  "Failed to create Point of Sale configuration": "Falló al crear la configuración del punto de venta",
+  "Point of sale configuration not found": "Configuración del punto de venta no encontrada",
+  "Failed to delete point of sale configurations": "Falló al eliminar las configuraciones del punto de venta",
+  "Name, IP and port are required": "Nombre, IP y puerto son requeridos",
+  "Failed to create printer": "Falló al crear la impresora",
+  "No printers found": "No se encontraron impresoras",
+  "Printer not found": "Impresora no encontrada",
+  "No printers found for this corporation": "No se encontraron impresoras para esta corporación",
+  "Printer not found or failed to update": "Impresora no encontrada o falló al actualizar",
+  "Printer not found or failed to delete": "Impresora no encontrada o falló al eliminar",
+  "Printer not found or failed to print": "Impresora no encontrada o falló al imprimir",
+  "Missing required data (printerId)": "Faltan datos requeridos (printerId)",
+  "Missing required data (orderId)": "Faltan datos requeridos (orderId)",
+  "No shopping cart found for the user": "No se encontró el carrito de compras para el usuario",
+  "itemIds must be an array of item identifiers": "itemIds debe ser un arreglo de identificadores de artículos",
+  "No products removed from the cart": "No se eliminaron productos del carrito",
+  "No shopping cart updated": "No se actualizó el carrito de compras",
+  "No abandoned shopping carts deleted": "No se eliminaron carritos de compras abandonados",
+  "Missing required data (shoppingCartId)": "Faltan datos requeridos (shoppingCartId)",
+  "No abandoned shopping cart found": "No se encontró el carrito de compras abandonado",
+  "There was an error sending the reminder": "Hubo un error al enviar el recordatorio",
+  "Shopping cart not found or inactive": "Carrito de compras no encontrado o inactivo",
+  "Failed to update cart address": "Falló al actualizar la dirección del carrito",
+  "Missing required parameter (shoppingCartId)": "Falta el parámetro requerido (shoppingCartId)",
+  "Special closed day not found": "Día especial cerrado no encontrado",
+  "Invalid email or password": "Correo electrónico o contraseña inválidos",
+  "Error sending code": "Error al enviar el código",
+  "Missing data: req.body.email": "Faltan datos: req.body.email",
+  "Email not found": "Correo electrónico no encontrado",
+  "Error sending email": "Error al enviar el correo electrónico",
+  "Invalid code": "Código inválido",
+  "Error updating password": "Error al actualizar la contraseña",
+  "User already exists": "El usuario ya existe",
+  "Platform already exists": "La plataforma ya existe",
+  "Error generating password": "Error al generar la contraseña",
+  "There was an error creating the platform": "Hubo un error al crear la plataforma",
+  "Corporation legal name already exists": "El nombre legal de la corporación ya existe",
+  "There was an error creating the corporation": "Hubo un error al crear la corporación",
+  "Error creating user": "Error al crear el usuario",
+  "Internal Server Error": "Error interno del servidor",
+  "User not found": "Usuario no encontrado",
+  "A corporation owner can not be deleted": "No se puede eliminar al propietario de la corporación",
+  "Failed to delete user": "Falló al eliminar el usuario"
+};
+
 const SECRET = process.env.REACT_APP_JWT_SECRET;
 const parseDate = value => {
   // Convertir la cadena de fecha en un objeto de fecha
@@ -7714,11 +8173,56 @@ function removeLoginLS() {
   localStorage.removeItem(keyLoginData);
 }
 
+// TRADUCTOR
+function translateMessage(cadena) {
+  // Verificar si la entrada es un string
+  if (typeof cadena !== "string") {
+    return ""; // Si no es un string, devolver un string vacío
+  }
+
+  // Verificar si la cadena está en el listado de messages
+  if (messages.hasOwnProperty(cadena)) {
+    cadena = messages[cadena]; // Usamos la traducción al español
+  }
+
+  // Condiciones para decidir el tipo y el título
+  if (/missing|not|error|failed|bad|invalid/i.test(cadena)) {
+    return {
+      called: true,
+      title: "Error",
+      message: cadena,
+      type: "error"
+    };
+  } else if (/required|already/i.test(cadena)) {
+    return {
+      called: true,
+      title: "Aviso",
+      message: cadena,
+      type: "warning"
+    };
+  } else if (/successfully/i.test(cadena)) {
+    return {
+      called: true,
+      title: "Correcto",
+      message: cadena,
+      type: "success"
+    };
+  } else {
+    return {
+      called: true,
+      title: "Notificación",
+      message: cadena,
+      type: "normal"
+    };
+  }
+}
+
 var css_248z$a = ".state-label {\r\n    padding: 2px 10px;\r\n    font-size: 0.75rem;\r\n    font-weight: bold;\r\n    border-radius: 5px;\r\n    width: 125px;\r\n    text-align: center;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.state-pending {\r\n    color: var(--color-pending);\r\n    background-color: var(--color-pending-background);\r\n}\r\n\r\n\r\n.state-prepared {\r\n    color: var(--color-success);\r\n    background-color: var(--color-success-background);\r\n}\r\n\r\n.state-pending {\r\n    color: var(--color-pending);\r\n    background-color: var(--color-pending-background);\r\n}\r\n\r\n.state-canceled{\r\n    color: var(--color-error);\r\n    background-color: var(--color-error-background);\r\n}\r\n\r\n.state-process{\r\n    color: var(--color-process);\r\n    background-color: var(--color-process-background);\r\n}";
 styleInject(css_248z$a);
 
 const StateLabel = ({
-  state
+  state,
+  text = null
 }) => {
   /*const dictionary = [
     {pending: "Pendiente", value:"pending"},
@@ -7729,39 +8233,39 @@ const StateLabel = ({
       case "pending":
         return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-pending"
-        }, "Pendiente");
+        }, text || "Pendiente");
       case "prepared":
         return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-prepared"
-        }, "Preparado");
+        }, text || "Preparado");
       case "paid":
         return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-prepared"
-        }, "Pagado");
+        }, text || "Pagado");
       case "active":
         return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-prepared"
-        }, "Activo");
+        }, text || "Activo");
       case "delivered":
         return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-delivered"
-        }, "Entregado");
+        }, text || "Entregado");
       case "inPreparation":
         return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-process"
-        }, "En preparaci\xF3n");
+        }, text || "En preparación");
       case "inDelivery":
         return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-process"
-        }, "Enviando");
+        }, text || "Enviando");
       case "cancelled":
         return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-canceled"
-        }, "Cancelado");
+        }, text || "Cancelado");
       case "inactive":
         return /*#__PURE__*/React.createElement("div", {
           className: "state-label state-canceled"
-        }, "Inactivo");
+        }, text || "Inactivo");
       default:
         return /*#__PURE__*/React.createElement("div", null, "-");
     }
@@ -9305,4 +9809,4 @@ const Datatable = ({
   }));
 };
 
-export { Button, CardList, Checkbox, ClientDetails, Datatable, Input, InputImage, MAPS_API_KEY, MapLocation, NoImage, OrderInfo, OrderNotes, OrderProducts, OrderResume, OrderShoppingCart, OrderTimeline, PinPad, Select, StateLabel, TextEditor, Textarea, addIdKeyIfMissing, checkUserAgent, generateCode, getFullAddress, getRequiredKeys, getTodayDate, handleImage, parseDate, parseDateAndHourToISO, readLoginLS, removeLoginLS, saveLoginLS, sortArrayByCustomOrder, stylesheet };
+export { Button, CardList, Checkbox, ClientDetails, Datatable, Input, InputImage, MAPS_API_KEY, MapLocation, NoImage, OrderInfo, OrderNotes, OrderProducts, OrderResume, OrderShoppingCart, OrderTimeline, PinPad, Select, StateLabel, TextEditor, Textarea, addIdKeyIfMissing, checkUserAgent, generateCode, getFullAddress, getRequiredKeys, getTodayDate, handleImage, parseDate, parseDateAndHourToISO, readLoginLS, removeLoginLS, saveLoginLS, sortArrayByCustomOrder, stylesheet, translateMessage };
