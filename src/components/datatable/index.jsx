@@ -79,7 +79,7 @@ export const Datatable = ({
     }
     return dataUpdated;
   };*/
-  const handleSearch = (data) => {
+  /*const handleSearch = (data) => {
     console.log("Datatable > handleSearch > data, search ", data, search);
     let dataUpdated = data;
     if (search !== "") {
@@ -89,6 +89,24 @@ export const Datatable = ({
           item.name?.toLowerCase().includes(searchLower) ||
           item.number?.toString().toLowerCase().includes(searchLower) ||
           item.Customer?.fullname?.toLowerCase().includes(searchLower)
+      );
+    }
+    return dataUpdated;
+  };*/
+
+  const handleSearch = (data) => {
+    let dataUpdated = data;
+    if (search !== "") {
+      const searchLower = search.toLowerCase();
+
+      // Obtener las claves de customHeaders
+      const keys = Object.keys(customHeaders);
+
+      dataUpdated = data.filter((item) =>
+        keys.some((key) => {
+          const value = key.includes(".") ? key.split(".").reduce((acc, curr) => acc?.[curr], item) : item[key];
+          return value?.toString().toLowerCase().includes(searchLower);
+        })
       );
     }
     return dataUpdated;

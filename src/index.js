@@ -12,6 +12,8 @@ export * from "./components/noImage";
 export * from "./components/pinPad";
 export * from "./components/cardList";
 export * from "./components/inputImage";
+export * from "./components/loader";
+export * from "./components/switchText";
 // Order
 export * from "./components/order/clientDetails.jsx";
 export * from "./components/order/orderInfo.jsx";

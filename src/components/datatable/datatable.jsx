@@ -22,7 +22,7 @@ export const DatatableComponent = ({
             <tr>
               {checkColumn && (
                 <th className="text-align-center" style={{ width: "50px" }}>
-                  <input type="checkbox" className="custom-checkbox" onChange={(e) => handleSelectAllRow(e.target.checked)} />
+                  {/*<input type="checkbox" className="custom-checkbox" onChange={(e) => handleSelectAllRow(e.target.checked)} />*/}
                 </th>
               )}
               {data.length > 0

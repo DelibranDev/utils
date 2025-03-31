@@ -190,7 +190,7 @@ const customHeaders = {
 };
 
 const customData = {
-    status: (data) => (data === "PUBLISHED" ? <Switch defaultChecked /> : <Switch />),
+    status: (data) => (data === "PUBLISHED" ? <SwitchText defaultChecked /> : <SwitchText />),
 };
 ```
 
