@@ -1,6 +1,6 @@
 {
   "name": "@delibrandev/utils",
-  "version": "1.0.99",
+  "version": "1.0.108",
   "description": "A collection of delibran utils.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

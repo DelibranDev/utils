@@ -8189,12 +8189,12 @@ function translateMessage(cadena) {
   }
 
   // Condiciones para decidir el tipo y el título
-  if (/missing|not|error|failed|bad|invalid/i.test(cadena)) {
+  if (/successfully/i.test(cadena)) {
     return {
       called: true,
-      title: "Error",
+      title: "Correcto",
       message: cadena,
-      type: "error"
+      type: "success"
     };
   } else if (/required|already/i.test(cadena)) {
     return {
@@ -8203,12 +8203,12 @@ function translateMessage(cadena) {
       message: cadena,
       type: "warning"
     };
-  } else if (/successfully/i.test(cadena)) {
+  } else if (/missing|not|error|failed|bad|invalid/i.test(cadena)) {
     return {
       called: true,
-      title: "Correcto",
+      title: "Error",
       message: cadena,
-      type: "success"
+      type: "error"
     };
   } else {
     return {
@@ -8495,7 +8495,8 @@ const Input = ({
     onBlur: handleValidation,
     defaultValue: defaultValue,
     disabled: disabled,
-    onChange: e => onWritting(e.target.value)
+    onChange: e => onWritting(e.target.value),
+    autocomplete: "off"
   }), /*#__PURE__*/React.createElement("div", {
     className: classIcon + iconAction,
     onClick: handleIcon
@@ -9464,7 +9465,7 @@ const OrderShoppingCart = ({
     }, /*#__PURE__*/React.createElement("div", {
       className: "product-image background-image",
       style: {
-        backgroundImage: data?.Product.images?.[0] ? `url('${data.Product.images[0]}')` : "no"
+        backgroundImage: data && data.Product && data.Product.images.length > 0 && data?.Product.images?.[0] ? `url('${data.Product.images[0]}')` : "no"
       }
     }), /*#__PURE__*/React.createElement("div", {
       className: "product-cart-info"
@@ -9472,13 +9473,13 @@ const OrderShoppingCart = ({
       className: "product-details"
     }, /*#__PURE__*/React.createElement("div", {
       className: "product-name"
-    }, data.Product.name), /*#__PURE__*/React.createElement("div", {
+    }, data && data.Product && data.Product.name ? data.Product.name : ""), /*#__PURE__*/React.createElement("div", {
       className: "product-description"
-    }, data.Product.description)), /*#__PURE__*/React.createElement("div", {
+    }, data?.Product?.description || "")), /*#__PURE__*/React.createElement("div", {
       className: "product-details-bottom"
     }, /*#__PURE__*/React.createElement("div", {
       className: "product-name"
-    }, data.Product.price ? data.Product.price.toFixed(2) : "0.00", "\u20AC"), /*#__PURE__*/React.createElement("div", {
+    }, data?.Product?.price ? data.Product.price.toFixed(2) : "0.00", "\u20AC"), /*#__PURE__*/React.createElement("div", {
       className: "product-actions"
     }, /*#__PURE__*/React.createElement(CartActions, {
       data: data
@@ -9491,7 +9492,7 @@ const OrderShoppingCart = ({
   })) : null);
 };
 
-var css_248z = ".datatable{\r\n    height: fit-content;\r\n    width: 100%;\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 20px;\r\n    & .adminPanel{\r\n        width: auto;\r\n        flex-grow: 1;\r\n        align-self: stretch;\r\n        position: relative;\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n    }\r\n}\r\n\r\n\r\n.headerDatatable{\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.sectionsDatatable{\r\n    width: 100%;\r\n    justify-content: flex-start;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    cursor: pointer;\r\n    padding: 10px;\r\n    & div{\r\n        padding: 5px;\r\n    }\r\n}\r\n\r\n.selectedHorizontalMenu{\r\n  color: var(--color-primary);\r\n  font-weight: 700;\r\n  border-bottom: 2px var(--color-primary) solid;\r\n}\r\n\r\n.actionsDatatable{\r\n    display: flex;\r\n    width: 100%;\r\n    justify-content: end;\r\n    gap: 5px;\r\n    padding: 10px;\r\n}\r\n\r\n.pagination{\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 30px;\r\n}\r\n\r\n.paginationDropdown{\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n}\r\n\r\n.paginationText{\r\n    margin-top: 3px;\r\n}\r\n\r\n.paginationPages{\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n    padding-right: 5px;\r\n}\r\n\r\n.pageBtn{\r\n    padding: 4px 9px;\r\n    background-color: white;\r\n    border-radius: 5px;\r\n    margin-left: 3px; \r\n    cursor: pointer;\r\n}\r\n\r\n.pageBtnActive{\r\n    border: 1px #0057FF solid;\r\n}\r\n\r\n.selectMaxRows{\r\n    margin: 0px 10px;\r\n}\r\n\r\n\r\n.rowTableMobile {\r\n    padding: 5px 10px;\r\n    line-height: 1.8;\r\n}\r\n\r\n.table-image{\r\n    width: 80px;\r\n    height: 50px;\r\n}\r\n\r\n.desktopDatatable {\r\n    display: flex;\r\n    align-items: center;\r\n    flex-grow: 1;\r\n    align-self: stretch;\r\n    height: 100%; /* Ensures the div fills the available height */\r\n  }\r\n  \r\n  .table-container {\r\n    display: flex;\r\n    height: 100%; /* Ensures the container takes up the full height of the parent */\r\n  }\r\n  \r\n  table {\r\n    color: rgba(32, 32, 32, 1);\r\n    width: 100%;\r\n    height: fit-content;\r\n    margin: 10px;\r\n    border-radius: 10px;\r\n    border: 1px #ebebeb solid;\r\n    border-collapse: unset!important;\r\n  }\r\n\r\n  thead{\r\n    display: flex;\r\n    height: 40px;\r\n    align-items: center;\r\n    border-bottom: 1px #ebebeb solid!important;\r\n  }\r\n\r\n  tbody{\r\n    display: block;\r\n    height: 100%; /* Ensures tbody takes up the full height of the table */\r\n  }\r\n\r\n  tbody td{\r\n    cursor: pointer;\r\n    height: 42px;\r\n  }\r\n  tbody td.checkboxtd {\r\n    cursor: default;\r\n}\r\n  \r\n  thead th, tbody td {\r\n    padding: 5px;\r\n    text-align: left;\r\n  }\r\n  \r\n  \r\n  tbody tr:nth-child(odd) {\r\n    background-color: #F5F5F5;\r\n  }\r\n  \r\n  thead tr, tbody tr {\r\n    display: table; /* Ensures tr display as table-row within tbody */\r\n    width: 100%;\r\n    table-layout: fixed; /* Ensures each row respects the table's fixed layout */\r\n  }\r\n\r\n  .rowSelected{\r\n    background-color: #e8e8e8!important;\r\n  }\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n  .headerDatatable{\r\n        flex-wrap: wrap;\r\n  }\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  \r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n\r\n}";
+var css_248z = ".datatable{\r\n    height: fit-content;\r\n    width: 100%;\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 20px;\r\n    & .adminPanel{\r\n        width: auto;\r\n        flex-grow: 1;\r\n        align-self: stretch;\r\n        position: relative;\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n    }\r\n}\r\n\r\n\r\n.headerDatatable{\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.sectionsDatatable{\r\n    width: 100%;\r\n    justify-content: flex-start;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    cursor: pointer;\r\n    padding: 10px;\r\n    & div{\r\n        padding: 5px;\r\n    }\r\n}\r\n\r\n.selectedHorizontalMenu{\r\n  color: var(--color-primary);\r\n  font-weight: 700;\r\n  border-bottom: 2px var(--color-primary) solid;\r\n}\r\n\r\n.actionsDatatable{\r\n    display: flex;\r\n    width: 100%;\r\n    justify-content: end;\r\n    gap: 5px;\r\n    padding: 10px;\r\n}\r\n\r\n.pagination{\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 30px;\r\n}\r\n\r\n.paginationDropdown{\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n}\r\n\r\n.paginationText{\r\n    margin-top: 3px;\r\n}\r\n\r\n.paginationPages{\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n    padding-right: 5px;\r\n}\r\n\r\n.pageBtn{\r\n    padding: 4px 9px;\r\n    background-color: white;\r\n    border-radius: 5px;\r\n    margin-left: 3px; \r\n    cursor: pointer;\r\n}\r\n\r\n.pageBtnActive{\r\n    border: 1px #0057FF solid;\r\n}\r\n\r\n.selectMaxRows{\r\n    margin: 0px 10px;\r\n}\r\n\r\n\r\n.rowTableMobile {\r\n    padding: 5px 10px;\r\n    line-height: 1.8;\r\n}\r\n\r\n.table-image{\r\n    width: 80px;\r\n    height: 50px;\r\n}\r\n\r\n.desktopDatatable {\r\n    display: flex;\r\n    align-items: center;\r\n    flex-grow: 1;\r\n    align-self: stretch;\r\n    height: 100%; /* Ensures the div fills the available height */\r\n  }\r\n  \r\n  .table-container {\r\n    display: flex;\r\n    height: 100%; /* Ensures the container takes up the full height of the parent */\r\n  }\r\n  \r\n  table {\r\n    color: rgba(32, 32, 32, 1);\r\n    width: 100%;\r\n    height: fit-content;\r\n    margin: 10px;\r\n    border-radius: 10px;\r\n    border: 1px #ebebeb solid;\r\n    border-collapse: unset!important;\r\n  }\r\n\r\n  thead{\r\n    display: flex;\r\n    height: 40px;\r\n    align-items: center;\r\n    border-bottom: 1px #ebebeb solid!important;\r\n  }\r\n\r\n  tbody{\r\n    display: block;\r\n    height: 100%; /* Ensures tbody takes up the full height of the table */\r\n  }\r\n\r\n  tbody td{\r\n    cursor: pointer;\r\n    height: 42px;\r\n  }\r\n  tbody td.checkboxtd {\r\n    cursor: default;\r\n}\r\n  \r\n  thead th, tbody td {\r\n    padding: 5px;\r\n    text-align: left;\r\n  }\r\n  \r\n  \r\n  tbody tr:nth-child(odd) {\r\n    background-color: #F5F5F5;\r\n  }\r\n  \r\n  thead tr, tbody tr {\r\n    display: table; /* Ensures tr display as table-row within tbody */\r\n    width: 100%;\r\n    table-layout: fixed; /* Ensures each row respects the table's fixed layout */\r\n  }\r\n\r\n  .rowSelected{\r\n    background-color: #e8e8e8!important;\r\n  }\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n  .headerDatatable{\r\n        flex-wrap: wrap;\r\n  }\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  .sectionsDatatable{\r\n    overflow-x: auto;\r\n    & div{\r\n      white-space: nowrap;\r\n    }\r\n  }\r\n  .datatable{\r\n    margin-left: -10px;\r\n    margin-right: -10px;\r\n    width: calc(100% + 20px);\r\n    & .adminPanel{\r\n      padding: 10px;\r\n    }\r\n  }\r\n\r\n  .desktopDatatable{\r\n    margin-left: -10px;\r\n    margin-right: -10px;\r\n  }\r\n\r\n  .table-container {\r\n    overflow-x: auto;\r\n  }\r\n\r\n  table {\r\n    min-width: 500px;\r\n    width: max-content;\r\n    margin: 10px 0;\r\n  }\r\n\r\n  thead {\r\n    height: 30px;\r\n  }\r\n\r\n  thead, tbody {\r\n    display: table;\r\n    width: 100%;\r\n    table-layout: fixed;\r\n  }\r\n\r\n  td, th {\r\n    max-width: 100px;\r\n    width: auto;              /* Se adapta al contenido */\r\n    white-space: nowrap;      /* No permite saltos de línea */\r\n    text-overflow: ellipsis;  /* Muestra los puntos suspensivos si se desborda */\r\n    overflow: hidden;         /* Oculta el contenido que se pasa */\r\n  }\r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n\r\n}";
 styleInject(css_248z);
 
 const Pagination = ({
@@ -9790,7 +9791,7 @@ const Datatable = ({
 
       // Obtener las claves de customHeaders
       const keys = Object.keys(customHeaders);
-      dataUpdated = data.filter(item => keys.some(key => {
+      dataUpdated = data && data.length > 0 && data.filter(item => keys.some(key => {
         const value = key.includes(".") ? key.split(".").reduce((acc, curr) => acc?.[curr], item) : item[key];
         return value?.toString().toLowerCase().includes(searchLower);
       }));
@@ -9816,18 +9817,26 @@ const Datatable = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [configuration]);
   React.useEffect(() => {
-    const maxRowsInteger = parseInt(configuration.maxRows);
-    let dataUpdated = handleSearch(data);
-    dataUpdated && updateDatatableConfiguration({
-      ...configuration,
-      pages: Array.from(Array(parseInt(data.length / maxRowsInteger) + 1).keys())
-    });
-    dataUpdated && setRows(data?.filter((f, index) => index > configuration.indexStart && index < configuration.indexStart + maxRowsInteger));
+    if (data && data.length > 0) {
+      const maxRowsInteger = parseInt(configuration.maxRows);
+      let dataUpdated = handleSearch(data);
+      dataUpdated && updateDatatableConfiguration({
+        ...configuration,
+        pages: Array.from(Array(parseInt(data.length / maxRowsInteger) + 1).keys())
+      });
+      dataUpdated && setRows(data?.filter((f, index) => index > configuration.indexStart && index < configuration.indexStart + maxRowsInteger));
+    } else {
+      setRows([]);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
   React.useEffect(() => {
-    let dataUpdated = handleSearch(data);
-    setRows(dataUpdated);
+    if (data && data.length > 0) {
+      let dataUpdated = handleSearch(data);
+      setRows(dataUpdated);
+    } else {
+      setRows([]);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
   return /*#__PURE__*/React.createElement("div", {

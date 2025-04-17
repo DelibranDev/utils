@@ -172,7 +172,6 @@
   .rowSelected{
     background-color: #e8e8e8!important;
   }
-
 /****** MEDIA QUERIES *******/
 
 
@@ -192,7 +191,53 @@
 
 /* 750px or less */
 @media (max-width: 750px) {
-  
+  .sectionsDatatable{
+    overflow-x: auto;
+    & div{
+      white-space: nowrap;
+    }
+  }
+  .datatable{
+    margin-left: -10px;
+    margin-right: -10px;
+    width: calc(100% + 20px);
+    & .adminPanel{
+      padding: 10px;
+    }
+  }
+
+  .desktopDatatable{
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 500px;
+    width: max-content;
+    margin: 10px 0;
+  }
+
+  thead {
+    height: 30px;
+  }
+
+  thead, tbody {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  td, th {
+    max-width: 100px;
+    width: auto;              /* Se adapta al contenido */
+    white-space: nowrap;      /* No permite saltos de línea */
+    text-overflow: ellipsis;  /* Muestra los puntos suspensivos si se desborda */
+    overflow: hidden;         /* Oculta el contenido que se pasa */
+  }
   
 }
 

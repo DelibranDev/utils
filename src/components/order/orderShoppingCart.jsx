@@ -7,15 +7,18 @@ export const OrderShoppingCart = ({ data, CartActions }) => {
         <div className="product-cart">
           <div
             className="product-image background-image"
-            style={{ backgroundImage: data?.Product.images?.[0] ? `url('${data.Product.images[0]}')` : "no" }}
+            style={{
+              backgroundImage:
+                data && data.Product && data.Product.images.length > 0 && data?.Product.images?.[0] ? `url('${data.Product.images[0]}')` : "no",
+            }}
           ></div>
           <div className="product-cart-info">
             <div className="product-details">
-              <div className="product-name">{data.Product.name}</div>
-              <div className="product-description">{data.Product.description}</div>
+              <div className="product-name">{data && data.Product && data.Product.name ? data.Product.name : ""}</div>
+              <div className="product-description">{data?.Product?.description || ""}</div>
             </div>
             <div className="product-details-bottom">
-              <div className="product-name">{data.Product.price ? data.Product.price.toFixed(2) : "0.00"}€</div>
+              <div className="product-name">{data?.Product?.price ? data.Product.price.toFixed(2) : "0.00"}€</div>
               <div className="product-actions">
                 <CartActions data={data} />
               </div>

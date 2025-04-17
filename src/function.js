@@ -213,12 +213,12 @@ export function translateMessage(cadena) {
   }
 
   // Condiciones para decidir el tipo y el título
-  if (/missing|not|error|failed|bad|invalid/i.test(cadena)) {
-    return { called: true, title: "Error", message: cadena, type: "error" };
+  if (/successfully/i.test(cadena)) {
+    return { called: true, title: "Correcto", message: cadena, type: "success" };
   } else if (/required|already/i.test(cadena)) {
     return { called: true, title: "Aviso", message: cadena, type: "warning" };
-  } else if (/successfully/i.test(cadena)) {
-    return { called: true, title: "Correcto", message: cadena, type: "success" };
+  } else if (/missing|not|error|failed|bad|invalid/i.test(cadena)) {
+    return { called: true, title: "Error", message: cadena, type: "error" };
   } else {
     return { called: true, title: "Notificación", message: cadena, type: "normal" };
   }

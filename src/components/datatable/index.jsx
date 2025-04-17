@@ -102,12 +102,15 @@ export const Datatable = ({
       // Obtener las claves de customHeaders
       const keys = Object.keys(customHeaders);
 
-      dataUpdated = data.filter((item) =>
-        keys.some((key) => {
-          const value = key.includes(".") ? key.split(".").reduce((acc, curr) => acc?.[curr], item) : item[key];
-          return value?.toString().toLowerCase().includes(searchLower);
-        })
-      );
+      dataUpdated =
+        data &&
+        data.length > 0 &&
+        data.filter((item) =>
+          keys.some((key) => {
+            const value = key.includes(".") ? key.split(".").reduce((acc, curr) => acc?.[curr], item) : item[key];
+            return value?.toString().toLowerCase().includes(searchLower);
+          })
+        );
     }
     return dataUpdated;
   };
@@ -132,16 +135,24 @@ export const Datatable = ({
   }, [configuration]);
 
   useEffect(() => {
-    const maxRowsInteger = parseInt(configuration.maxRows);
-    let dataUpdated = handleSearch(data);
-    dataUpdated && updateDatatableConfiguration({ ...configuration, pages: Array.from(Array(parseInt(data.length / maxRowsInteger) + 1).keys()) });
-    dataUpdated && setRows(data?.filter((f, index) => index > configuration.indexStart && index < configuration.indexStart + maxRowsInteger));
+    if (data && data.length > 0) {
+      const maxRowsInteger = parseInt(configuration.maxRows);
+      let dataUpdated = handleSearch(data);
+      dataUpdated && updateDatatableConfiguration({ ...configuration, pages: Array.from(Array(parseInt(data.length / maxRowsInteger) + 1).keys()) });
+      dataUpdated && setRows(data?.filter((f, index) => index > configuration.indexStart && index < configuration.indexStart + maxRowsInteger));
+    } else {
+      setRows([]);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   useEffect(() => {
-    let dataUpdated = handleSearch(data);
-    setRows(dataUpdated);
+    if (data && data.length > 0) {
+      let dataUpdated = handleSearch(data);
+      setRows(dataUpdated);
+    } else {
+      setRows([]);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
