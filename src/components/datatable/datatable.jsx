@@ -11,6 +11,7 @@ export const DatatableComponent = ({
   rowCallback = () => {},
   handleSelectRow = () => {},
   handleSelectAllRow = () => {},
+  visibleColumns,
 }) => {
   console.log("DatatableComponent > data: ", data);
   console.log("DatatableComponent > rows: ", rows);
@@ -27,7 +28,7 @@ export const DatatableComponent = ({
               )}
               {data.length > 0
                 ? Object.keys(sortArrayByCustomOrder(customHeaders, data[0]))
-                    .filter((field) => field in customHeaders)
+                    .filter((field) => field in customHeaders && visibleColumns.includes(field))
                     .map((field, index) => (
                       <th key={index} className="text-align-center">
                         {customHeaders[field]}
@@ -54,7 +55,7 @@ export const DatatableComponent = ({
                   </td>
                 )}
                 {Object.keys(sortArrayByCustomOrder(customHeaders, d))
-                  .filter((field) => field in customHeaders)
+                  .filter((field) => field in customHeaders && visibleColumns.includes(field))
                   .map((field, index) => (
                     <td
                       key={index}

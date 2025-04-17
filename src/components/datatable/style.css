@@ -172,6 +172,25 @@
   .rowSelected{
     background-color: #e8e8e8!important;
   }
+
+  .toggleColumnPanel{
+    width: auto;
+    border: 1px var(--color-terciary-2) solid;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 40px;
+    right: 25px;
+    height: auto;
+    padding: 5px 15px 5px 5px;
+    background-color: var(--color-secondary);
+    & .toggleColumnPanelItem{
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+  }
+
+
 /****** MEDIA QUERIES *******/
 
 
@@ -195,6 +214,9 @@
     overflow-x: auto;
     & div{
       white-space: nowrap;
+    }
+    & .selectedHorizontalMenu{
+      border-bottom: 0px;
     }
   }
   .datatable{

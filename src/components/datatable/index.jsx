@@ -38,6 +38,8 @@ export const Datatable = ({
   const [activeSection, setActiveSection] = useState(0);
   const [configuration, updateConfiguration] = useState({ maxRows: 12, indexStart: 0, pages: [0], filterBy: { section: "", filter: [] } });
   const [search, setSearch] = useState("");
+  const [visibleColumns, setVisibleColumns] = useState([]);
+  const [toggleColumnPanel, showToggleColumnPanel] = useState(false);
 
   const handleMaxRows = (value) => {
     updateDatatableConfiguration({ ...configuration, maxRows: value });
@@ -156,6 +158,23 @@ export const Datatable = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
+  const handleVisibleColumns = (column) => {
+    setVisibleColumns((prevColumns) => {
+      if (prevColumns.includes(column)) {
+        // Si ya existe, la quitamos
+        return prevColumns.filter((col) => col !== column);
+      } else {
+        // Si no existe, la añadimos
+        return [...prevColumns, column];
+      }
+    });
+  };
+
+  useEffect(() => {
+    setVisibleColumns(Object.entries(customHeaders).map(([clave, valor]) => clave));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="datatable">
       {title !== "" && (
@@ -176,6 +195,11 @@ export const Datatable = ({
             cloneCallback={cloneCallback}
             deleteCallback={deleteCallback}
             setSearch={setSearch}
+            customHeaders={customHeaders}
+            handleVisibleColumns={handleVisibleColumns}
+            visibleColumns={visibleColumns}
+            toggleColumnPanel={toggleColumnPanel}
+            showToggleColumnPanel={showToggleColumnPanel}
           />
         </div>
         <DatatableComponent
@@ -187,6 +211,7 @@ export const Datatable = ({
           customData={customData}
           rowCallback={rowCallback}
           handleSelectRow={handleSelectRow}
+          visibleColumns={visibleColumns}
         />
       </div>
       {<Pagination configuration={configuration} maxRowsAvailable={false} handleMaxRows={handleMaxRows} handlePage={handlePage} />}

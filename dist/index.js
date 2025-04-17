@@ -9492,7 +9492,7 @@ const OrderShoppingCart = ({
   })) : null);
 };
 
-var css_248z = ".datatable{\r\n    height: fit-content;\r\n    width: 100%;\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 20px;\r\n    & .adminPanel{\r\n        width: auto;\r\n        flex-grow: 1;\r\n        align-self: stretch;\r\n        position: relative;\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n    }\r\n}\r\n\r\n\r\n.headerDatatable{\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.sectionsDatatable{\r\n    width: 100%;\r\n    justify-content: flex-start;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    cursor: pointer;\r\n    padding: 10px;\r\n    & div{\r\n        padding: 5px;\r\n    }\r\n}\r\n\r\n.selectedHorizontalMenu{\r\n  color: var(--color-primary);\r\n  font-weight: 700;\r\n  border-bottom: 2px var(--color-primary) solid;\r\n}\r\n\r\n.actionsDatatable{\r\n    display: flex;\r\n    width: 100%;\r\n    justify-content: end;\r\n    gap: 5px;\r\n    padding: 10px;\r\n}\r\n\r\n.pagination{\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 30px;\r\n}\r\n\r\n.paginationDropdown{\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n}\r\n\r\n.paginationText{\r\n    margin-top: 3px;\r\n}\r\n\r\n.paginationPages{\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n    padding-right: 5px;\r\n}\r\n\r\n.pageBtn{\r\n    padding: 4px 9px;\r\n    background-color: white;\r\n    border-radius: 5px;\r\n    margin-left: 3px; \r\n    cursor: pointer;\r\n}\r\n\r\n.pageBtnActive{\r\n    border: 1px #0057FF solid;\r\n}\r\n\r\n.selectMaxRows{\r\n    margin: 0px 10px;\r\n}\r\n\r\n\r\n.rowTableMobile {\r\n    padding: 5px 10px;\r\n    line-height: 1.8;\r\n}\r\n\r\n.table-image{\r\n    width: 80px;\r\n    height: 50px;\r\n}\r\n\r\n.desktopDatatable {\r\n    display: flex;\r\n    align-items: center;\r\n    flex-grow: 1;\r\n    align-self: stretch;\r\n    height: 100%; /* Ensures the div fills the available height */\r\n  }\r\n  \r\n  .table-container {\r\n    display: flex;\r\n    height: 100%; /* Ensures the container takes up the full height of the parent */\r\n  }\r\n  \r\n  table {\r\n    color: rgba(32, 32, 32, 1);\r\n    width: 100%;\r\n    height: fit-content;\r\n    margin: 10px;\r\n    border-radius: 10px;\r\n    border: 1px #ebebeb solid;\r\n    border-collapse: unset!important;\r\n  }\r\n\r\n  thead{\r\n    display: flex;\r\n    height: 40px;\r\n    align-items: center;\r\n    border-bottom: 1px #ebebeb solid!important;\r\n  }\r\n\r\n  tbody{\r\n    display: block;\r\n    height: 100%; /* Ensures tbody takes up the full height of the table */\r\n  }\r\n\r\n  tbody td{\r\n    cursor: pointer;\r\n    height: 42px;\r\n  }\r\n  tbody td.checkboxtd {\r\n    cursor: default;\r\n}\r\n  \r\n  thead th, tbody td {\r\n    padding: 5px;\r\n    text-align: left;\r\n  }\r\n  \r\n  \r\n  tbody tr:nth-child(odd) {\r\n    background-color: #F5F5F5;\r\n  }\r\n  \r\n  thead tr, tbody tr {\r\n    display: table; /* Ensures tr display as table-row within tbody */\r\n    width: 100%;\r\n    table-layout: fixed; /* Ensures each row respects the table's fixed layout */\r\n  }\r\n\r\n  .rowSelected{\r\n    background-color: #e8e8e8!important;\r\n  }\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n  .headerDatatable{\r\n        flex-wrap: wrap;\r\n  }\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  .sectionsDatatable{\r\n    overflow-x: auto;\r\n    & div{\r\n      white-space: nowrap;\r\n    }\r\n  }\r\n  .datatable{\r\n    margin-left: -10px;\r\n    margin-right: -10px;\r\n    width: calc(100% + 20px);\r\n    & .adminPanel{\r\n      padding: 10px;\r\n    }\r\n  }\r\n\r\n  .desktopDatatable{\r\n    margin-left: -10px;\r\n    margin-right: -10px;\r\n  }\r\n\r\n  .table-container {\r\n    overflow-x: auto;\r\n  }\r\n\r\n  table {\r\n    min-width: 500px;\r\n    width: max-content;\r\n    margin: 10px 0;\r\n  }\r\n\r\n  thead {\r\n    height: 30px;\r\n  }\r\n\r\n  thead, tbody {\r\n    display: table;\r\n    width: 100%;\r\n    table-layout: fixed;\r\n  }\r\n\r\n  td, th {\r\n    max-width: 100px;\r\n    width: auto;              /* Se adapta al contenido */\r\n    white-space: nowrap;      /* No permite saltos de línea */\r\n    text-overflow: ellipsis;  /* Muestra los puntos suspensivos si se desborda */\r\n    overflow: hidden;         /* Oculta el contenido que se pasa */\r\n  }\r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n\r\n}";
+var css_248z = ".datatable{\r\n    height: fit-content;\r\n    width: 100%;\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 20px;\r\n    & .adminPanel{\r\n        width: auto;\r\n        flex-grow: 1;\r\n        align-self: stretch;\r\n        position: relative;\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n    }\r\n}\r\n\r\n\r\n.headerDatatable{\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.sectionsDatatable{\r\n    width: 100%;\r\n    justify-content: flex-start;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 10px;\r\n    cursor: pointer;\r\n    padding: 10px;\r\n    & div{\r\n        padding: 5px;\r\n    }\r\n}\r\n\r\n.selectedHorizontalMenu{\r\n  color: var(--color-primary);\r\n  font-weight: 700;\r\n  border-bottom: 2px var(--color-primary) solid;\r\n}\r\n\r\n.actionsDatatable{\r\n    display: flex;\r\n    width: 100%;\r\n    justify-content: end;\r\n    gap: 5px;\r\n    padding: 10px;\r\n}\r\n\r\n.pagination{\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    height: 30px;\r\n}\r\n\r\n.paginationDropdown{\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n}\r\n\r\n.paginationText{\r\n    margin-top: 3px;\r\n}\r\n\r\n.paginationPages{\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    width: 100%;\r\n    gap: 10px;\r\n    align-items: center;\r\n    padding-right: 5px;\r\n}\r\n\r\n.pageBtn{\r\n    padding: 4px 9px;\r\n    background-color: white;\r\n    border-radius: 5px;\r\n    margin-left: 3px; \r\n    cursor: pointer;\r\n}\r\n\r\n.pageBtnActive{\r\n    border: 1px #0057FF solid;\r\n}\r\n\r\n.selectMaxRows{\r\n    margin: 0px 10px;\r\n}\r\n\r\n\r\n.rowTableMobile {\r\n    padding: 5px 10px;\r\n    line-height: 1.8;\r\n}\r\n\r\n.table-image{\r\n    width: 80px;\r\n    height: 50px;\r\n}\r\n\r\n.desktopDatatable {\r\n    display: flex;\r\n    align-items: center;\r\n    flex-grow: 1;\r\n    align-self: stretch;\r\n    height: 100%; /* Ensures the div fills the available height */\r\n  }\r\n  \r\n  .table-container {\r\n    display: flex;\r\n    height: 100%; /* Ensures the container takes up the full height of the parent */\r\n  }\r\n  \r\n  table {\r\n    color: rgba(32, 32, 32, 1);\r\n    width: 100%;\r\n    height: fit-content;\r\n    margin: 10px;\r\n    border-radius: 10px;\r\n    border: 1px #ebebeb solid;\r\n    border-collapse: unset!important;\r\n  }\r\n\r\n  thead{\r\n    display: flex;\r\n    height: 40px;\r\n    align-items: center;\r\n    border-bottom: 1px #ebebeb solid!important;\r\n  }\r\n\r\n  tbody{\r\n    display: block;\r\n    height: 100%; /* Ensures tbody takes up the full height of the table */\r\n  }\r\n\r\n  tbody td{\r\n    cursor: pointer;\r\n    height: 42px;\r\n  }\r\n  tbody td.checkboxtd {\r\n    cursor: default;\r\n}\r\n  \r\n  thead th, tbody td {\r\n    padding: 5px;\r\n    text-align: left;\r\n  }\r\n  \r\n  \r\n  tbody tr:nth-child(odd) {\r\n    background-color: #F5F5F5;\r\n  }\r\n  \r\n  thead tr, tbody tr {\r\n    display: table; /* Ensures tr display as table-row within tbody */\r\n    width: 100%;\r\n    table-layout: fixed; /* Ensures each row respects the table's fixed layout */\r\n  }\r\n\r\n  .rowSelected{\r\n    background-color: #e8e8e8!important;\r\n  }\r\n\r\n  .toggleColumnPanel{\r\n    width: auto;\r\n    border: 1px var(--color-terciary-2) solid;\r\n    border-radius: 5px;\r\n    position: absolute;\r\n    margin-top: 40px;\r\n    right: 25px;\r\n    height: auto;\r\n    padding: 5px 15px 5px 5px;\r\n    background-color: var(--color-secondary);\r\n    & .toggleColumnPanelItem{\r\n      display: flex;\r\n      gap: 5px;\r\n      align-items: center;\r\n    }\r\n  }\r\n\r\n\r\n/****** MEDIA QUERIES *******/\r\n\r\n\r\n\r\n/* 1300px or less */\r\n@media (max-width: 1300px) {\r\n  .headerDatatable{\r\n        flex-wrap: wrap;\r\n  }\r\n}\r\n\r\n/* 992px or less */\r\n@media (max-width: 992px) {\r\n\r\n  \r\n}\r\n\r\n/* 750px or less */\r\n@media (max-width: 750px) {\r\n  .sectionsDatatable{\r\n    overflow-x: auto;\r\n    & div{\r\n      white-space: nowrap;\r\n    }\r\n    & .selectedHorizontalMenu{\r\n      border-bottom: 0px;\r\n    }\r\n  }\r\n  .datatable{\r\n    margin-left: -10px;\r\n    margin-right: -10px;\r\n    width: calc(100% + 20px);\r\n    & .adminPanel{\r\n      padding: 10px;\r\n    }\r\n  }\r\n\r\n  .desktopDatatable{\r\n    margin-left: -10px;\r\n    margin-right: -10px;\r\n  }\r\n\r\n  .table-container {\r\n    overflow-x: auto;\r\n  }\r\n\r\n  table {\r\n    min-width: 500px;\r\n    width: max-content;\r\n    margin: 10px 0;\r\n  }\r\n\r\n  thead {\r\n    height: 30px;\r\n  }\r\n\r\n  thead, tbody {\r\n    display: table;\r\n    width: 100%;\r\n    table-layout: fixed;\r\n  }\r\n\r\n  td, th {\r\n    max-width: 100px;\r\n    width: auto;              /* Se adapta al contenido */\r\n    white-space: nowrap;      /* No permite saltos de línea */\r\n    text-overflow: ellipsis;  /* Muestra los puntos suspensivos si se desborda */\r\n    overflow: hidden;         /* Oculta el contenido que se pasa */\r\n  }\r\n  \r\n}\r\n\r\n/* 600px or less */\r\n@media (max-width: 600px) {\r\n\r\n}";
 styleInject(css_248z);
 
 const Pagination = ({
@@ -9537,7 +9537,8 @@ const DatatableComponent = ({
   customData = {},
   rowCallback = () => {},
   handleSelectRow = () => {},
-  handleSelectAllRow = () => {}
+  handleSelectAllRow = () => {},
+  visibleColumns
 }) => {
   console.log("DatatableComponent > data: ", data);
   console.log("DatatableComponent > rows: ", rows);
@@ -9552,7 +9553,7 @@ const DatatableComponent = ({
     style: {
       width: "50px"
     }
-  }), data.length > 0 ? Object.keys(sortArrayByCustomOrder(customHeaders, data[0])).filter(field => field in customHeaders).map((field, index) => /*#__PURE__*/React.createElement("th", {
+  }), data.length > 0 ? Object.keys(sortArrayByCustomOrder(customHeaders, data[0])).filter(field => field in customHeaders && visibleColumns.includes(field)).map((field, index) => /*#__PURE__*/React.createElement("th", {
     key: index,
     className: "text-align-center"
   }, customHeaders[field])) : Object.values(customHeaders)?.map((value, index) => /*#__PURE__*/React.createElement("th", {
@@ -9573,7 +9574,7 @@ const DatatableComponent = ({
     className: "custom-checkbox",
     onChange: e => handleSelectRow(d.id, e.target.checked),
     checked: selectedRows.includes(d.id)
-  })), Object.keys(sortArrayByCustomOrder(customHeaders, d)).filter(field => field in customHeaders).map((field, index) => /*#__PURE__*/React.createElement("td", {
+  })), Object.keys(sortArrayByCustomOrder(customHeaders, d)).filter(field => field in customHeaders && visibleColumns.includes(field)).map((field, index) => /*#__PURE__*/React.createElement("td", {
     key: index,
     className: "text-align-center",
     onClick: typeof d[field] === "boolean" || d[field] === "PUBLISHED" || d[field] === "DRAFT" ? null : () => rowCallback(d)
@@ -9600,6 +9601,11 @@ function HiOutlineSearch (props) {
   return GenIcon({"attr":{"fill":"none","viewBox":"0 0 24 24","strokeWidth":"2","stroke":"currentColor","aria-hidden":"true"},"child":[{"tag":"path","attr":{"strokeLinecap":"round","strokeLinejoin":"round","d":"M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"},"child":[]}]})(props);
 }
 
+// THIS FILE IS AUTO GENERATED
+function PiColumnsPlusLeftLight (props) {
+  return GenIcon({"attr":{"viewBox":"0 0 256 256","fill":"currentColor"},"child":[{"tag":"path","attr":{"d":"M128,34H104A14,14,0,0,0,90,48V208a14,14,0,0,0,14,14h24a14,14,0,0,0,14-14V48A14,14,0,0,0,128,34Zm2,174a2,2,0,0,1-2,2H104a2,2,0,0,1-2-2V48a2,2,0,0,1,2-2h24a2,2,0,0,1,2,2ZM200,34H176a14,14,0,0,0-14,14V208a14,14,0,0,0,14,14h24a14,14,0,0,0,14-14V48A14,14,0,0,0,200,34Zm2,174a2,2,0,0,1-2,2H176a2,2,0,0,1-2-2V48a2,2,0,0,1,2-2h24a2,2,0,0,1,2,2ZM70,128a6,6,0,0,1-6,6H46v18a6,6,0,0,1-12,0V134H16a6,6,0,0,1,0-12H34V104a6,6,0,0,1,12,0v18H64A6,6,0,0,1,70,128Z"},"child":[]}]})(props);
+}
+
 const Actions = ({
   checkColumn = false,
   activeSection = "",
@@ -9608,8 +9614,14 @@ const Actions = ({
   selectedRows = [],
   cloneCallback = () => {},
   deleteCallback = () => {},
-  setSearch
+  setSearch,
+  customHeaders,
+  handleVisibleColumns,
+  visibleColumns,
+  toggleColumnPanel,
+  showToggleColumnPanel
 }) => {
+  console.log(customHeaders);
   const actions = [{
     id: "search",
     text: "Buscar",
@@ -9650,6 +9662,29 @@ const Actions = ({
     callback: handleCheckColumn,
     customClass: "customButtonColor2"
   }];
+  const ToggleColumn = () => {
+    const handleToggleColumnPanel = () => {
+      showToggleColumnPanel(!toggleColumnPanel);
+    };
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        cursor: "pointer"
+      },
+      onClick: handleToggleColumnPanel
+    }, /*#__PURE__*/React.createElement(PiColumnsPlusLeftLight, {
+      size: "2rem"
+    })), toggleColumnPanel && /*#__PURE__*/React.createElement("div", {
+      className: "toggleColumnPanel"
+    }, Object.entries(customHeaders).map(([clave, valor]) => /*#__PURE__*/React.createElement("div", {
+      key: clave,
+      className: "toggleColumnPanelItem"
+    }, /*#__PURE__*/React.createElement("input", {
+      type: "checkbox",
+      className: "custom-checkbox",
+      onChange: () => handleVisibleColumns(clave),
+      checked: visibleColumns.includes(clave)
+    }), `${valor}`))));
+  };
   const handleSearch = e => {
     setSearch(e);
   };
@@ -9672,7 +9707,13 @@ const Actions = ({
     text: a.text,
     icon: a.icon,
     action: a.callback
-  })), availableActions().some(obj => obj.id === "search") && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Input, {
+  })), availableActions().some(obj => obj.id === "search") && /*#__PURE__*/React.createElement("div", {
+    className: "flex-start",
+    style: {
+      width: "250px",
+      gap: "15px"
+    }
+  }, /*#__PURE__*/React.createElement(Input, {
     id: "",
     type: "",
     placeholder: "Buscar",
@@ -9686,7 +9727,7 @@ const Actions = ({
     disabled: false,
     validation: null,
     onWritting: handleSearch
-  })));
+  }), /*#__PURE__*/React.createElement(ToggleColumn, null)));
 };
 
 const Datatable = ({
@@ -9727,6 +9768,8 @@ const Datatable = ({
     }
   });
   const [search, setSearch] = React.useState("");
+  const [visibleColumns, setVisibleColumns] = React.useState([]);
+  const [toggleColumnPanel, showToggleColumnPanel] = React.useState(false);
   const handleMaxRows = value => {
     updateDatatableConfiguration({
       ...configuration,
@@ -9839,6 +9882,21 @@ const Datatable = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
+  const handleVisibleColumns = column => {
+    setVisibleColumns(prevColumns => {
+      if (prevColumns.includes(column)) {
+        // Si ya existe, la quitamos
+        return prevColumns.filter(col => col !== column);
+      } else {
+        // Si no existe, la añadimos
+        return [...prevColumns, column];
+      }
+    });
+  };
+  React.useEffect(() => {
+    setVisibleColumns(Object.entries(customHeaders).map(([clave, valor]) => clave));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return /*#__PURE__*/React.createElement("div", {
     className: "datatable"
   }, title !== "" && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
@@ -9861,7 +9919,12 @@ const Datatable = ({
     selectedRows: selectedRows,
     cloneCallback: cloneCallback,
     deleteCallback: deleteCallback,
-    setSearch: setSearch
+    setSearch: setSearch,
+    customHeaders: customHeaders,
+    handleVisibleColumns: handleVisibleColumns,
+    visibleColumns: visibleColumns,
+    toggleColumnPanel: toggleColumnPanel,
+    showToggleColumnPanel: showToggleColumnPanel
   })), /*#__PURE__*/React.createElement(DatatableComponent, {
     checkColumn: checkColumn,
     data: data,
@@ -9870,7 +9933,8 @@ const Datatable = ({
     selectedRows: selectedRows,
     customData: customData,
     rowCallback: rowCallback,
-    handleSelectRow: handleSelectRow
+    handleSelectRow: handleSelectRow,
+    visibleColumns: visibleColumns
   })), /*#__PURE__*/React.createElement(Pagination, {
     configuration: configuration,
     maxRowsAvailable: false,
