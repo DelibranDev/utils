@@ -181,8 +181,12 @@
     margin-top: 40px;
     right: 25px;
     height: auto;
-    padding: 5px 15px 5px 5px;
+    padding: 10px 20px 10px 10px;
     background-color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 5;
     & .toggleColumnPanelItem{
       display: flex;
       gap: 5px;
@@ -238,9 +242,10 @@
   }
 
   table {
-    min-width: 500px;
+    /*min-width: 500px;*/
     width: max-content;
     margin: 10px 0;
+    border: 0px;
   }
 
   thead {
@@ -254,8 +259,8 @@
   }
 
   td, th {
-    max-width: 100px;
-    width: auto;              /* Se adapta al contenido */
+   /* max-width: 100px;*/
+   /* width: auto;*/              /* Se adapta al contenido */
     white-space: nowrap;      /* No permite saltos de línea */
     text-overflow: ellipsis;  /* Muestra los puntos suspensivos si se desborda */
     overflow: hidden;         /* Oculta el contenido que se pasa */

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { sortArrayByCustomOrder } from "./../../function";
 
 export const DatatableComponent = ({
@@ -15,6 +15,33 @@ export const DatatableComponent = ({
 }) => {
   console.log("DatatableComponent > data: ", data);
   console.log("DatatableComponent > rows: ", rows);
+  const [maxLengthValues, setMaxLengthValues] = useState({});
+
+  function getMaxLengthsByKey() {
+    const maxLengths = {};
+    const dataArray = rows;
+    dataArray.forEach((item) => {
+      Object.entries(item).forEach(([key, value]) => {
+        let strLength;
+
+        if (typeof value === "number" || typeof value === "string") {
+          strLength = String(value).length;
+          if (strLength < 10) maxLengths[key] = 110;
+          else if (strLength > 9 && strLength < 50) maxLengths[key] = strLength * 8;
+          else maxLengths[key] = strLength * 4;
+        } else {
+          maxLengths[key] = 110;
+        }
+      });
+    });
+    setMaxLengthValues(maxLengths);
+  }
+
+  useEffect(() => {
+    getMaxLengthsByKey();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rows]);
+
   return (
     <div className="desktopDatatable">
       <div className="table-container">
@@ -30,7 +57,7 @@ export const DatatableComponent = ({
                 ? Object.keys(sortArrayByCustomOrder(customHeaders, data[0]))
                     .filter((field) => field in customHeaders && visibleColumns.includes(field))
                     .map((field, index) => (
-                      <th key={index} className="text-align-center">
+                      <th key={index} className="text-align-center" style={{ width: `${maxLengthValues[field] || 100}px` }}>
                         {customHeaders[field]}
                       </th>
                     ))
@@ -60,6 +87,7 @@ export const DatatableComponent = ({
                     <td
                       key={index}
                       className="text-align-center"
+                      style={{ width: `${maxLengthValues[field] || 100}px` }}
                       onClick={typeof d[field] === "boolean" || d[field] === "PUBLISHED" || d[field] === "DRAFT" ? null : () => rowCallback(d)}
                     >
                       {customData[field] ? customData[field](d[field], d) : d[field]}
