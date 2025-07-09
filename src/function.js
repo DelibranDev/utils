@@ -172,19 +172,19 @@ function descifrarAES(textoCifrado) {
 }
 
 // Función para guardar datos de login en localStorage con cifrado AES
-const keyLoginData = "lgdt";
-export function saveLoginLS(datos) {
+const keyLoginData = "ls_";
+export function saveLoginLS(datos, platform = "") {
   if (typeof datos === "object" && datos !== null) {
     const datosCifrados = cifrarAES(JSON.stringify(datos));
-    localStorage.setItem(keyLoginData, datosCifrados);
+    localStorage.setItem(keyLoginData + "" + platform, datosCifrados);
   } else {
     console.error("El argumento debe ser un objeto válido.");
   }
 }
 
 // Función para leer datos de login desde localStorage con descifrado AES
-export function readLoginLS() {
-  const datosCifrados = localStorage.getItem(keyLoginData);
+export function readLoginLS(platform = "") {
+  const datosCifrados = localStorage.getItem(keyLoginData + "" + platform);
   if (!datosCifrados) return null;
 
   try {
@@ -196,8 +196,8 @@ export function readLoginLS() {
 }
 
 //Función para borrar el login
-export function removeLoginLS() {
-  localStorage.removeItem(keyLoginData);
+export function removeLoginLS(platform = "") {
+  localStorage.removeItem(keyLoginData + "" + platform);
 }
 
 // TRADUCTOR

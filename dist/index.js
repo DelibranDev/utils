@@ -8149,19 +8149,19 @@ function descifrarAES(textoCifrado) {
 }
 
 // Función para guardar datos de login en localStorage con cifrado AES
-const keyLoginData = "lgdt";
-function saveLoginLS(datos) {
+const keyLoginData = "ls_";
+function saveLoginLS(datos, platform = "") {
   if (typeof datos === "object" && datos !== null) {
     const datosCifrados = cifrarAES(JSON.stringify(datos));
-    localStorage.setItem(keyLoginData, datosCifrados);
+    localStorage.setItem(keyLoginData + "" + platform, datosCifrados);
   } else {
     console.error("El argumento debe ser un objeto válido.");
   }
 }
 
 // Función para leer datos de login desde localStorage con descifrado AES
-function readLoginLS() {
-  const datosCifrados = localStorage.getItem(keyLoginData);
+function readLoginLS(platform = "") {
+  const datosCifrados = localStorage.getItem(keyLoginData + "" + platform);
   if (!datosCifrados) return null;
   try {
     return JSON.parse(descifrarAES(datosCifrados));
@@ -8172,8 +8172,8 @@ function readLoginLS() {
 }
 
 //Función para borrar el login
-function removeLoginLS() {
-  localStorage.removeItem(keyLoginData);
+function removeLoginLS(platform = "") {
+  localStorage.removeItem(keyLoginData + "" + platform);
 }
 
 // TRADUCTOR
@@ -8403,18 +8403,20 @@ const Select = ({
   }, v.name))));
 };
 
-var css_248z$a = ".customButton {\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  font-size: 0.7rem;\r\n  padding: 0 12px;\r\n  border: 1px var(--color-terciary-2) solid;\r\n  border-radius: 5px;\r\n  height: 30px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  box-shadow: none;\r\n  text-transform: none;\r\n  align-items: center;\r\n  & svg {\r\n    padding-right: 5px;\r\n    font-size: 1.1rem;\r\n  }\r\n}\r\n\r\n.customButtonColor1 {\r\n  background-color: var(--color-secondary);\r\n  color: var(--color-primary);\r\n  & svg {\r\n    color: var(--color-primary);\r\n  }\r\n}\r\n\r\n.customButtonColor2 {\r\n  background-color: var(--color-primary);\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n  }\r\n  & svg {\r\n    color: var(--color-secondary);\r\n  }\r\n}\r\n\r\n.customButtonText {\r\n  margin-top: 1px;\r\n  color: var(--color-primary);\r\n  font-weight: 400;\r\n  white-space: nowrap;\r\n}\r\n\r\n.customButtonDisabled {\r\n  background-color: var(--color-terciary-2);\r\n  height: 25px;\r\n  & .customButtonText {\r\n    color: var(--color-terciary-3);\r\n    padding: 5px 20px;\r\n  }\r\n}\r\n\r\n.customButtonSuccess {\r\n  background-color: var(--color-success);\r\n  height: 25px;\r\n\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n    padding: 5px 20px;\r\n  }\r\n}\r\n\r\n.customButtonDanger {\r\n  background-color: var(--color-error);\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n  }\r\n}\r\n\r\n.justify-center{\r\n    justify-content: center;\r\n}\r\n";
+var css_248z$a = ".customButton {\r\n  background-color: var(--color-secondary);\r\n  border: 1px var(--color-terciary-2) solid;\r\n  font-size: 0.7rem;\r\n  padding: 0 12px;\r\n  border: 1px var(--color-terciary-2) solid;\r\n  border-radius: 5px;\r\n  height: 30px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  box-shadow: none;\r\n  text-transform: none;\r\n  align-items: center;\r\n  & svg {\r\n    padding-right: 5px;\r\n    font-size: 1.1rem;\r\n  }\r\n}\r\n\r\n.customButtonColor1 {\r\n  background-color: var(--color-secondary);\r\n  color: var(--color-primary);\r\n  & svg {\r\n    color: var(--color-primary);\r\n  }\r\n}\r\n\r\n.customButtonColor2 {\r\n  background-color: var(--color-primary);\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n  }\r\n  & svg {\r\n    color: var(--color-secondary);\r\n  }\r\n}\r\n\r\n.customButtonText {\r\n  margin-top: 1px;\r\n  color: var(--color-primary);\r\n  font-weight: 400;\r\n  white-space: nowrap;\r\n}\r\n\r\n.customButtonDisabled {\r\n  background-color: var(--color-terciary-2);\r\n  height: 25px;\r\n  & .customButtonText {\r\n    color: var(--color-terciary-3);\r\n    padding: 5px 20px;\r\n  }\r\n}\r\n\r\n.customButtonSuccess {\r\n  background-color: var(--color-success);\r\n  height: 25px;\r\n\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n    padding: 5px 20px;\r\n  }\r\n}\r\n\r\n.customButtonDanger {\r\n  background-color: var(--color-error);\r\n  & .customButtonText {\r\n    color: var(--color-secondary);\r\n  }\r\n}\r\n\r\n.justify-center {\r\n  justify-content: center;\r\n}\r\n";
 styleInject(css_248z$a);
 
 const Button = ({
   text,
   icon = null,
   customClass = "customButtonColor1",
-  action = () => null
+  action = () => null,
+  disabled
 }) => {
   return /*#__PURE__*/React.createElement("button", {
-    className: `customButton ${customClass} ${!icon && "justify-center"}`,
-    onClick: action
+    className: `customButton ${customClass} ${!icon && "justify-center"} ${disabled && "customButtonDisabled"}`,
+    onClick: action,
+    disabled: disabled
   }, icon && icon, /*#__PURE__*/React.createElement("div", {
     className: "customButtonText"
   }, text));
@@ -9920,6 +9922,10 @@ const Datatable = ({
       }
     });
   };
+  const rowCallbackHandler = e => {
+    showToggleColumnPanel(false);
+    rowCallback(e);
+  };
   React.useEffect(() => {
     setVisibleColumns(Object.entries(customHeaders).map(([clave, valor]) => clave));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -9959,7 +9965,7 @@ const Datatable = ({
     rows: rows,
     selectedRows: selectedRows,
     customData: customData,
-    rowCallback: rowCallback,
+    rowCallback: rowCallbackHandler,
     handleSelectRow: handleSelectRow,
     visibleColumns: visibleColumns
   })), /*#__PURE__*/React.createElement(Pagination, {

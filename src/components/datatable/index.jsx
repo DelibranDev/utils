@@ -170,6 +170,11 @@ export const Datatable = ({
     });
   };
 
+  const rowCallbackHandler = (e) => {
+    showToggleColumnPanel(false);
+    rowCallback(e);
+  };
+
   useEffect(() => {
     setVisibleColumns(Object.entries(customHeaders).map(([clave, valor]) => clave));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -209,7 +214,7 @@ export const Datatable = ({
           rows={rows}
           selectedRows={selectedRows}
           customData={customData}
-          rowCallback={rowCallback}
+          rowCallback={rowCallbackHandler}
           handleSelectRow={handleSelectRow}
           visibleColumns={visibleColumns}
         />
