@@ -1,6 +1,6 @@
 {
   "name": "@delibrandev/utils",
-  "version": "1.0.121",
+  "version": "1.0.122",
   "description": "A collection of delibran utils.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -39,7 +39,6 @@
     "rollup-plugin-postcss": "^4.0.2"
   },
   "publishConfig": {
-    "@delibrandev:registry": "https://npm.pkg.github.com",
     "access": "public"
   },
   "repository": {
