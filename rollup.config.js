@@ -4,14 +4,14 @@ import resolve from "@rollup/plugin-node-resolve";
 import postcss from "rollup-plugin-postcss";
 
 export default {
-  external: ["react", "react-dom"],
+  external: ["react", "react-dom", "crypto", "crypto-js"],
   input: "src/index.js",
   output: [
     { file: "dist/index.js", format: "cjs" },
     { file: "dist/index.es.js", format: "es", exports: "named" },
   ],
   plugins: [
-    resolve({ extensions: [".js", ".jsx"] }), // 👈 Agregar .jsx aquí
+    resolve({ extensions: [".js", ".jsx"] }),
     commonjs(),
     postcss(),
     babel({
@@ -19,6 +19,5 @@ export default {
       babelHelpers: "bundled",
       presets: ["@babel/preset-react"],
     }),
-    resolve(),
   ],
 };
