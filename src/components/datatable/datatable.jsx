@@ -5,6 +5,7 @@ export const DatatableComponent = ({
   checkColumn = false,
   data = [],
   customHeaders = {},
+  customHeadersStyle = {},
   rows = [],
   selectedRows = [],
   customData = {},
@@ -13,27 +14,32 @@ export const DatatableComponent = ({
   handleSelectAllRow = () => {},
   visibleColumns,
 }) => {
-  console.log("DatatableComponent > data: ", data);
-  console.log("DatatableComponent > rows: ", rows);
   const [maxLengthValues, setMaxLengthValues] = useState({});
 
   function getMaxLengthsByKey() {
     const maxLengths = {};
-    const dataArray = rows;
-    dataArray.forEach((item) => {
-      Object.entries(item).forEach(([key, value]) => {
-        let strLength;
+    const MIN_WIDTH = 110;
 
-        if (typeof value === "number" || typeof value === "string") {
-          strLength = String(value).length;
-          if (strLength < 10) maxLengths[key] = 110;
-          else if (strLength > 9 && strLength < 50) maxLengths[key] = strLength * 8;
-          else maxLengths[key] = strLength * 4;
+    (rows || []).forEach((item) => {
+      Object.entries(item || {}).forEach(([key, value]) => {
+        const isDataImage = typeof value === "string" && value.startsWith("data:image");
+        let width = MIN_WIDTH;
+
+        if (typeof value === "number" || (typeof value === "string" && !isDataImage)) {
+          const len = String(value).length;
+          if (len < 10) width = MIN_WIDTH;
+          else if (len < 50) width = len * 8;
+          else width = len * 4;
         } else {
-          maxLengths[key] = 110;
+          // Para objetos, null/undefined o imágenes base64, usamos el mínimo
+          width = MIN_WIDTH;
         }
+
+        // Mantener siempre el máximo por clave
+        maxLengths[key] = Math.max(maxLengths[key] ?? MIN_WIDTH, width);
       });
     });
+
     setMaxLengthValues(maxLengths);
   }
 
@@ -57,7 +63,11 @@ export const DatatableComponent = ({
                 ? Object.keys(sortArrayByCustomOrder(customHeaders, data[0]))
                     .filter((field) => field in customHeaders && visibleColumns.includes(field))
                     .map((field, index) => (
-                      <th key={index} className="text-align-center" style={{ width: `${maxLengthValues[field] || 100}px` }}>
+                      <th
+                        key={index}
+                        className="text-align-center"
+                        style={{ width: `${customHeadersStyle[field]?.width || maxLengthValues[field] || 100}px` }}
+                      >
                         {customHeaders[field]}
                       </th>
                     ))
@@ -87,7 +97,7 @@ export const DatatableComponent = ({
                     <td
                       key={index}
                       className="text-align-center"
-                      style={{ width: `${maxLengthValues[field] || 100}px` }}
+                      style={{ width: `${customHeadersStyle[field]?.width || maxLengthValues[field] || 100}px` }}
                       onClick={typeof d[field] === "boolean" || d[field] === "PUBLISHED" || d[field] === "DRAFT" ? null : () => rowCallback(d)}
                     >
                       {customData[field] ? customData[field](d[field], d) : d[field]}

@@ -14,6 +14,7 @@ export const Datatable = ({
     name: "Nombre",
     description: "Descripción",
   },
+  customHeadersStyle = {},
   customData,
   sections = [
     {
@@ -32,7 +33,6 @@ export const Datatable = ({
   checkColumn,
   checkedRows,
 }) => {
-  console.log("Datatable > data: ", data);
   const [selectedRows, setSelectedRows] = useState(checkedRows && checkedRows.length > 0 ? checkedRows : []);
   const [rows, setRows] = useState([]);
   const [activeSection, setActiveSection] = useState(0);
@@ -211,6 +211,7 @@ export const Datatable = ({
           checkColumn={checkColumn}
           data={data}
           customHeaders={customHeaders}
+          customHeadersStyle={customHeadersStyle}
           rows={rows}
           selectedRows={selectedRows}
           customData={customData}

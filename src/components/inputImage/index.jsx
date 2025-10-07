@@ -12,7 +12,7 @@ export const InputImage = ({ uniqueId, className, image = null }) => {
   };
 
   return (
-    <label className={`inputImage ${className} ${uniqueId}`} style={{ backgroundImage: image === null ? `url('${image}')` : "" }}>
+    <label className={`inputImage ${className} ${uniqueId}`} style={{ backgroundImage: image !== null ? `url('${image}')` : "" }}>
       {imageLoaded === null && image === null && <NoImage />}
       <input type="file" id={`${uniqueId}`} style={{ display: "none" }} onChange={(e) => updateImage(e, uniqueId)} />
     </label>
