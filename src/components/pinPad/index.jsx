@@ -25,7 +25,7 @@ export const PinPad = ({ callback, inputText }) => {
   };
 
   const handleDigit = (id, pin) => {
-    if (id < 9 || pin === 10) setPinValue(pinValue + pin);
+    if (id < 9 || id === 10) setPinValue(pinValue + pin);
     if (id === 9) setPinValue("");
     if (id === 11) handlePin();
     if (id === 12) setPinValue(pinValue.slice(0, -1));

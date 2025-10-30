@@ -29,13 +29,13 @@ export const OrderResume = ({
         <div className="invoiceResume-Item">
           <div className="invoiceResume-title">Descuento</div>
           <div className="invoiceResume-note"></div>
-          <div className="invoiceResume-value">0,00 €</div>
+          <div className="invoiceResume-value">{data.discountedTotal === 0 ? 0 : data.total - data.discountedTotal} €</div>
         </div>
         <div className="invoiceResume-Separator"></div>
         <div className="invoiceResume-Item">
           <div className="invoiceResume-title">Total</div>
           <div></div>
-          <div className="invoiceResume-value">{data.total} €</div>
+          <div className="invoiceResume-value">{data.discountedTotal === 0 ? data.total : data.discountedTotal} €</div>
         </div>
       </div>
       <div>
