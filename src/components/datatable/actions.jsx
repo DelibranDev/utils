@@ -19,7 +19,6 @@ export const Actions = ({
   toggleColumnPanel,
   showToggleColumnPanel,
 }) => {
-  console.log(customHeaders);
   const actions = [
     { id: "search", text: "Buscar", icon: <HiOutlineSearch />, callback: () => null },
     { id: "filter", text: "Filtrar", icon: <HiOutlineSearch />, callback: () => null },

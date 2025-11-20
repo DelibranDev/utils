@@ -2,7 +2,7 @@ import React from "react";
 import { LuUser } from "react-icons/lu";
 import "./style.css";
 
-export const CardList = ({ title = "", icon = <LuUser />, data, callback = () => null }) => {
+export const CardList = ({ head = "ACCESO DE USUARIO", title = "", icon = <LuUser />, data, callback = () => null }) => {
   const ItemCard = ({ data }) => {
     return (
       <div className="cardUser" onClick={() => callback(data)}>
@@ -13,6 +13,7 @@ export const CardList = ({ title = "", icon = <LuUser />, data, callback = () =>
   };
   return (
     <div>
+      <div className="loginTitle">{head}</div>
       <div className="cardLabel">{title}</div>
       <div className="cardList">
         {data.map((card) => (

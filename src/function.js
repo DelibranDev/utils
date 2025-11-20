@@ -126,12 +126,7 @@ export function getRequiredKeys(obj) {
 
 export const handleImage = (e, uniqueClassLabel) => {
   const label = e.target.parentElement;
-  const file = e.target.files[0];
-
-  console.log("=== handleImage ===");
-  console.log(e);
-  console.log(label);
-  console.log(uniqueClassLabel);
+  const file = e.target.files && e.target.files[0];
 
   if (file) {
     const reader = new FileReader();
@@ -139,7 +134,7 @@ export const handleImage = (e, uniqueClassLabel) => {
       // Establece la imagen como fondo del label
       label.style.color = "white"; // Cambia el color del texto si es necesario
       const elements = document.getElementsByClassName(uniqueClassLabel);
-      console.log(elements);
+
       if (elements.length > 0) {
         elements[0].style.backgroundImage = `url(${e.target.result})`;
       }

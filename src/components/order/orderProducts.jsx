@@ -7,7 +7,10 @@ export const OrderProducts = ({ data }) => {
         (data.products || []).map((product, index) => (
           <div key={index} className="order-products-item">
             <div className="order-product-left">
-              <div className="order-product-image" style={{ backgroundImage: `url('${product?.images[0]}')` }}></div>
+              <div
+                className="order-product-image"
+                style={{ backgroundImage: `url('${product?.images && product?.images.length > 0 ? product?.images[0] : ""}')` }}
+              ></div>
               <div className="order-product-info">
                 <div className="order-product-name">{product?.name}</div>
                 <div className="order-product-ingredients">{product?.description || "Sin atributos"}</div>

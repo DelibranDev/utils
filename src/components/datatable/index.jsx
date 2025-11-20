@@ -73,29 +73,6 @@ export const Datatable = ({
     });
   };
 
-  /*const handleSearch = (data) => {
-    console.log("Datatable > handleSearch > data, search ", data, search);
-    let dataUpdated = data;
-    if (search !== "") {
-      dataUpdated = data.filter((item) => item.name?.toLowerCase().includes(search?.toLowerCase()));
-    }
-    return dataUpdated;
-  };*/
-  /*const handleSearch = (data) => {
-    console.log("Datatable > handleSearch > data, search ", data, search);
-    let dataUpdated = data;
-    if (search !== "") {
-      const searchLower = search.toLowerCase();
-      dataUpdated = data.filter(
-        (item) =>
-          item.name?.toLowerCase().includes(searchLower) ||
-          item.number?.toString().toLowerCase().includes(searchLower) ||
-          item.Customer?.fullname?.toLowerCase().includes(searchLower)
-      );
-    }
-    return dataUpdated;
-  };*/
-
   const handleSearch = (data) => {
     let dataUpdated = data;
     if (search !== "") {

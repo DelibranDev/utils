@@ -1,7 +1,6 @@
 import React from "react";
 
 export const OrderTimeline = ({ data }) => {
-  console.log(data?.OrderLog);
   const orderLog = data?.OrderLog;
 
   function transformOrderLog(orderLog) {

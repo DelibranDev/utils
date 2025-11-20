@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RiCloseFill, RiCheckFill, RiDeleteBack2Line } from "react-icons/ri";
 import "./style.css";
 
-export const PinPad = ({ callback, inputText }) => {
+export const PinPad = ({ callback, inputText, head = "PUNTO DE ACCESO" }) => {
   const [pinValue, setPinValue] = useState("");
   const pinList = [
     "1",
@@ -43,6 +43,7 @@ export const PinPad = ({ callback, inputText }) => {
     <div className="areaPin">
       <div className="loginArea">
         <div className="containerSide">
+          <div className="loginTitle">{head}</div>
           <div className="pinLabel">{inputText}</div>
           <div className="flex-gap">
             <div className="inputPwd">{"●".repeat(pinValue.length)}</div>
