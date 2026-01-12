@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no tests\" && exit 1",
     "build": "rollup -c",
-    "generate-docs": "jsdoc src --destination docs"
+    "generate-docs": "jsdoc src --destination docs",
+    "dev": "rollup -c -w"
   },
   "keywords": [
     "react",
