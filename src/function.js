@@ -2,7 +2,7 @@ import CryptoJS from "crypto-js";
 import { messages } from "./translations";
 const SECRET = process.env.REACT_APP_JWT_SECRET;
 
-export const parseDate = (value) => {
+export const parseDate = (value, type = "normal") => {
   // Convertir la cadena de fecha en un objeto de fecha
   var fecha = new Date(value);
 
@@ -13,7 +13,10 @@ export const parseDate = (value) => {
   var minutos = fecha.getMinutes();
 
   // Formatear la cadena de fecha en el formato deseado
-  var fechaFormateada = `${dia} de ${mes} a las ${hora}:${minutos < 10 ? "0" : ""}${minutos}`;
+  var fechaFormateada =
+    type === "normal"
+      ? `${dia} de ${mes} a las ${hora}:${minutos < 10 ? "0" : ""}${minutos}`
+      : `${dia}/${mes} ${hora}:${minutos < 10 ? "0" : ""}${minutos}`;
 
   return fechaFormateada;
 };

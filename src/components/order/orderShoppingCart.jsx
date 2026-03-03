@@ -22,10 +22,7 @@ export const OrderShoppingCart = ({ data, CartActions, size = "normal" }) => {
               className="product-image background-image"
               style={{
                 backgroundImage:
-                  data &&
-                  data.Product &&
-                  data.Product.images.length > 0 &&
-                  data?.Product.images?.[0]
+                  data && data.Product && data.Product.images.length > 0 && data?.Product.images?.[0]
                     ? `url('${data.Product.images[0]}')`
                     : "no",
               }}
@@ -33,11 +30,7 @@ export const OrderShoppingCart = ({ data, CartActions, size = "normal" }) => {
           )}
           <div
             className="product-cart-info"
-            style={
-              size === "normal"
-                ? { flexDirection: "column" }
-                : { flexDirection: "row" }
-            }
+            style={size === "normal" ? { flexDirection: "column", width: "100%" } : { flexDirection: "row", width: "100%" }}
           >
             <div
               className="product-details"
@@ -63,20 +56,12 @@ export const OrderShoppingCart = ({ data, CartActions, size = "normal" }) => {
                     : {}
                 }
               >
-                {data && data.Product && data.Product.name
-                  ? data.Product.name
-                  : ""}
+                {data && data.Product && data.Product.name ? data.Product.name : ""}
               </div>
-              {size === "normal" && (
-                <div className="product-description">
-                  {data?.Product?.description || ""}
-                </div>
-              )}
+              {size === "normal" && <div className="product-description">{data?.Product?.description || ""}</div>}
             </div>
             <div className="product-details-bottom">
-              <div className="product-name">
-                {data?.Product?.price ? data.Product.price.toFixed(2) : "0.00"}€
-              </div>
+              <div className="product-name">{data?.Product?.price ? data.Product.price.toFixed(2) : "0.00"}€</div>
               <div
                 className="product-actions"
                 style={
@@ -91,6 +76,7 @@ export const OrderShoppingCart = ({ data, CartActions, size = "normal" }) => {
               </div>
             </div>
           </div>
+          {data?.variantId !== null || data?.itemIds.length > 0 ? <div className="product-cart-details">Personalizado</div> : ""}
         </div>
       </>
     );
@@ -98,9 +84,7 @@ export const OrderShoppingCart = ({ data, CartActions, size = "normal" }) => {
 
   return (
     <div className="order-products">
-      {Array.isArray(data?.ShoppingCartProducts)
-        ? data.ShoppingCartProducts.map((item) => <Product data={item} />)
-        : null}
+      {Array.isArray(data?.ShoppingCartProducts) ? data.ShoppingCartProducts.map((item) => <Product data={item} />) : null}
     </div>
   );
 };

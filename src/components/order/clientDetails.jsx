@@ -25,9 +25,7 @@ export const ClientDetails = ({ data, size = "normal" }) => {
         <div className="client-details-container">
           <div className="client-details-header">Dirección de envío</div>
           <div className="client-details-address">
-            {fullAddress && (
-              <MapLocation address={fullAddress} height={"100px"} />
-            )}
+            {fullAddress && <MapLocation address={fullAddress} height={"100px"} />}
             <div className="client-details-address-container">
               <div className="client-details-address-name">{address.name}</div>
               <div className="client-details-header">{client.fullname}</div>
@@ -43,16 +41,10 @@ export const ClientDetails = ({ data, size = "normal" }) => {
     return (
       <>
         <div className="client-details-container">
-          <div className="client-details-third">{client.fullname}</div>
-        </div>
-        <div className="client-details-container">
-          <div className="client-details-header">Información de contacto</div>
-          <div className="client-details-third">
-            {fullAddress}
-            <div className="client-details-address-name">({address.name})</div>
-          </div>
-          <div className="client-details-sub">{client.email}</div>
-          <div className="client-details-sub">{client.phone}</div>
+          <div className="client-details-header">{client.fullname}</div>
+          <div className="client-details-third">{fullAddress}</div>
+          <div className="client-details-third">{client.email}</div>
+          <div className="client-details-third">{client.phone}</div>
         </div>
       </>
     );

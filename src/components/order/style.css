@@ -184,7 +184,7 @@
 .product-cart {
   border: 1px lightgrey solid;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   height: auto;
 
@@ -213,6 +213,12 @@
     flex-grow: 1;
     padding: 10px;
     width: 90%;
+  }
+
+  & .product-cart-details {
+    padding-left: 10px;
+    font-size: 0.8rem;
+    color: grey;
   }
 
   & .product-details {
