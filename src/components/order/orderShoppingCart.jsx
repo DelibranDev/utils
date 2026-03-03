@@ -76,7 +76,7 @@ export const OrderShoppingCart = ({ data, CartActions, size = "normal" }) => {
               </div>
             </div>
           </div>
-          {data?.variantId !== null || data?.itemIds.length > 0 ? <div className="product-cart-details">Personalizado</div> : ""}
+          {data?.info ? <div className="product-cart-details">{data?.info}</div> : ""}
         </div>
       </>
     );
