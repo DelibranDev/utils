@@ -15,6 +15,7 @@ export * from "./components/inputImage";
 export * from "./components/loader";
 export * from "./components/switchText";
 // Order
+export * from "./components/order/order.jsx";
 export * from "./components/order/clientDetails.jsx";
 export * from "./components/order/orderInfo.jsx";
 export * from "./components/order/orderNotes.jsx";

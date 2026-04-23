@@ -1,0 +1,483 @@
+.backgroundBox {
+  -webkit-backdrop-filter: saturate(140%) blur(2px);
+  backdrop-filter: saturate(140%) blur(2px);
+  background: #ffffff14;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+}
+
+.editOrderFloatingBox {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px #0003;
+  height: 60vh;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  z-index: 9999;
+}
+
+.editOrderContent {
+  padding: 24px;
+}
+
+.editOrderHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.editOrderMainColumn {
+  width: 66%;
+  height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.editOrderSideColumn {
+  width: 33%;
+}
+
+.editOrderTitle {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.editOrderSubtitle {
+  margin: 6px 0 0;
+  opacity: 0.75;
+}
+
+.editOrderSections {
+  display: flex;
+  gap: 20px;
+}
+
+.editOrderProducts {
+  display: grid;
+  gap: 20px;
+  width: 70%;
+  padding-right: 15px;
+  /*height: 100vh;*/
+  overflow-y: auto;
+  /*padding-bottom: 50vh;*/
+  height: 600px;
+}
+
+.editOrderDetails {
+  display: grid;
+  gap: 20px;
+  width: 30%;
+}
+
+.editOrderCard {
+  background: #ffffff;
+  /*border: 1px solid #e5e7eb;*/
+  border-radius: 14px;
+  padding: 3px;
+  width: 100%;
+}
+
+.editOrderCardTitle {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.editOrderGrid {
+  display: grid;
+  /*grid-template-columns: repeat(2, minmax(0, 1fr));*/
+  gap: 16px;
+}
+
+.editOrderField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.editOrderFieldFull {
+  grid-column: 1 / -1;
+}
+
+.editOrderField label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.editOrderField input,
+.editOrderField select,
+.editOrderField textarea {
+  width: 90%;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 5px 12px;
+  background: #fff;
+  font-size: 14px;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+.editOrderField textarea {
+  resize: vertical;
+  min-height: 100px;
+  width: 97%;
+}
+
+.editOrderField select {
+  width: 97%;
+}
+
+.editOrderInfo {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid #eceff3;
+}
+
+.editOrderInfoLabel {
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.editOrderActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.editOrderEmptyBox {
+  padding: 18px;
+  border: 1px dashed #d1d5db;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.editOrderProductsList {
+  display: grid;
+  gap: 14px;
+}
+
+.editOrderProductRow {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+  background: #fafafa;
+  display: grid;
+  gap: 14px;
+}
+
+.editOrderProductMain {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.editOrderProductThumb {
+  width: 84px;
+  height: 84px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editOrderProductThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editOrderProductThumbPlaceholder {
+  font-size: 12px;
+  text-align: center;
+  padding: 8px;
+  color: #6b7280;
+}
+
+.editOrderProductData h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.editOrderProductData p {
+  margin: 4px 0;
+  font-size: 13px;
+  word-break: break-word;
+}
+
+.editOrderProductControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.editOrderQuantityBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editOrderQtyBtn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.editOrderQuantityBox input {
+  width: 90px;
+  min-height: 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.editOrderRowButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.editOrderSelectedProduct {
+  margin-top: 16px;
+}
+
+.editOrderSelectedProductInfo {
+  padding: 14px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid #eceff3;
+  display: grid;
+  gap: 6px;
+}
+
+.editOrderSelectedProductName {
+  font-weight: 700;
+}
+
+.editOrderEmptyInline {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+}
+
+.editOrderConfigBlock {
+  grid-column: 1 / -1;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+  background: #fafafa;
+}
+
+.editOrderConfigTitle {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.editOrderVariantList {
+  display: grid;
+  gap: 10px;
+}
+
+.editOrderVariantItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.editOrderVariantItem.isSelected {
+  border-color: #9ca3af;
+  background: #f3f4f6;
+}
+
+.editOrderVariantInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.editOrderVariantSecondaryOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.editOrderTag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eef2f7;
+  font-size: 12px;
+}
+
+.editOrderVariantPrice {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.editOrderAttributeGroups {
+  display: grid;
+  gap: 14px;
+}
+
+.editOrderAttributeGroup {
+  border: 1px solid #dbe1e8;
+  border-radius: 10px;
+  padding: 12px;
+  background: #fff;
+}
+
+.editOrderAttributeGroupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.editOrderAttributeGroupName {
+  font-weight: 700;
+}
+
+.editOrderAttributeMeta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.editOrderBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #fff3cd;
+  border: 1px solid #f6d98b;
+  font-size: 12px;
+}
+
+.editOrderAttributeItems {
+  display: grid;
+  gap: 10px;
+}
+
+.editOrderAttributeItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.editOrderAttributeItem.isSelected {
+  border-color: #9ca3af;
+  background: #f3f4f6;
+}
+
+.editOrderAttributeItemInfo {
+  display: grid;
+  gap: 4px;
+}
+
+.editOrderAttributeItemPrice {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.editOrderAttributeCounter {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.editOrderConfigError {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #b45309;
+}
+
+.editOrderConfigErrorMain {
+  margin-top: 14px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .editOrderContent {
+    padding: 16px;
+    padding-top: 52px;
+  }
+
+  .editOrderHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .editOrderGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .editOrderProductMain {
+    grid-template-columns: 1fr;
+  }
+
+  .editOrderProductThumb {
+    width: 100%;
+    max-width: 140px;
+    height: 140px;
+  }
+
+  .editOrderProductControls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .editOrderRowButtons {
+    flex-direction: column;
+  }
+
+  .editOrderActions {
+    justify-content: stretch;
+  }
+}

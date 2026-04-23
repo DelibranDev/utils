@@ -1,11 +1,12 @@
 {
   "name": "@delibrandev/utils",
-  "version": "1.0.162",
+  "version": "1.0.167",
   "description": "A collection of delibran utils.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
     "test": "echo \"Error: no tests\" && exit 1",
+    "prebuild": "npm version patch --no-git-tag-version",
     "build": "rollup -c",
     "generate-docs": "jsdoc src --destination docs",
     "dev": "rollup -c -w"

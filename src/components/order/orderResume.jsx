@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./../button";
+import "./orderResume.css";
 
 export const OrderResume = ({
   data,
@@ -9,7 +10,7 @@ export const OrderResume = ({
   canCreateInvoice = true,
 }) => {
   return (
-    <div className="pt-3">
+    <div>
       <div className="invoiceResume-Header">
         <div>
           <div className="invoiceResume-Header-title">No Factura</div>
@@ -44,7 +45,11 @@ export const OrderResume = ({
             <div>
               <Button text={"Imprimir ticket"} icon={null} customClass={"w-100"} action={callbackPrintTicket} />
             </div>
-            <div>{canCreateInvoice && <Button text={"Crear factura"} icon={null} customClass={"w-100"} action={callbackCreateInvoice} />}</div>
+            <div>
+              {canCreateInvoice && (
+                <Button text={"Crear factura"} icon={null} customClass={"w-100"} action={callbackCreateInvoice} />
+              )}
+            </div>
           </div>
         ) : (
           <div style={{ paddingTop: "15px" }}>
