@@ -40,6 +40,7 @@ export const Order = ({
   },
   size = "normal",
 }) => {
+  console.log(info, details, showProducts, notes, resume, timeline, canEdit);
   return (
     <div className="orderContainer">
       <div className="orderActions">{canEdit && <Edit data={data} {...edition} />}</div>

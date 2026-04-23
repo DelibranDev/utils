@@ -4,6 +4,7 @@ import { parseDate } from "./../../function";
 import "./style.css";
 
 export const OrderInfo = ({ data, size = "normal" }) => {
+  console.log("=== OrderInfo ===");
   const NormalInfo = () => {
     return (
       <>

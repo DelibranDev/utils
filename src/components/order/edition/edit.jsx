@@ -27,6 +27,7 @@ export const Edit = ({
   onRefresh,
   onUpdatePanelData,
 }) => {
+  console.log("=== Edit ===");
   const orderId = data?.orderId;
   const status = data?.status;
   const paymentStatus = data?.paymentStatus;
