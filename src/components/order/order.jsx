@@ -42,29 +42,19 @@ export const Order = ({
 }) => {
   return (
     <div className="orderContainer">
-      <div className="orderActions">
-        <Edit data={data} {...edition} />
-      </div>
+      <div className="orderActions">{canEdit && <Edit data={data} {...edition} />}</div>
       <div className="order">
         <div className="orderColumn">
           <div className="orderColumnItem">
-            <OrderInfo data={data} />
-            <OrderProducts data={data} size={size} />
+            {info && <OrderInfo data={data} />}
+            {showProducts && <OrderProducts data={data} size={size} />}
           </div>
         </div>
         <div className="orderColumn">
-          <div className="orderColumnItem">
-            <OrderResume data={data} />
-          </div>
-          <div className="orderColumnItem">
-            <OrderNotes data={data} />
-          </div>
-          <div className="orderColumnItem">
-            <ClientDetails data={data} size={size} />
-          </div>
-          <div className="orderColumnItem">
-            <OrderTimeline data={data} />
-          </div>
+          <div className="orderColumnItem">{resume && <OrderResume data={data} />}</div>
+          <div className="orderColumnItem">{notes && <OrderNotes data={data} />}</div>
+          <div className="orderColumnItem">{details && <ClientDetails data={data} size={size} />}</div>
+          <div className="orderColumnItem">{timeline && <OrderTimeline data={data} />}</div>
         </div>
       </div>
     </div>
