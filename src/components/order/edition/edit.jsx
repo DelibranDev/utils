@@ -335,7 +335,7 @@ export const Edit = ({
     return clientsState.find((client) => client.customerId === orderForm.customerId);
   }, [clientsState, orderForm.customerId]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const signature = buildOrderSignature(data || null);
 
     if (lastSyncedOrderRef.current === signature) {
@@ -344,7 +344,7 @@ export const Edit = ({
 
     lastSyncedOrderRef.current = signature;
     syncOrderStates(data || null);
-  }, [data, buildOrderSignature, syncOrderStates]);
+  }, [data, buildOrderSignature, syncOrderStates]);*/
 
   /*useEffect(() => {
     setClients(clients || []);
@@ -355,11 +355,10 @@ export const Edit = ({
   }, [products]);*/
 
   useEffect(() => {
-    if (!showPanelEdition || hasOpenedPanelRef.current) return;
-
-    hasOpenedPanelRef.current = true;
-    refreshAllData();
-  }, [showPanelEdition, refreshAllData]);
+    if (showPanelEdition) {
+      refreshAllData();
+    }
+  }, [showPanelEdition]);
 
   const handleOpenPanel = () => {
     handlePanelEdition(true);
