@@ -8,7 +8,7 @@ export const OrderProducts = ({ data, size = "normal", variants, atributos }) =>
     }, [variants, product?.variantId]);
 
     const selectedAttributes = useMemo(() => {
-      if (!Array.isArray(product?.itemIds) || !product.itemIds.length) return [];
+      if (!Array.isArray(product?.itemIds) || !product.itemIds.length || !atributos) return [];
 
       const selectedItemIds = new Set(product.itemIds);
 
