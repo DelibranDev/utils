@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Button } from "../../../button";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { getProductRowKey } from "../utils/edit.helpers";
@@ -10,10 +10,59 @@ export const OrderProductRow = ({
   rowLoadingKey,
   updateQuantityProductToOrder,
   removeProductToOrder,
+  variants = [],
+  atributos = [],
 }) => {
   const rowKey = getProductRowKey(product);
   const isUpdating = rowLoadingKey === `${rowKey}-update`;
   const isRemoving = rowLoadingKey === `${rowKey}-remove`;
+
+  const selectedVariant = useMemo(() => {
+    if (!product?.variantId) return null;
+    return variants.find((variant) => variant.variantId === product.variantId) || null;
+  }, [variants, product?.variantId]);
+
+  const selectedAttributes = useMemo(() => {
+    if (!Array.isArray(product?.itemIds) || !product.itemIds.length) return [];
+
+    const selectedItemIds = new Set(product.itemIds);
+
+    return atributos.flatMap((attributeGroup) => {
+      const matchedItems = (attributeGroup.items || []).filter((item) => selectedItemIds.has(item.itemId));
+
+      return matchedItems.map((item) => ({
+        itemGroupId: attributeGroup.itemGroupId,
+        groupName: attributeGroup.name,
+        itemId: item.itemId,
+        itemName: item.name,
+        price: item.price,
+      }));
+    });
+  }, [atributos, product?.itemIds]);
+
+  const getVariant = () => {
+    if (!selectedVariant?.options?.length) return <></>;
+    return (
+      <>
+        <p>
+          <b>Variante:</b>
+          {selectedVariant.options.map((option) => `${option.optionGroup?.name || ""}: ${option.name}`).join(", ")}
+        </p>
+      </>
+    );
+  };
+
+  const getAttributes = () => {
+    if (!selectedAttributes.length) return <></>;
+    return (
+      <>
+        <p>
+          <b>Atributos:</b>
+          {selectedAttributes.map((attribute) => `${attribute.groupName}: ${attribute.itemName}`).join(", ")}
+        </p>
+      </>
+    );
+  };
 
   return (
     <div className="editOrderProductRow">
@@ -29,8 +78,8 @@ export const OrderProductRow = ({
         <div className="editOrderProductData">
           <h4>{product.name}</h4>
           <p>Precio: {product.price ?? "-"}</p>
-          <p>Variantes: {product.variantId || "-"}</p>
-          <p>Atributos: {product.itemIds?.length ? product.itemIds.join(", ") : "-"}</p>
+          {getVariant()}
+          {getAttributes()}
         </div>
       </div>
 
@@ -79,14 +128,14 @@ export const OrderProductRow = ({
           <Button
             text={isUpdating ? "Actualizando..." : "Actualizar cantidad"}
             icon={<MdEdit />}
-            customClass={"customButtonColor2"}
+            customClass="customButtonColor2"
             action={() => updateQuantityProductToOrder(product)}
           />
 
           <Button
             text={isRemoving ? "Eliminando..." : "Eliminar"}
             icon={<MdDelete />}
-            customClass={"customButtonColor3"}
+            customClass="customButtonColor3"
             action={() => removeProductToOrder(product)}
           />
         </div>

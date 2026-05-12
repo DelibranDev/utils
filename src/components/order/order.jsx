@@ -39,16 +39,18 @@ export const Order = ({
     canCreateInvoice: true,
   },
   size = "normal",
+  variants = [],
+  atributos = [],
 }) => {
   console.log(info, details, showProducts, notes, resume, timeline, canEdit);
   return (
     <div className="orderContainer">
-      <div className="orderActions">{canEdit && <Edit data={data} {...edition} />}</div>
+      <div className="orderActions">{canEdit && <Edit data={data} {...edition} variants={variants} atributos={atributos} />}</div>
       <div className="order">
         <div className="orderColumn">
           <div className="orderColumnItem">
             {info && <OrderInfo data={data} />}
-            {showProducts && <OrderProducts data={data} size={size} />}
+            {showProducts && <OrderProducts data={data} size={size} variants={variants} atributos={atributos} />}
           </div>
         </div>
         <div className="orderColumn">

@@ -8,6 +8,8 @@ export const OrderProductsCard = ({
   rowLoadingKey,
   updateQuantityProductToOrder,
   removeProductToOrder,
+  variants,
+  atributos,
 }) => {
   return (
     <div className="editOrderCard">
@@ -26,6 +28,8 @@ export const OrderProductsCard = ({
               rowLoadingKey={rowLoadingKey}
               updateQuantityProductToOrder={updateQuantityProductToOrder}
               removeProductToOrder={removeProductToOrder}
+              variants={variants}
+              atributos={atributos}
             />
           ))}
         </div>

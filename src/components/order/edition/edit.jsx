@@ -26,6 +26,8 @@ export const Edit = ({
   onShowAlert,
   onRefresh,
   onUpdatePanelData,
+  variants,
+  atributos,
 }) => {
   console.log("=== Edit ===");
   const orderId = data?.orderId;
@@ -336,25 +338,6 @@ export const Edit = ({
     return clientsState.find((client) => client.customerId === orderForm.customerId);
   }, [clientsState, orderForm.customerId]);
 
-  /*useEffect(() => {
-    const signature = buildOrderSignature(data || null);
-
-    if (lastSyncedOrderRef.current === signature) {
-      return;
-    }
-
-    lastSyncedOrderRef.current = signature;
-    syncOrderStates(data || null);
-  }, [data, buildOrderSignature, syncOrderStates]);*/
-
-  /*useEffect(() => {
-    setClients(clients || []);
-  }, [clients]);
-
-  useEffect(() => {
-    setProducts(products || []);
-  }, [products]);*/
-
   useEffect(() => {
     if (showPanelEdition) {
       refreshAllData();
@@ -400,6 +383,8 @@ export const Edit = ({
                       rowLoadingKey={rowLoadingKey}
                       updateQuantityProductToOrder={updateQuantityProductToOrder}
                       removeProductToOrder={removeProductToOrder}
+                      variants={variants}
+                      atributos={atributos}
                     />
 
                     <AddProductCard
