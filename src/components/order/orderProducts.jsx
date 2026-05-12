@@ -3,7 +3,7 @@ import React, { useMemo } from "react";
 export const OrderProducts = ({ data, size = "normal", variants, atributos }) => {
   const NormalSize = ({ product, index }) => {
     const selectedVariant = useMemo(() => {
-      if (!product?.variantId) return null;
+      if (!product?.variantId || !variants) return null;
       return variants.find((variant) => variant.variantId === product.variantId) || null;
     }, [variants, product?.variantId]);
 
