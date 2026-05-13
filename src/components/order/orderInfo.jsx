@@ -15,7 +15,7 @@ export const OrderInfo = ({ data, size = "normal" }) => {
             <div className="order-value">{data?.number}</div>
           </div>
         </div>
-        <div className="order-info">
+        <div className="order-number">
           <div className="order-info-time">
             <div className="order-label text-align-right">Fecha del pedido</div>
             <div className="order-value text-align-right">{parseDate(data?.createdAt)}</div>

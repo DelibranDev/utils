@@ -45,7 +45,7 @@ export const OrderProductRow = ({
     return (
       <>
         <p>
-          <b>Variante:</b>
+          <b>Variante: </b>
           {selectedVariant.options.map((option) => `${option.optionGroup?.name || ""}: ${option.name}`).join(", ")}
         </p>
       </>
@@ -57,7 +57,7 @@ export const OrderProductRow = ({
     return (
       <>
         <p>
-          <b>Atributos:</b>
+          <b>Atributos: </b>
           {selectedAttributes.map((attribute) => `${attribute.groupName}: ${attribute.itemName}`).join(", ")}
         </p>
       </>

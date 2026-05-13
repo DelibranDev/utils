@@ -27,9 +27,12 @@ export const OrderTimeline = ({ data }) => {
       .filter(([key, value]) => statusMap[key] && value) // Filtra valores no nulos
       .map(([key, value], index) => {
         const dateObj = new Date(value);
-        const formattedDate = `${dateObj.getHours()}:${String(dateObj.getMinutes()).padStart(2, "0")} de ${dateObj.toLocaleString("es-ES", {
-          month: "short",
-        })}, ${dateObj.getFullYear()}`;
+        const formattedDate = `${dateObj.getHours()}:${String(dateObj.getMinutes()).padStart(2, "0")} de ${dateObj.toLocaleString(
+          "es-ES",
+          {
+            month: "short",
+          },
+        )}, ${dateObj.getFullYear()}`;
 
         return {
           id: index,
@@ -46,6 +49,9 @@ export const OrderTimeline = ({ data }) => {
 
   return (
     <div className="timeline-container">
+      <div class="client-details-header">
+        <b>Seguimiento</b>
+      </div>
       <ul className="timeline">
         {orderLog &&
           transformOrderLog(orderLog)?.map((timeline) => (

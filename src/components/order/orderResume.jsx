@@ -18,7 +18,7 @@ export const OrderResume = ({
         </div>
         <div>
           <div className="invoiceResume-Header-title text-align-right">Canal de venta</div>
-          <div className="invoiceResume-Header-value text-align-right">{data.paymentMethod}</div>
+          <div className="invoiceResume-Header-value text-align-right">{data?.SalesChannel?.name}</div>
         </div>
       </div>
       <div className="invoiceResume-Body">

@@ -30,7 +30,7 @@ export const OrderProducts = ({ data, size = "normal", variants, atributos }) =>
       return (
         <>
           <div>
-            <b>Variante:</b>
+            <b>Variante: </b>
             {selectedVariant.options.map((option) => `${option.optionGroup?.name || ""}: ${option.name}`).join(", ")}
           </div>
         </>
@@ -42,7 +42,7 @@ export const OrderProducts = ({ data, size = "normal", variants, atributos }) =>
       return (
         <>
           <div>
-            <b>Atributos:</b>
+            <b>Atributos: </b>
             {selectedAttributes.map((attribute) => `${attribute.groupName}: ${attribute.itemName}`).join(", ")}
           </div>
         </>
