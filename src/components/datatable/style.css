@@ -289,6 +289,10 @@ tbody tr {
   align-items: center;
   gap: 2px;
   margin-left: 0;
+  & svg {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 .datatableHeaderIcon,
@@ -385,10 +389,10 @@ tbody tr {
 }
 
 .datatableSearchInput {
+  min-height: 15px !important;
+  padding: 3px 10px !important;
   width: 100%;
-  min-height: 36px;
   box-sizing: border-box;
-  padding: 7px 10px 7px 32px;
   border: 1px solid #d7d7d7;
   border-radius: 5px;
   background: #fff;
@@ -396,6 +400,11 @@ tbody tr {
 
 .toggleColumnContainer {
   position: relative;
+  margin-left: 15px;
+}
+
+.datatableClearFilters {
+  height: auto;
 }
 
 .datatableFooterInfo {
