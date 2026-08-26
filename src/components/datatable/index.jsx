@@ -5,8 +5,6 @@ import { Sections } from "./sections";
 import { Actions } from "./actions";
 import "./style.css";
 
-console.info("[UTILS Datatable v2026.08.26-2] módulo cargado");
-
 const DEFAULT_SECTIONS = [
   {
     text: null,
@@ -99,11 +97,6 @@ export const Datatable = ({
 
   const sourceData = Array.isArray(data) ? data : [];
 
-  console.debug("[UTILS Datatable v2026.08.26-2] render", {
-    rows: sourceData.length,
-    activeSection,
-    indexStart,
-  });
 
   const filteredData = useMemo(() => {
     let result = [...sourceData];
@@ -187,7 +180,6 @@ export const Datatable = ({
   };
 
   const handleSectionData = (section, callback) => {
-    console.debug("[UTILS Datatable v2026.08.26-2] section", section);
     setActiveSection(section);
     setIndexStart(0);
     showToggleColumnPanel(false);

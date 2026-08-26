@@ -38,6 +38,19 @@ const getDisplayValue = (field, value) => {
   return String(getObjectLabel(value));
 };
 
+const isArrayColumn = (values) => {
+  const validValues = values.filter((value) => value !== null && value !== undefined);
+  return validValues.length > 0 && validValues.every((value) => Array.isArray(value));
+};
+
+const getCustomDataValue = (value, values) => {
+  if ((value === null || value === undefined) && isArrayColumn(values)) {
+    return [];
+  }
+
+  return value;
+};
+
 const ColumnFilter = ({ field, values, filter, onChange, onClose }) => {
   const filterType = getFilterType(values);
 
@@ -182,8 +195,11 @@ export const DatatableComponent = ({
 
               {columns.map((field, columnIndex) => {
                 const values = data.map((item) => item?.[field]);
-                const hasFilter = Boolean(columnFilters[field]);
-                const isSorted = sortConfig.column === field && Boolean(sortConfig.direction);
+                const columnIsArray = isArrayColumn(values);
+                const isFilterable = customHeadersStyle[field]?.filterable !== false && !columnIsArray;
+                const isSortable = customHeadersStyle[field]?.sortable !== false && !columnIsArray;
+                const hasFilter = isFilterable && Boolean(columnFilters[field]);
+                const isSorted = isSortable && sortConfig.column === field && Boolean(sortConfig.direction);
 
                 return (
                   <th
@@ -196,33 +212,37 @@ export const DatatableComponent = ({
                         <span className="datatableHeaderLabel">{customHeaders[field]}</span>
                       </div>
                       <div className="datatableHeaderActions">
-                        <button
-                          type="button"
-                          className={`datatableHeaderIcon ${isSorted ? "active" : ""}`}
-                          title="Ordenar"
-                          onClick={(event) => {
-                            event.stopPropagation();
-                            handleSort(field);
-                          }}
-                        >
-                          {isSorted && sortConfig.direction === "desc" ? <MdArrowDownward /> : <MdArrowUpward />}
-                        </button>
+                        {isSortable && (
+                          <button
+                            type="button"
+                            className={`datatableHeaderIcon ${isSorted ? "active" : ""}`}
+                            title="Ordenar"
+                            onClick={(event) => {
+                              event.stopPropagation();
+                              handleSort(field);
+                            }}
+                          >
+                            {isSorted && sortConfig.direction === "desc" ? <MdArrowDownward /> : <MdArrowUpward />}
+                          </button>
+                        )}
 
-                        <button
-                          type="button"
-                          className={`datatableHeaderIcon ${hasFilter ? "active" : ""}`}
-                          title="Filtrar"
-                          onClick={(event) => {
-                            event.stopPropagation();
-                            setOpenFilterColumn((current) => (current === field ? null : field));
-                          }}
-                        >
-                          <MdFilterAlt />
-                        </button>
+                        {isFilterable && (
+                          <button
+                            type="button"
+                            className={`datatableHeaderIcon ${hasFilter ? "active" : ""}`}
+                            title="Filtrar"
+                            onClick={(event) => {
+                              event.stopPropagation();
+                              setOpenFilterColumn((current) => (current === field ? null : field));
+                            }}
+                          >
+                            <MdFilterAlt />
+                          </button>
+                        )}
                       </div>
                     </div>
 
-                    {openFilterColumn === field && (
+                    {isFilterable && openFilterColumn === field && (
                       <ColumnFilter
                         field={field}
                         values={values}
@@ -251,24 +271,29 @@ export const DatatableComponent = ({
                   </td>
                 )}
 
-                {columns.map((field) => (
-                  <td
-                    key={field}
-                    className="text-align-center"
-                    style={{ width: `${customHeadersStyle[field]?.width || maxLengthValues[field] || 100}px` }}
-                    onClick={
-                      typeof row[field] === "boolean" || row[field] === "PUBLISHED" || row[field] === "DRAFT"
-                        ? undefined
-                        : () => rowCallback(row)
-                    }
-                  >
-                    {customData[field]
-                      ? customData[field](row[field], row)
-                      : field === "status" || field === "paymentStatus"
-                        ? (STATUS_LABELS[row[field]] ?? row[field])
-                        : row[field]}
-                  </td>
-                ))}
+                {columns.map((field) => {
+                  const fieldValues = data.map((item) => item?.[field]);
+                  const cellValue = getCustomDataValue(row[field], fieldValues);
+
+                  return (
+                    <td
+                      key={field}
+                      className="text-align-center"
+                      style={{ width: `${customHeadersStyle[field]?.width || maxLengthValues[field] || 100}px` }}
+                      onClick={
+                        typeof row[field] === "boolean" || row[field] === "PUBLISHED" || row[field] === "DRAFT"
+                          ? undefined
+                          : () => rowCallback(row)
+                      }
+                    >
+                      {customData[field]
+                        ? customData[field](cellValue, row)
+                        : field === "status" || field === "paymentStatus"
+                          ? (STATUS_LABELS[row[field]] ?? row[field])
+                          : row[field]}
+                    </td>
+                  );
+                })}
               </tr>
             ))}
           </tbody>
