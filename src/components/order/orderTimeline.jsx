@@ -7,6 +7,7 @@ export const OrderTimeline = ({ data }) => {
     if (!orderLog || typeof orderLog !== "object") return [];
 
     const statusMap = {
+      pending: "Productos añadidos al carrito",
       peding: "Productos añadidos al carrito",
       inPreparation: "Pedido en preparación",
       prepared: "Pedido preparado",
@@ -20,51 +21,49 @@ export const OrderTimeline = ({ data }) => {
       recoveryEmailSent: "Correo de recuperación enviado",
       paymentCompleted: "Pago completado",
       createdAt: "Pedido creado",
-      /*updatedAt: "Pedido actualizado",*/
     };
 
-    let events = Object.entries(orderLog)
-      .filter(([key, value]) => statusMap[key] && value) // Filtra valores no nulos
-      .map(([key, value], index) => {
+    return Object.entries(orderLog)
+      .filter(([key, value]) => statusMap[key] && value)
+      .map(([key, value]) => {
         const dateObj = new Date(value);
-        const formattedDate = `${dateObj.getHours()}:${String(dateObj.getMinutes()).padStart(2, "0")} de ${dateObj.toLocaleString(
-          "es-ES",
-          {
-            month: "short",
-          },
-        )}, ${dateObj.getFullYear()}`;
 
         return {
-          id: index,
+          key,
           name: statusMap[key],
-          date: formattedDate,
-          timestamp: dateObj.getTime(), // Guarda la fecha en timestamp para ordenación
+          date: `${String(dateObj.getHours()).padStart(2, "0")}:${String(dateObj.getMinutes()).padStart(
+            2,
+            "0",
+          )} de ${dateObj.toLocaleString("es-ES", {
+            month: "short",
+          })}, ${dateObj.getFullYear()}`,
+          timestamp: dateObj.getTime(),
         };
       })
-      .sort((a, b) => a.timestamp - b.timestamp) // Ordena por timestamp de menor a mayor
-      .map(({ id, name, date }) => ({ id, name, date })); // Elimina el timestamp del resultado final
-
-    return events;
+      .sort((a, b) => b.timestamp - a.timestamp);
   }
+
+  const timeline = transformOrderLog(orderLog);
 
   return (
     <div className="timeline-container">
-      <div class="client-details-header">
+      <div className="client-details-header">
         <b>Seguimiento</b>
       </div>
+
       <ul className="timeline">
-        {orderLog &&
-          transformOrderLog(orderLog)?.map((timeline) => (
-            <li>
-              <div className="circleRounded">
-                <div className="circle"></div>
-              </div>
-              <div className="event">
-                <div className="event-name">{timeline.name}</div>
-                <div className="event-date">{timeline.date}</div>
-              </div>
-            </li>
-          ))}
+        {timeline.map((item) => (
+          <li key={`${item.key}-${item.timestamp}`}>
+            <div className="circleRounded">
+              <div className="circle"></div>
+            </div>
+
+            <div className="event">
+              <div className="event-name">{item.name}</div>
+              <div className="event-date">{item.date}</div>
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
   );

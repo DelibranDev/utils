@@ -9,6 +9,12 @@ export const OrderResume = ({
   callbackPrintInvoice = () => null,
   canCreateInvoice = true,
 }) => {
+  const formatAmount = (amount) => Number(amount || 0).toFixed(2);
+
+  const discount = Number(data.discountedTotal) === 0 ? 0 : Number(data.total) - Number(data.discountedTotal);
+
+  const total = Number(data.discountedTotal) === 0 ? Number(data.total) : Number(data.discountedTotal);
+
   return (
     <div>
       <div className="invoiceResume-Header">
@@ -16,35 +22,42 @@ export const OrderResume = ({
           <div className="invoiceResume-Header-title">No Factura</div>
           <div className="invoiceResume-Header-value">{data.number}</div>
         </div>
+
         <div>
           <div className="invoiceResume-Header-title text-align-right">Canal de venta</div>
           <div className="invoiceResume-Header-value text-align-right">{data?.SalesChannel?.name}</div>
         </div>
       </div>
+
       <div className="invoiceResume-Body">
         <div className="invoiceResume-Item">
           <div className="invoiceResume-title">Subtotal</div>
           <div className="invoiceResume-note">{(data.products || []).length > 0 && data.products.length} artículos</div>
-          <div className="invoiceResume-value">{data.total} €</div>
+          <div className="invoiceResume-value">{formatAmount(data.total)} €</div>
         </div>
+
         <div className="invoiceResume-Item">
           <div className="invoiceResume-title">Descuento</div>
           <div className="invoiceResume-note"></div>
-          <div className="invoiceResume-value">{data.discountedTotal === 0 ? 0 : data.total - data.discountedTotal} €</div>
+          <div className="invoiceResume-value">{formatAmount(discount)} €</div>
         </div>
+
         <div className="invoiceResume-Separator"></div>
+
         <div className="invoiceResume-Item">
           <div className="invoiceResume-title">Total</div>
           <div></div>
-          <div className="invoiceResume-value">{data.discountedTotal === 0 ? data.total : data.discountedTotal} €</div>
+          <div className="invoiceResume-value">{formatAmount(total)} €</div>
         </div>
       </div>
+
       <div>
         {data.Invoice === null ? (
           <div className="flex-gap" style={{ paddingTop: "15px" }}>
             <div>
               <Button text={"Imprimir ticket"} icon={null} customClass={"w-100"} action={callbackPrintTicket} />
             </div>
+
             <div>
               {canCreateInvoice && (
                 <Button text={"Crear factura"} icon={null} customClass={"w-100"} action={callbackCreateInvoice} />
