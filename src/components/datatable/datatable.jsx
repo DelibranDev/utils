@@ -43,6 +43,23 @@ const isArrayColumn = (values) => {
   return validValues.length > 0 && validValues.every((value) => Array.isArray(value));
 };
 
+
+const renderCustomDataSafely = (renderer, value, row) => {
+  try {
+    return renderer(value, row);
+  } catch (error) {
+    if (value === null || value === undefined) {
+      try {
+        return renderer([], row);
+      } catch {
+        // Re-lanzamos el error original para no ocultar errores reales del renderer.
+      }
+    }
+
+    throw error;
+  }
+};
+
 const getCustomDataValue = (value, values) => {
   if ((value === null || value === undefined) && isArrayColumn(values)) {
     return [];
@@ -287,7 +304,7 @@ export const DatatableComponent = ({
                       }
                     >
                       {customData[field]
-                        ? customData[field](cellValue, row)
+                        ? renderCustomDataSafely(customData[field], cellValue, row)
                         : field === "status" || field === "paymentStatus"
                           ? (STATUS_LABELS[row[field]] ?? row[field])
                           : row[field]}
