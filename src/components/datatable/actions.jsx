@@ -1,106 +1,125 @@
-import React, { useState } from "react";
-import { HiOutlineSearch } from "react-icons/hi";
+import React from "react";
+import { MdSearch, MdClose, MdViewColumn } from "react-icons/md";
 import { Button } from "./../button";
-import { Input } from "./../input";
-import { PiColumnsPlusLeftFill, PiColumnsPlusLeftLight } from "react-icons/pi";
 
 export const Actions = ({
   checkColumn = false,
-  activeSection = "",
-  sections = {},
+  activeSection = 0,
+  sections = [],
   handleCheckColumn = () => {},
   selectedRows = [],
   cloneCallback = () => {},
   deleteCallback = () => {},
-  setSearch,
-  customHeaders,
-  handleVisibleColumns,
-  visibleColumns,
-  toggleColumnPanel,
-  showToggleColumnPanel,
+  setSearch = () => {},
+  search = "",
+  customHeaders = {},
+  handleVisibleColumns = () => {},
+  visibleColumns = [],
+  toggleColumnPanel = false,
+  showToggleColumnPanel = () => {},
+  clearFilters = () => {},
+  hasActiveFilters = false,
 }) => {
   const actions = [
-    { id: "search", text: "Buscar", icon: <HiOutlineSearch />, callback: () => null },
-    { id: "filter", text: "Filtrar", icon: <HiOutlineSearch />, callback: () => null },
-    { id: "order", text: "Ordenar", icon: <HiOutlineSearch />, callback: () => null },
-    { id: "select", text: "Seleccionar", icon: "", callback: handleCheckColumn },
+    { id: "search", text: "Buscar", icon: <MdSearch />, callback: () => null },
+    { id: "select", text: "Seleccionar", icon: null, callback: handleCheckColumn },
   ];
 
   const actionsWithSelected = [
-    { id: "clone", text: "Duplicar", icon: <HiOutlineSearch />, callback: () => cloneCallback(selectedRows), customClass: "customButtonColor1" },
-    { id: "delete", text: "Eliminar", icon: <HiOutlineSearch />, callback: () => deleteCallback(selectedRows), customClass: "customButtonColor1" },
-    { id: "cancel", text: "Cancelar", icon: "", callback: handleCheckColumn, customClass: "customButtonColor2" },
+    {
+      id: "clone",
+      text: "Duplicar",
+      icon: null,
+      callback: () => cloneCallback(selectedRows),
+      customClass: "customButtonColor1",
+    },
+    {
+      id: "delete",
+      text: "Eliminar",
+      icon: null,
+      callback: () => deleteCallback(selectedRows),
+      customClass: "customButtonColor1",
+    },
+    {
+      id: "cancel",
+      text: "Cancelar",
+      icon: null,
+      callback: handleCheckColumn,
+      customClass: "customButtonColor2",
+    },
   ];
 
-  const ToggleColumn = () => {
-    const handleToggleColumnPanel = () => {
-      showToggleColumnPanel(!toggleColumnPanel);
-    };
-    return (
-      <>
-        <div style={{ cursor: "pointer" }} onClick={handleToggleColumnPanel}>
-          <PiColumnsPlusLeftLight size={"2rem"} />
-        </div>
-        {toggleColumnPanel && (
-          <div className="toggleColumnPanel">
-            {Object.entries(customHeaders).map(([clave, valor]) => (
-              <div key={clave} className="toggleColumnPanelItem">
-                <input
-                  type="checkbox"
-                  className="custom-checkbox"
-                  onChange={() => handleVisibleColumns(clave)}
-                  checked={visibleColumns.includes(clave)}
-                />
-                {`${valor}`}
-              </div>
-            ))}
-          </div>
-        )}
-      </>
-    );
-  };
-
-  const handleSearch = (e) => {
-    setSearch(e);
-  };
-
-  const availableActions = () => {
-    return sections?.[activeSection]?.actions ? actions.filter((f) => sections[activeSection].actions.includes(f.id)) : [];
-  };
-
-  const availableActionsWithSelected = () => {
-    return sections?.[activeSection]?.actionsWithSelect
-      ? actionsWithSelected.filter((f) => sections[activeSection].actionsWithSelect.includes(f.id))
-      : [];
-  };
+  const currentSection = sections?.[activeSection] ?? {};
+  const availableActions = actions.filter((action) => currentSection.actions?.includes(action.id));
+  const availableActionsWithSelected = actionsWithSelected.filter((action) =>
+    currentSection.actionsWithSelect?.includes(action.id),
+  );
+  const hasSearch = availableActions.some((action) => action.id === "search");
 
   return (
     <div className="actionsDatatable">
       {checkColumn
-        ? availableActionsWithSelected().map((a, i) => (
-            <Button key={i} text={a.text} icon={a.icon} action={a.callback} customClass={a.customClass || ""} />
+        ? availableActionsWithSelected.map((action) => (
+            <Button
+              key={action.id}
+              text={action.text}
+              icon={action.icon}
+              action={action.callback}
+              customClass={action.customClass || ""}
+            />
           ))
-        : availableActions()
-            .filter((f) => f.id !== "search")
-            .map((a, i) => <Button key={i} text={a.text} icon={a.icon} action={a.callback} />)}
-      {availableActions().some((obj) => obj.id === "search") && (
-        <div className="flex-start" style={{ width: "250px", gap: "15px" }}>
-          <Input
-            id={""}
-            type={""}
-            placeholder={"Buscar"}
-            classname={"text-align-right"}
-            icon={null}
-            iconType={null}
-            iconPositionRight={true}
-            label={""}
-            description={""}
-            defaultValue={""}
-            disabled={false}
-            validation={null}
-            onWritting={handleSearch}
-          />
-          <ToggleColumn />
+        : availableActions
+            .filter((action) => action.id !== "search")
+            .map((action) => <Button key={action.id} text={action.text} icon={action.icon} action={action.callback} />)}
+
+      {!checkColumn && hasActiveFilters && (
+        <Button
+          text="Limpiar filtros"
+          icon={<MdClose />}
+          action={clearFilters}
+          customClass="datatableClearFilters"
+        />
+      )}
+
+      {hasSearch && (
+        <div className="datatableSearchTools">
+          <div className="datatableSearchWrapper">
+            <MdSearch className="datatableSearchIcon" />
+            <input
+              className="datatableSearchInput"
+              type="text"
+              placeholder="Buscar"
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+            />
+          </div>
+
+          <div className="toggleColumnContainer">
+            <button
+              type="button"
+              className="toggleColumnButton"
+              title="Mostrar u ocultar columnas"
+              onClick={() => showToggleColumnPanel(!toggleColumnPanel)}
+            >
+              <MdViewColumn size="2rem" />
+            </button>
+
+            {toggleColumnPanel && (
+              <div className="toggleColumnPanel">
+                {Object.entries(customHeaders).map(([key, value]) => (
+                  <label key={key} className="toggleColumnPanelItem">
+                    <input
+                      type="checkbox"
+                      className="custom-checkbox"
+                      onChange={() => handleVisibleColumns(key)}
+                      checked={visibleColumns.includes(key)}
+                    />
+                    {String(value)}
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>

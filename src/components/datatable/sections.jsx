@@ -7,7 +7,7 @@ export const Sections = ({ sections, activeSection, handleSectionData }) => {
         sections?.map((s, i) => {
           return (
             s.text !== null && (
-              <div className={i === activeSection ? "selectedHorizontalMenu" : ""} onClick={() => handleSectionData(i, s.callback)}>
+              <div key={`${s.text}-${i}`} className={i === activeSection ? "selectedHorizontalMenu" : ""} onClick={() => handleSectionData(i, s.callback)}>
                 {s.text}
               </div>
             )

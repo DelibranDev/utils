@@ -1,238 +1,232 @@
-.datatable{
-    height: fit-content;
-    width: 100%;
+.datatable {
+  height: fit-content;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  & .adminPanel {
+    width: auto;
+    flex-grow: 1;
+    align-self: stretch;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 20px;
-    & .adminPanel{
-        width: auto;
-        flex-grow: 1;
-        align-self: stretch;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
+  }
 }
 
-
-.headerDatatable{
-    width: 100%;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
+.headerDatatable {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
 
-.sectionsDatatable{
-    width: 100%;
-    justify-content: flex-start;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    padding: 10px;
-    & div{
-        padding: 5px;
-    }
+.sectionsDatatable {
+  width: 100%;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px;
+  & div {
+    padding: 5px;
+  }
 }
 
-.selectedHorizontalMenu{
+.selectedHorizontalMenu {
   color: var(--color-primary);
   font-weight: 700;
   border-bottom: 2px var(--color-primary) solid;
 }
 
-.actionsDatatable{
-    display: flex;
-    width: 100%;
-    justify-content: end;
-    gap: 5px;
-    padding: 10px;
+.actionsDatatable {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  gap: 5px;
+  padding: 10px;
 }
 
-.pagination{
-    justify-content: space-between;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    height: 30px;
+.pagination {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 30px;
 }
 
-.paginationDropdown{
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    gap: 10px;
-    align-items: center;
+.paginationDropdown {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
 }
 
-.paginationText{
-    margin-top: 3px;
+.paginationText {
+  margin-top: 3px;
 }
 
-.paginationPages{
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    gap: 10px;
-    align-items: center;
-    padding-right: 5px;
+.paginationPages {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
+  padding-right: 5px;
 }
 
-.pageBtn{
-    padding: 4px 9px;
-    background-color: white;
-    border-radius: 5px;
-    margin-left: 3px; 
-    cursor: pointer;
+.pageBtn {
+  padding: 4px 9px;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 3px;
+  cursor: pointer;
 }
 
-.pageBtnActive{
-    border: 1px #0057FF solid;
+.pageBtnActive {
+  border: 1px #0057ff solid;
 }
 
-.selectMaxRows{
-    margin: 0px 10px;
+.selectMaxRows {
+  margin: 0px 10px;
 }
-
 
 .rowTableMobile {
-    padding: 5px 10px;
-    line-height: 1.8;
+  padding: 5px 10px;
+  line-height: 1.8;
 }
 
-.table-image{
-    width: 80px;
-    height: 50px;
+.table-image {
+  width: 80px;
+  height: 50px;
 }
 
 .desktopDatatable {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    align-self: stretch;
-    height: 100%; /* Ensures the div fills the available height */
-  }
-  
-  .table-container {
-    display: flex;
-    height: 100%; /* Ensures the container takes up the full height of the parent */
-  }
-  
-  table {
-    color: rgba(32, 32, 32, 1);
-    width: 100%;
-    height: fit-content;
-    margin: 10px;
-    border-radius: 10px;
-    border: 1px #ebebeb solid;
-    border-collapse: unset!important;
-  }
-
-  thead{
-    display: flex;
-    height: 40px;
-    align-items: center;
-    border-bottom: 1px #ebebeb solid!important;
-  }
-
-  tbody{
-    display: block;
-    height: 100%; /* Ensures tbody takes up the full height of the table */
-  }
-
-  tbody td{
-    cursor: pointer;
-    height: 42px;
-  }
-  tbody td.checkboxtd {
-    cursor: default;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  align-self: stretch;
+  height: 100%; /* Ensures the div fills the available height */
 }
-  
-  thead th, tbody td {
-    padding: 5px;
-    text-align: left;
-  }
-  
-  
-  tbody tr:nth-child(odd) {
-    background-color: #F5F5F5;
-  }
-  
-  thead tr, tbody tr {
-    display: table; /* Ensures tr display as table-row within tbody */
-    width: 100%;
-    table-layout: fixed; /* Ensures each row respects the table's fixed layout */
-  }
 
-  .rowSelected{
-    background-color: #e8e8e8!important;
-  }
+.table-container {
+  display: flex;
+  height: 100%; /* Ensures the container takes up the full height of the parent */
+}
 
-  .toggleColumnPanel{
-    width: auto;
-    border: 1px var(--color-terciary-2) solid;
-    border-radius: 5px;
-    position: absolute;
-    margin-top: 40px;
-    right: 25px;
-    height: auto;
-    padding: 10px 20px 10px 10px;
-    background-color: var(--color-secondary);
+table {
+  color: rgba(32, 32, 32, 1);
+  width: 100%;
+  height: fit-content;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px #ebebeb solid;
+  border-collapse: unset !important;
+}
+
+thead {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  border-bottom: 1px #ebebeb solid !important;
+}
+
+tbody {
+  display: block;
+  height: 100%; /* Ensures tbody takes up the full height of the table */
+}
+
+tbody td {
+  cursor: pointer;
+  height: 42px;
+}
+tbody td.checkboxtd {
+  cursor: default;
+}
+
+thead th,
+tbody td {
+  padding: 5px;
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+thead tr,
+tbody tr {
+  display: table; /* Ensures tr display as table-row within tbody */
+  width: 100%;
+  table-layout: fixed; /* Ensures each row respects the table's fixed layout */
+}
+
+.rowSelected {
+  background-color: #e8e8e8 !important;
+}
+
+.toggleColumnPanel {
+  width: auto;
+  border: 1px var(--color-terciary-2) solid;
+  border-radius: 5px;
+  position: absolute;
+  margin-top: 40px;
+  right: 25px;
+  height: auto;
+  padding: 10px 20px 10px 10px;
+  background-color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 5;
+  & .toggleColumnPanelItem {
     display: flex;
-    flex-direction: column;
     gap: 5px;
-    z-index: 5;
-    & .toggleColumnPanelItem{
-      display: flex;
-      gap: 5px;
-      align-items: center;
-    }
+    align-items: center;
   }
-
+}
 
 /****** MEDIA QUERIES *******/
 
-
-
 /* 1300px or less */
 @media (max-width: 1300px) {
-  .headerDatatable{
-        flex-wrap: wrap;
+  .headerDatatable {
+    flex-wrap: wrap;
   }
 }
 
 /* 992px or less */
 @media (max-width: 992px) {
-
-  
 }
 
 /* 750px or less */
 @media (max-width: 750px) {
-  .sectionsDatatable{
+  .sectionsDatatable {
     overflow-x: auto;
-    & div{
+    & div {
       white-space: nowrap;
     }
-    & .selectedHorizontalMenu{
+    & .selectedHorizontalMenu {
       border-bottom: 0px;
     }
   }
-  .datatable{
+  .datatable {
     margin-left: -10px;
     margin-right: -10px;
     width: calc(100% + 20px);
-    & .adminPanel{
+    & .adminPanel {
       padding: 10px;
     }
   }
 
-  .desktopDatatable{
+  .desktopDatatable {
     margin-left: -10px;
     margin-right: -10px;
   }
@@ -252,23 +246,163 @@
     height: 30px;
   }
 
-  thead, tbody {
+  thead,
+  tbody {
     display: table;
     width: 100%;
     table-layout: fixed;
   }
 
-  td, th {
-   /* max-width: 100px;*/
-   /* width: auto;*/              /* Se adapta al contenido */
-    white-space: nowrap;      /* No permite saltos de línea */
-    text-overflow: ellipsis;  /* Muestra los puntos suspensivos si se desborda */
-    overflow: hidden;         /* Oculta el contenido que se pasa */
+  td,
+  th {
+    /* max-width: 100px;*/
+    /* width: auto;*/ /* Se adapta al contenido */
+    white-space: nowrap; /* No permite saltos de línea */
+    text-overflow: ellipsis; /* Muestra los puntos suspensivos si se desborda */
+    overflow: hidden; /* Oculta el contenido que se pasa */
   }
-  
 }
 
 /* 600px or less */
 @media (max-width: 600px) {
+}
+/* Datatable v2026.08.26-2 */
+.datatableHeaderCell {
+  position: relative;
+  overflow: visible;
+}
 
+.datatableHeaderContent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  width: 100%;
+}
+
+.datatableHeaderLabel {
+  min-width: 0;
+}
+
+.datatableHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 0;
+}
+
+.datatableHeaderIcon,
+.toggleColumnButton {
+  border: 0;
+  background: transparent;
+  padding: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  color: inherit;
+}
+
+.datatableHeaderIcon:hover,
+.datatableHeaderIcon.active,
+.toggleColumnButton:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.columnFilterPopover {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 4px;
+  z-index: 50;
+  min-width: 210px;
+  padding: 12px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  background: var(--color-secondary, #fff);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.datatableHeaderCellFirst .columnFilterPopover {
+  left: 4px;
+  right: auto;
+}
+
+.columnFilterTitle {
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.columnFilterPopover label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 400;
+}
+
+.columnFilterPopover input,
+.columnFilterPopover select {
+  width: 100%;
+  min-height: 34px;
+  padding: 5px 8px;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.columnFilterPopover input {
+  width: calc(100% - 15px);
+}
+.columnFilterClose {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: right;
+  padding: 3px 0;
+}
+
+.datatableSearchTools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.datatableSearchWrapper {
+  position: relative;
+  width: 250px;
+}
+
+.datatableSearchIcon {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.datatableSearchInput {
+  width: 100%;
+  min-height: 36px;
+  box-sizing: border-box;
+  padding: 7px 10px 7px 32px;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.toggleColumnContainer {
+  position: relative;
+}
+
+.datatableFooterInfo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 5px;
+  font-size: 0.9rem;
+  opacity: 0.75;
 }

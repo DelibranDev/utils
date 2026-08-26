@@ -24,7 +24,8 @@ export const Pagination = ({ configuration, maxRowsAvailable, handleMaxRows, han
         {configuration.pages?.map((p) => {
           return (
             <div
-              className={(configuration.indexStart + 12) / configuration.maxRows === p + 1 ? "pageBtn pageBtnActive" : "pageBtn"}
+              key={p}
+              className={configuration.indexStart / configuration.maxRows === p ? "pageBtn pageBtnActive" : "pageBtn"}
               onClick={() => handlePage(p)}
             >
               {p + 1}
