@@ -1,11 +1,96 @@
-.actionsDatatable { display:flex; width:auto; justify-content:flex-end; align-items:center; gap:5px; padding:10px; min-width:0; }
-.datatableSearchTools { display:flex; align-items:center; gap:10px; min-width:0; }
-.datatableSearchWrapper { position:relative; width:250px; max-width:100%; }
-.datatableSearchIcon { position:absolute; right:9px; top:50%; transform:translateY(-50%); pointer-events:none; }
-.datatableSearchInput { min-height:15px !important; padding:3px 30px 3px 10px !important; width:100%; box-sizing:border-box; border:1px solid #d7d7d7; border-radius:5px; background:#fff; }
-.toggleColumnContainer { position:relative; margin-left:8px; }
-.toggleColumnButton { border:0; background:transparent; padding:4px; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; border-radius:4px; }
-.toggleColumnPanel { width:max-content; max-width:min(320px, 90vw); border:1px solid var(--color-terciary-2); border-radius:5px; position:absolute; top:100%; right:0; padding:10px 20px 10px 10px; background:var(--color-secondary); display:flex; flex-direction:column; gap:5px; z-index:60; }
-.toggleColumnPanelItem { display:flex; gap:5px; align-items:center; }
-@media (max-width: 992px) { .actionsDatatable { width:100%; flex-wrap:wrap; padding-top:0; } .datatableSearchTools { flex:1; } }
-@media (max-width: 600px) { .actionsDatatable, .datatableSearchTools { width:100%; } .datatableSearchWrapper { width:100%; } .toggleColumnContainer { margin-left:0; } }
+.actionsDatatable {
+  display: flex;
+  width: auto;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  min-width: 0;
+}
+.datatableSearchTools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.datatableSearchWrapper {
+  position: relative;
+  width: 250px;
+  max-width: 100%;
+}
+.datatableSearchIcon {
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.datatableSearchInput {
+  min-height: 15px !important;
+  padding: 3px 30px 3px 10px !important;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  background: #fff;
+}
+.toggleColumnContainer {
+  position: relative;
+  margin-left: 8px;
+}
+.toggleColumnButton {
+  border: 0;
+  background: transparent;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.toggleColumnPanel {
+  width: max-content;
+  max-width: min(320px, 90vw);
+  border: 1px solid var(--color-terciary-2);
+  border-radius: 5px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 10px 20px 10px 10px;
+  background: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 60;
+}
+.toggleColumnPanelItem {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+@media (max-width: 992px) {
+  .actionsDatatable {
+    width: 100%;
+    flex-wrap: wrap;
+    padding-top: 0;
+  }
+  .datatableSearchTools {
+    flex: 1;
+  }
+}
+@media (max-width: 600px) {
+  .actionsDatatable,
+  .datatableSearchTools {
+    width: 100%;
+  }
+  .datatableSearchWrapper {
+    width: 100%;
+  }
+  .toggleColumnContainer {
+    margin-left: 0;
+  }
+}
+
+.datatableClearFilters {
+  height: 38px;
+}

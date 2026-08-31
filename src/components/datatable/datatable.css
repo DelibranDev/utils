@@ -351,6 +351,7 @@
 .datatableSearchWrapper {
   position: relative;
   width: 250px;
+  margin-right: 30px;
 }
 
 .datatableSearchIcon {
@@ -359,6 +360,7 @@
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
+  font-size: 1.1rem;
 }
 
 .datatableSearchInput {
@@ -377,7 +379,7 @@
 }
 
 .datatableClearFilters {
-  height: auto;
+  height: 38px;
 }
 
 .datatableFooterInfo {
@@ -458,6 +460,8 @@
   }
 }
 
-@media (max-width: 992px) { }
+@media (max-width: 992px) {
+}
 
-@media (max-width: 600px) { }
+@media (max-width: 600px) {
+}

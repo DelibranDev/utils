@@ -32,7 +32,74 @@ const getFilterType = (values) => {
   return "select";
 };
 
-const formatCellValue = (value) => (typeof value === "number" && Number.isFinite(value) ? value.toFixed(2) : value);
+const CURRENCY_FIELD_PATTERN = /(?:^|_)(?:total|amount|price|subtotal|discount|discountedtotal|tax|vat|cost)(?:$|_)/i;
+
+const isCurrencyField = (field, style = {}) => {
+  const configuredType = String(style?.type ?? style?.format ?? "").toLowerCase();
+  if (["currency", "money", "moneda", "euro", "eur"].includes(configuredType)) return true;
+  if (style?.currency === true) return true;
+
+  return CURRENCY_FIELD_PATTERN.test(String(field).replace(/([a-z])([A-Z])/g, "$1_$2").toLowerCase());
+};
+
+const formatCurrency = (value) => {
+  const numericValue = typeof value === "number" ? value : Number(value);
+  return Number.isFinite(numericValue) ? `${numericValue.toFixed(2)} €` : value;
+};
+
+const startOfWeek = (date) => {
+  const result = new Date(date);
+  result.setHours(0, 0, 0, 0);
+  const day = result.getDay();
+  const distanceToMonday = day === 0 ? 6 : day - 1;
+  result.setDate(result.getDate() - distanceToMonday);
+  return result;
+};
+
+const formatDateValue = (value) => {
+  if (!isIsoDate(value)) return value;
+
+  const date = new Date(value);
+  const now = new Date();
+  const dateDay = new Date(date);
+  const today = new Date(now);
+  dateDay.setHours(0, 0, 0, 0);
+  today.setHours(0, 0, 0, 0);
+
+  const differenceInDays = Math.round((today.getTime() - dateDay.getTime()) / 86400000);
+  const time = new Intl.DateTimeFormat("es-ES", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(date);
+
+  if (differenceInDays === 0) return `Hoy a las ${time}`;
+  if (differenceInDays === 1) return `Ayer a las ${time}`;
+
+  const weekStart = startOfWeek(now);
+  const nextWeekStart = new Date(weekStart);
+  nextWeekStart.setDate(nextWeekStart.getDate() + 7);
+
+  if (dateDay >= weekStart && dateDay < nextWeekStart) {
+    const weekday = new Intl.DateTimeFormat("es-ES", { weekday: "long" }).format(date);
+    return `${weekday.charAt(0).toUpperCase()}${weekday.slice(1)} a las ${time}`;
+  }
+
+  const calendarDate = new Intl.DateTimeFormat("es-ES", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  }).format(date);
+
+  return `${calendarDate} a las ${time}`;
+};
+
+const formatCellValue = (field, value, style = {}) => {
+  if (isIsoDate(value)) return formatDateValue(value);
+  if (isCurrencyField(field, style)) return formatCurrency(value);
+  if (typeof value === "number" && Number.isFinite(value)) return value.toFixed(2);
+  return value;
+};
 
 const getDisplayValue = (field, value) => {
   if (field === "status" || field === "paymentStatus") {
@@ -383,7 +450,7 @@ export const DatatableComponent = ({
                         ? renderCustomDataSafely(customData[field], cellValue, row)
                         : field === "status" || field === "paymentStatus"
                           ? (STATUS_LABELS[row[field]] ?? row[field])
-                          : formatCellValue(row[field])}
+                          : formatCellValue(field, row[field], customHeadersStyle[field])}
                     </td>
                   );
                 })}

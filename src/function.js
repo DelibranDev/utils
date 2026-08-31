@@ -21,6 +21,30 @@ export const parseDate = (value, type = "normal") => {
   return fechaFormateada;
 };
 
+export const formatCuteDate = (value) => {
+  if (!value) return "";
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+
+  const now = new Date();
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const startOfDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const daysDifference = Math.round((startOfToday - startOfDate) / 86400000);
+  const time = new Intl.DateTimeFormat("es-ES", { hour: "2-digit", minute: "2-digit" }).format(date);
+
+  if (daysDifference === 0) return `Hoy a las ${time}`;
+  if (daysDifference === 1) return `Ayer a las ${time}`;
+
+  if (daysDifference > 1 && daysDifference < 7) {
+    const weekday = new Intl.DateTimeFormat("es-ES", { weekday: "long" }).format(date);
+    return `${weekday.charAt(0).toUpperCase() + weekday.slice(1)} a las ${time}`;
+  }
+
+  const calendarDate = new Intl.DateTimeFormat("es-ES", { day: "2-digit", month: "2-digit", year: "numeric" }).format(date);
+  return `${calendarDate} a las ${time}`;
+};
+
 export const getTodayDate = (daysToAdd = 0) => {
   const today = new Date();
   today.setDate(today.getDate() + daysToAdd); // Sumar o restar días
