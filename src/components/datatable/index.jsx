@@ -97,7 +97,6 @@ export const Datatable = ({
 
   const sourceData = Array.isArray(data) ? data : [];
 
-
   const filteredData = useMemo(() => {
     let result = [...sourceData];
 
@@ -249,8 +248,6 @@ export const Datatable = ({
 
   const rowCallbackHandler = (row) => {
     showToggleColumnPanel(false);
-    setActiveSection(0);
-    setIndexStart(0);
     rowCallback(row);
   };
 
