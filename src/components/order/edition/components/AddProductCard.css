@@ -1,0 +1,3 @@
+/* Estilos específicos de AddProductCard; las reglas base compartidas permanecen en edit.css para compatibilidad. */
+@media (max-width: 992px) { .editOrderCard { min-width:0; max-width:100%; } }
+@media (max-width: 600px) { .editOrderCard { width:100%; box-sizing:border-box; } }

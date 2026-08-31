@@ -7,3 +7,6 @@
     height: 100%;
     font-size: 1.5rem;
 }
+@media (max-width: 992px) { .noImage { max-width:100%; } }
+
+@media (max-width: 600px) { .noImage { font-size:1.2rem; min-height:80px; } }

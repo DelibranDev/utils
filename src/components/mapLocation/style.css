@@ -1,0 +1,3 @@
+.mapLocationError { color:var(--color-error, red); } .mapLocationFrame { border:0; width:100%; border-radius:5px; }
+@media (max-width: 992px) { .mapLocationFrame { max-width:100%; } }
+@media (max-width: 600px) { .mapLocationFrame { min-height:120px !important; } }

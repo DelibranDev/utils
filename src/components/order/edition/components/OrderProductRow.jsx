@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { Button } from "../../../button";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { getProductRowKey } from "../utils/edit.helpers";
+import "./OrderProductRow.css";
 
 export const OrderProductRow = ({
   product,

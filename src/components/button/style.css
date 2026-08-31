@@ -71,3 +71,7 @@
 .justify-center {
   justify-content: center;
 }
+
+@media (max-width: 992px) { .customButton { max-width:100%; } }
+
+@media (max-width: 600px) { .customButton { max-width:100%; min-height:32px; } }

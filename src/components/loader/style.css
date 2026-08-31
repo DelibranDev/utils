@@ -31,3 +31,7 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 992px) { .loader-spinner { width:42px; height:42px; } }
+
+@media (max-width: 600px) { .loader-spinner { width:34px; height:34px; } }

@@ -22,3 +22,6 @@
     border-radius: 5px;
     height: 50px;
 }
+@media (max-width: 992px) { .customTextarea { width:100%; box-sizing:border-box; } }
+
+@media (max-width: 600px) { .customTextarea { min-height:70px; width:100%; box-sizing:border-box; } }

@@ -3,7 +3,7 @@ import { Pagination } from "./pagination";
 import { DatatableComponent } from "./datatable";
 import { Sections } from "./sections";
 import { Actions } from "./actions";
-import "./style.css";
+import "./index.css";
 
 const DEFAULT_SECTIONS = [
   {
@@ -249,6 +249,8 @@ export const Datatable = ({
 
   const rowCallbackHandler = (row) => {
     showToggleColumnPanel(false);
+    setActiveSection(0);
+    setIndexStart(0);
     rowCallback(row);
   };
 

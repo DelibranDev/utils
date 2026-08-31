@@ -1,90 +1,17 @@
 import React from "react";
+import "./orderShoppingCart.css";
 
-export const OrderShoppingCart = ({ data, CartActions, size = "normal" }) => {
-  const Product = ({ data }) => {
-    return (
-      <>
-        <div
-          className="product-cart"
-          style={
-            size !== "normal"
-              ? {
-                  borderRadius: "0",
-                  borderLeft: "0",
-                  borderRight: "0",
-                  borderBottom: "0",
-                }
-              : {}
-          }
-        >
-          {size === "normal" && (
-            <div
-              className="product-image background-image"
-              style={{
-                backgroundImage:
-                  data && data.Product && data.Product.images.length > 0 && data?.Product.images?.[0]
-                    ? `url('${data.Product.images[0]}')`
-                    : "no",
-              }}
-            ></div>
-          )}
-          <div
-            className="product-cart-info"
-            style={size === "normal" ? { flexDirection: "column", width: "100%" } : { flexDirection: "row", width: "100%" }}
-          >
-            <div
-              className="product-details"
-              style={
-                size !== "normal"
-                  ? {
-                      borderRadius: "0",
-                      borderLeft: "0",
-                      borderRight: "0",
-                      borderBottom: "0",
-                      marginTop: "4px",
-                    }
-                  : {}
-              }
-            >
-              <div
-                className="product-name"
-                style={
-                  size !== "normal"
-                    ? {
-                        fontWeight: "500",
-                      }
-                    : {}
-                }
-              >
-                {data && data.Product && data.Product.name ? data.Product.name : ""}
-              </div>
-              {size === "normal" && <div className="product-description">{data?.Product?.description || ""}</div>}
-            </div>
-            <div className="product-details-bottom">
-              <div className="product-name">{data?.Product?.price ? data.Product.price.toFixed(2) : "0.00"}€</div>
-              <div
-                className="product-actions"
-                style={
-                  size !== "normal"
-                    ? {
-                        marginLeft: "5px",
-                      }
-                    : {}
-                }
-              >
-                <CartActions data={data} />
-              </div>
-            </div>
-          </div>
-          {data?.info ? <div className="product-cart-details">{data?.info}</div> : ""}
+export const OrderShoppingCart = ({ data, CartActions, size = "normal" }) => (
+  <div className={`orderShoppingCart ${size !== "normal" ? "orderShoppingCartCompact" : ""}`}>
+    {Array.isArray(data?.ShoppingCartProducts) ? data.ShoppingCartProducts.map((item, index) => (
+      <div className="shoppingProduct" key={item?.shoppingCartProductId || item?.id || index}>
+        {size === "normal" && <div className="shoppingProductImage" style={{ backgroundImage: item?.Product?.images?.[0] ? `url('${item.Product.images[0]}')` : "none" }} />}
+        <div className="shoppingProductInfo">
+          <div className="shoppingProductDetails"><div className="shoppingProductName">{item?.Product?.name || ""}</div>{size === "normal" && <div className="shoppingProductDescription">{item?.Product?.description || ""}</div>}</div>
+          <div className="shoppingProductBottom"><div className="shoppingProductName">{Number(item?.Product?.price || 0).toFixed(2)}€</div><div className="shoppingProductActions">{CartActions ? <CartActions data={item} /> : null}</div></div>
         </div>
-      </>
-    );
-  };
-
-  return (
-    <div className="order-products">
-      {Array.isArray(data?.ShoppingCartProducts) ? data.ShoppingCartProducts.map((item) => <Product data={item} />) : null}
-    </div>
-  );
-};
+        {item?.info ? <div className="shoppingProductMeta">{item.info}</div> : null}
+      </div>
+    )) : null}
+  </div>
+);

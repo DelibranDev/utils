@@ -1,0 +1,3 @@
+.textEditor { width:100%; min-width:0; } .textEditor .rsw-editor { max-width:100%; box-sizing:border-box; }
+@media (max-width: 992px) { .textEditor .rsw-toolbar { flex-wrap:wrap; } }
+@media (max-width: 600px) { .textEditor .rsw-ce { min-height:120px; } }

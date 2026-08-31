@@ -1,74 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./../button";
 import "./orderResume.css";
 
-export const OrderResume = ({
-  data,
-  callbackPrintTicket = () => null,
-  callbackCreateInvoice = () => null,
-  callbackPrintInvoice = () => null,
-  canCreateInvoice = true,
-}) => {
-  const formatAmount = (amount) => Number(amount || 0).toFixed(2);
+const formatAmount = (amount) => Number(amount || 0).toFixed(2);
+const invoiceNumber = (invoice) => invoice?.number ?? invoice?.invoiceNumber ?? invoice?.identifier ?? invoice?.code ?? "";
 
-  const discount = Number(data.discountedTotal) === 0 ? 0 : Number(data.total) - Number(data.discountedTotal);
+const unwrapResult = (result) => result?.data?.data ?? result?.data ?? result;
 
-  const total = Number(data.discountedTotal) === 0 ? Number(data.total) : Number(data.discountedTotal);
+export const OrderResume = ({ data = {}, callbackPrintTicket = () => null, callbackCreateInvoice = () => null, callbackPrintInvoice = () => null, callbackRefreshOrder = null, canCreateInvoice = true, onDataChange = () => null }) => {
+  const [localData, setLocalData] = useState(data);
+  const [isCreatingInvoice, setIsCreatingInvoice] = useState(false);
+
+  useEffect(() => setLocalData(data || {}), [data]);
+
+  const discount = Number(localData.discountedTotal) === 0 ? 0 : Number(localData.total) - Number(localData.discountedTotal);
+  const total = Number(localData.discountedTotal) === 0 ? Number(localData.total) : Number(localData.discountedTotal);
+  const invoice = localData?.Invoice || null;
+
+  const handleCreateInvoice = async () => {
+    if (isCreatingInvoice) return;
+    setIsCreatingInvoice(true);
+    try {
+      const rawResult = await callbackCreateInvoice(localData);
+      let result = unwrapResult(rawResult);
+      if (typeof callbackRefreshOrder === "function") {
+        const refreshed = unwrapResult(await callbackRefreshOrder(localData));
+        if (refreshed) result = refreshed;
+      }
+      let nextData = localData;
+      if (result?.Invoice || result?.orderId || result?.products) nextData = { ...localData, ...result };
+      else if (result && typeof result === "object") nextData = { ...localData, Invoice: result };
+      setLocalData(nextData);
+      onDataChange(nextData);
+    } finally {
+      setIsCreatingInvoice(false);
+    }
+  };
 
   return (
-    <div>
-      <div className="invoiceResume-Header">
-        <div>
-          <div className="invoiceResume-Header-title">No Factura</div>
-          <div className="invoiceResume-Header-value">{data.number}</div>
-        </div>
-
-        <div>
-          <div className="invoiceResume-Header-title text-align-right">Canal de venta</div>
-          <div className="invoiceResume-Header-value text-align-right">{data?.SalesChannel?.name}</div>
-        </div>
+    <div className="invoiceResume">
+      <div className="invoiceResumeHeader">
+        <div><div className="invoiceResumeHeaderTitle">No. Factura</div><div className="invoiceResumeHeaderValue">{invoice ? (invoiceNumber(invoice) || "Creada") : "Sin factura"}</div></div>
+        <div className="invoiceResumeChannel"><div className="invoiceResumeHeaderTitle">Canal de venta</div><div className="invoiceResumeHeaderValue">{localData?.SalesChannel?.name}</div></div>
       </div>
-
-      <div className="invoiceResume-Body">
-        <div className="invoiceResume-Item">
-          <div className="invoiceResume-title">Subtotal</div>
-          <div className="invoiceResume-note">{(data.products || []).length > 0 && data.products.length} artículos</div>
-          <div className="invoiceResume-value">{formatAmount(data.total)} €</div>
-        </div>
-
-        <div className="invoiceResume-Item">
-          <div className="invoiceResume-title">Descuento</div>
-          <div className="invoiceResume-note"></div>
-          <div className="invoiceResume-value">{formatAmount(discount)} €</div>
-        </div>
-
-        <div className="invoiceResume-Separator"></div>
-
-        <div className="invoiceResume-Item">
-          <div className="invoiceResume-title">Total</div>
-          <div></div>
-          <div className="invoiceResume-value">{formatAmount(total)} €</div>
-        </div>
+      <div className="invoiceResumeBody">
+        <div className="invoiceResumeItem"><div>Subtotal</div><div className="invoiceResumeNote">{(localData.products || []).length} artículos</div><div className="invoiceResumeValue">{formatAmount(localData.total)} €</div></div>
+        <div className="invoiceResumeItem"><div>Descuento</div><div /><div className="invoiceResumeValue">{formatAmount(discount)} €</div></div>
+        <div className="invoiceResumeSeparator" />
+        <div className="invoiceResumeItem"><strong>Total</strong><div /><div className="invoiceResumeValue">{formatAmount(total)} €</div></div>
       </div>
-
-      <div>
-        {data.Invoice === null ? (
-          <div className="flex-gap" style={{ paddingTop: "15px" }}>
-            <div>
-              <Button text={"Imprimir ticket"} icon={null} customClass={"w-100"} action={callbackPrintTicket} />
-            </div>
-
-            <div>
-              {canCreateInvoice && (
-                <Button text={"Crear factura"} icon={null} customClass={"w-100"} action={callbackCreateInvoice} />
-              )}
-            </div>
-          </div>
-        ) : (
-          <div style={{ paddingTop: "15px" }}>
-            <Button text={"Imprimir factura"} icon={null} customClass={"w-100"} action={callbackPrintInvoice} />
-          </div>
-        )}
+      <div className="invoiceResumeActions">
+        {!invoice ? <><Button text="Imprimir ticket" customClass="w-100" action={callbackPrintTicket} />{canCreateInvoice && <Button text={isCreatingInvoice ? "Creando..." : "Crear factura"} customClass="w-100" action={handleCreateInvoice} />}</> : <Button text="Imprimir factura" customClass="w-100" action={() => callbackPrintInvoice(invoice, localData)} />}
       </div>
     </div>
   );

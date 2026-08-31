@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import "./style.css";
 
 export const MAPS_API_KEY = "AIzaSyArOoqzUgxtt2rxD8v6MLPbXFMp4YPUIz4";
 
@@ -58,14 +59,14 @@ export const MapLocation = ({ lat = null, lon = null, address = null, height = "
 
   return (
     <div>
-      {error && !googleMapsUrl && <p style={{ color: "red" }}>{error}</p>}
+      {error && !googleMapsUrl && <p className="mapLocationError">{error}</p>}
       {googleMapsUrl ? (
         <iframe
           title="mapLocation"
           width="100%"
           height="100%"
           frameBorder="0"
-          style={{ border: 0, minHeight: height, borderRadius: "5px" }}
+          className="mapLocationFrame" style={{ minHeight: height }}
           src={googleMapsUrl}
           allowFullScreen
         ></iframe>

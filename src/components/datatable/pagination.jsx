@@ -1,6 +1,6 @@
 import React from "react";
 import { Select } from "./../select";
-import "./style.css";
+import "./pagination.css";
 
 export const Pagination = ({ configuration, maxRowsAvailable, handleMaxRows, handlePage }) => {
   return (

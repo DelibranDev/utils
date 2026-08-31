@@ -1,4 +1,5 @@
 import React from "react";
+import "./orderTimeline.css";
 
 export const OrderTimeline = ({ data }) => {
   const orderLog = data?.OrderLog;

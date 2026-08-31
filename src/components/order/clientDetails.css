@@ -1,0 +1,11 @@
+.clientDetails { display:flex; flex-direction:column; gap:12px; min-width:0; }
+.clientDetailsContainer { display:flex; flex-direction:column; gap:5px; min-width:0; }
+.clientDetailsHeader { font-weight:700; }
+.clientDetailsSub, .clientContactLink { color:var(--color-process); overflow-wrap:anywhere; }
+.clientContactLink { text-decoration:none; width:fit-content; }
+.clientContactLink:hover { text-decoration:underline; }
+.clientDetailsAddress { display:flex; gap:8px; border:1px solid var(--color-terciary-2); border-radius:6px; padding:6px; min-height:110px; height:auto; box-sizing:border-box; }
+.clientDetailsMap { flex:0 0 45%; min-width:0; }
+.clientDetailsAddressText { flex:1; min-width:0; overflow-wrap:anywhere; }
+@media (max-width: 992px) { .clientDetailsAddress { min-height:105px; } }
+@media (max-width: 600px) { .clientDetailsAddress { flex-direction:column; max-height:none; } .clientDetailsMap { flex-basis:auto; width:100%; } .clientDetailsSmall { font-size:.8rem; } }

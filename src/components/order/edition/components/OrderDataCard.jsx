@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../../../button";
 import { MdEdit } from "react-icons/md";
+import "./OrderDataCard.css";
 
 export const OrderDataCard = ({ orderForm, setOrderForm, clients, isLoadingClients, isSavingOrder, updatePendingOrderData }) => {
   const handleClientChange = (value) => {

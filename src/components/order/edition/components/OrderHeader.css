@@ -1,0 +1,3 @@
+.editOrderHeaderActions { display:flex; gap:10px; }
+@media (max-width: 992px) { .editOrderHeaderActions { flex-wrap:wrap; } }
+@media (max-width: 600px) { .editOrderHeaderActions { width:100%; flex-direction:column; } }

@@ -1,15 +1,16 @@
 import React from "react";
 import { Button } from "../../../button";
 import { MdRefresh, MdClose } from "react-icons/md";
+import "./OrderHeader.css";
 
 export const OrderHeader = ({ order, refreshAllData, handleClosePanel }) => {
   return (
     <div className="editOrderHeader">
       <div>
         <h2 className="editOrderTitle">Modificar pedido</h2>
-        <p className="editOrderSubtitle">{order?.number ? `Pedido #${order.number}` : "Cargando pedido..."}</p>
+        <p className="editOrderSubtitle">{order?.number ? `Pedido ${order?.SalesChannel?.identifier || ""}${order.number}` : "Cargando pedido..."}</p>
       </div>
-      <div style={{ display: "flex", gap: "10px" }}>
+      <div className="editOrderHeaderActions">
         <Button
           text={"Eliminar cambios no guardados"}
           icon={<MdRefresh />}

@@ -83,3 +83,7 @@
     }
   }
 }
+
+@media (max-width: 992px) {
+  /* Tablet: el componente conserva el ancho del contenedor. */
+}

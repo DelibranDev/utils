@@ -1,16 +1,17 @@
 import React from "react";
+import "./style.css";
 
 export function Checkbox({ text, clickEvent, checked, className }) {
   return (
     <div className={className}>
       <input
-        style={{ padding: "0px", marginTop: "15px", marginLeft: "-20px" }}
+        className="checkboxInput"
         id="privacyCheckbox"
         type="checkbox"
         onClick={clickEvent}
         checked={checked}
       />
-      <div style={{ paddingLeft: "30px", marginTop: "-20px" }}>{text}</div>
+      <div className="checkboxText">{text}</div>
     </div>
   );
 }

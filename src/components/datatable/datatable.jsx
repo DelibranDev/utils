@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { MdFilterAlt, MdArrowUpward, MdArrowDownward } from "react-icons/md";
+import "./datatable.css";
 
 const STATUS_LABELS = {
   pending: "Pendiente",
@@ -23,11 +24,15 @@ const isIsoDate = (value) =>
 
 const getFilterType = (values) => {
   const validValues = values.filter((value) => value !== null && value !== undefined && value !== "");
+
   if (validValues.length === 0) return "select";
   if (validValues.every((value) => typeof value === "number")) return "number";
   if (validValues.every((value) => isIsoDate(value))) return "date";
+
   return "select";
 };
+
+const formatCellValue = (value) => (typeof value === "number" && Number.isFinite(value) ? value.toFixed(2) : value);
 
 const getDisplayValue = (field, value) => {
   if (field === "status" || field === "paymentStatus") {
@@ -35,14 +40,15 @@ const getDisplayValue = (field, value) => {
   }
 
   if (typeof value === "boolean") return value ? "Sí" : "No";
+
   return String(getObjectLabel(value));
 };
 
 const isArrayColumn = (values) => {
   const validValues = values.filter((value) => value !== null && value !== undefined);
+
   return validValues.length > 0 && validValues.every((value) => Array.isArray(value));
 };
-
 
 const renderCustomDataSafely = (renderer, value, row) => {
   try {
@@ -79,17 +85,31 @@ const ColumnFilter = ({ field, values, filter, onChange, onClose }) => {
           <input
             type="number"
             value={filter?.min ?? ""}
-            onChange={(event) => onChange({ type: "number", min: event.target.value, max: filter?.max ?? "" })}
+            onChange={(event) =>
+              onChange({
+                type: "number",
+                min: event.target.value,
+                max: filter?.max ?? "",
+              })
+            }
           />
         </label>
+
         <label>
           Máximo
           <input
             type="number"
             value={filter?.max ?? ""}
-            onChange={(event) => onChange({ type: "number", min: filter?.min ?? "", max: event.target.value })}
+            onChange={(event) =>
+              onChange({
+                type: "number",
+                min: filter?.min ?? "",
+                max: event.target.value,
+              })
+            }
           />
         </label>
+
         <button type="button" className="columnFilterClose" onClick={onClose}>
           Cerrar
         </button>
@@ -105,17 +125,31 @@ const ColumnFilter = ({ field, values, filter, onChange, onClose }) => {
           <input
             type="date"
             value={filter?.from ?? ""}
-            onChange={(event) => onChange({ type: "date", from: event.target.value, to: filter?.to ?? "" })}
+            onChange={(event) =>
+              onChange({
+                type: "date",
+                from: event.target.value,
+                to: filter?.to ?? "",
+              })
+            }
           />
         </label>
+
         <label>
           Hasta
           <input
             type="date"
             value={filter?.to ?? ""}
-            onChange={(event) => onChange({ type: "date", from: filter?.from ?? "", to: event.target.value })}
+            onChange={(event) =>
+              onChange({
+                type: "date",
+                from: filter?.from ?? "",
+                to: event.target.value,
+              })
+            }
           />
         </label>
+
         <button type="button" className="columnFilterClose" onClick={onClose}>
           Cerrar
         </button>
@@ -140,8 +174,10 @@ const ColumnFilter = ({ field, values, filter, onChange, onClose }) => {
     <div className="columnFilterPopover" onClick={(event) => event.stopPropagation()}>
       <select value={filter?.value ?? ""} onChange={(event) => onChange({ type: "select", value: event.target.value })}>
         <option value="">Todos</option>
+
         {uniqueValues.map((value) => {
           const rawValue = String(getObjectLabel(value));
+
           return (
             <option key={rawValue} value={rawValue}>
               {getDisplayValue(field, value)}
@@ -149,6 +185,7 @@ const ColumnFilter = ({ field, values, filter, onChange, onClose }) => {
           );
         })}
       </select>
+
       <button type="button" className="columnFilterClose" onClick={onClose}>
         Cerrar
       </button>
@@ -173,61 +210,86 @@ export const DatatableComponent = ({
   handleSort = () => {},
 }) => {
   const [openFilterColumn, setOpenFilterColumn] = useState(null);
-  const MIN_WIDTH = 110;
+
+  const MIN_WIDTH = 120;
+  const MAX_AUTO_WIDTH = 320;
+  const HEADER_ACTIONS_WIDTH = 58;
 
   const columns = useMemo(
     () => Object.keys(customHeaders).filter((field) => visibleColumns.includes(field)),
     [customHeaders, visibleColumns],
   );
 
-  const maxLengthValues = useMemo(() => {
-    const maxLengths = {};
+  const columnWidths = useMemo(() => {
+    const widths = {};
 
-    rows.forEach((item) => {
-      columns.forEach((key) => {
-        const value = getObjectLabel(item?.[key]);
+    columns.forEach((field) => {
+      const configuredWidth = Number(customHeadersStyle[field]?.width);
+
+      if (Number.isFinite(configuredWidth) && configuredWidth > 0) {
+        widths[field] = configuredWidth;
+        return;
+      }
+
+      const headerLabel = String(customHeaders[field] ?? "");
+      const headerWidth = headerLabel.length * 8 + HEADER_ACTIONS_WIDTH + 24;
+
+      let contentWidth = MIN_WIDTH;
+
+      rows.forEach((item) => {
+        const value = getObjectLabel(item?.[field]);
         const isDataImage = typeof value === "string" && value.startsWith("data:image");
-        let width = MIN_WIDTH;
 
         if (typeof value === "number" || (typeof value === "string" && !isDataImage)) {
-          const length = String(value).length;
-          if (length >= 10 && length < 50) width = length * 8;
-          else if (length >= 50) width = length * 4;
+          contentWidth = Math.max(contentWidth, Math.min(String(value).length * 8 + 20, MAX_AUTO_WIDTH));
         }
-
-        maxLengths[key] = Math.max(maxLengths[key] ?? MIN_WIDTH, width);
       });
+
+      widths[field] = Math.max(MIN_WIDTH, Math.min(Math.max(headerWidth, contentWidth), MAX_AUTO_WIDTH));
     });
 
-    return maxLengths;
-  }, [rows, columns]);
+    return widths;
+  }, [columns, customHeaders, customHeadersStyle, rows]);
 
   return (
     <div className="desktopDatatable">
       <div className="table-container">
-        <table cellSpacing="0">
+        <table className="datatableTable" cellSpacing="0">
           <thead>
             <tr>
-              {checkColumn && <th className="text-align-center" style={{ width: "50px" }} />}
+              {checkColumn && (
+                <th className="text-align-center datatableCheckboxColumn" style={{ width: "50px", minWidth: "50px" }} />
+              )}
 
               {columns.map((field, columnIndex) => {
                 const values = data.map((item) => item?.[field]);
                 const columnIsArray = isArrayColumn(values);
+
                 const isFilterable = customHeadersStyle[field]?.filterable !== false && !columnIsArray;
+
                 const isSortable = customHeadersStyle[field]?.sortable !== false && !columnIsArray;
+
                 const hasFilter = isFilterable && Boolean(columnFilters[field]);
+
                 const isSorted = isSortable && sortConfig.column === field && Boolean(sortConfig.direction);
+
+                const width = columnWidths[field];
 
                 return (
                   <th
                     key={field}
                     className={`text-align-center datatableHeaderCell ${columnIndex === 0 ? "datatableHeaderCellFirst" : ""}`}
-                    style={{ width: `${customHeadersStyle[field]?.width || maxLengthValues[field] || 100}px` }}
+                    style={{
+                      width: `${width}px`,
+                      minWidth: `${width}px`,
+                      maxWidth: `${width}px`,
+                    }}
                   >
                     <div className="datatableHeaderContent">
-                      <div>
-                        <span className="datatableHeaderLabel">{customHeaders[field]}</span>
-                      </div>
+                      <span className="datatableHeaderLabel" title={String(customHeaders[field] ?? "")}>
+                        {customHeaders[field]}
+                      </span>
+
                       <div className="datatableHeaderActions">
                         {isSortable && (
                           <button
@@ -278,7 +340,14 @@ export const DatatableComponent = ({
             {rows.map((row, rowIndex) => (
               <tr key={row.id || row.orderId || rowIndex} className={selectedRows.includes(row.id) ? "rowSelected" : ""}>
                 {checkColumn && (
-                  <td className="text-align-center checkboxtd" style={{ width: "50px" }}>
+                  <td
+                    className="text-align-center checkboxtd datatableCheckboxColumn"
+                    style={{
+                      width: "50px",
+                      minWidth: "50px",
+                      maxWidth: "50px",
+                    }}
+                  >
                     <input
                       type="checkbox"
                       className="custom-checkbox"
@@ -290,13 +359,20 @@ export const DatatableComponent = ({
 
                 {columns.map((field) => {
                   const fieldValues = data.map((item) => item?.[field]);
+
                   const cellValue = getCustomDataValue(row[field], fieldValues);
+
+                  const width = columnWidths[field];
 
                   return (
                     <td
                       key={field}
-                      className="text-align-center"
-                      style={{ width: `${customHeadersStyle[field]?.width || maxLengthValues[field] || 100}px` }}
+                      className="text-align-center datatableCell"
+                      style={{
+                        width: `${width}px`,
+                        minWidth: `${width}px`,
+                        maxWidth: `${width}px`,
+                      }}
                       onClick={
                         typeof row[field] === "boolean" || row[field] === "PUBLISHED" || row[field] === "DRAFT"
                           ? undefined
@@ -307,7 +383,7 @@ export const DatatableComponent = ({
                         ? renderCustomDataSafely(customData[field], cellValue, row)
                         : field === "status" || field === "paymentStatus"
                           ? (STATUS_LABELS[row[field]] ?? row[field])
-                          : row[field]}
+                          : formatCellValue(row[field])}
                     </td>
                   );
                 })}

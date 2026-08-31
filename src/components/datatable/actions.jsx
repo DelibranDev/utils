@@ -1,6 +1,7 @@
 import React from "react";
 import { MdSearch, MdClose, MdViewColumn } from "react-icons/md";
 import { Button } from "./../button";
+import "./actions.css";
 
 export const Actions = ({
   checkColumn = false,

@@ -1,5 +1,6 @@
 import React from "react";
 import { OrderProductRow } from "./OrderProductRow";
+import "./OrderProductsCard.css";
 
 export const OrderProductsCard = ({
   products,

@@ -1,4 +1,5 @@
 import React from "react";
+import "./sections.css";
 
 export const Sections = ({ sections, activeSection, handleSectionData }) => {
   return (

@@ -1,0 +1,14 @@
+.orderShoppingCart { display:flex; flex-direction:column; gap:8px; width:100%; min-width:0; }
+.shoppingProduct { border:1px solid lightgrey; display:flex; width:100%; min-height:110px; border-radius:10px; box-sizing:border-box; overflow:hidden; flex-wrap:wrap; }
+.shoppingProductImage { width:30%; min-width:110px; background-color:#f1f1f1; background-position:center; background-repeat:no-repeat; background-size:cover; }
+.shoppingProductInfo { display:flex; flex:1; min-width:0; flex-direction:column; justify-content:space-between; gap:10px; padding:10px; }
+.shoppingProductDetails { display:flex; flex-direction:column; line-height:1rem; min-width:0; }
+.shoppingProductName { font-weight:700; font-size:.9rem; overflow:hidden; text-overflow:ellipsis; }
+.shoppingProductDescription { color:grey; font-size:.75rem; overflow-wrap:anywhere; }
+.shoppingProductBottom { display:flex; justify-content:space-between; align-items:center; gap:5px; }
+.shoppingProductActions { display:flex; justify-content:flex-end; align-items:center; gap:10px; }
+.shoppingProductMeta { width:100%; padding:0 10px 10px; font-size:.8rem; color:grey; box-sizing:border-box; white-space:pre-line; }
+.orderShoppingCartCompact .shoppingProduct { min-height:auto; border-left:0; border-right:0; border-bottom:0; border-radius:0; }
+.orderShoppingCartCompact .shoppingProductInfo { flex-direction:row; align-items:center; }
+@media (max-width: 992px) { .shoppingProductImage { width:34%; } }
+@media (max-width: 600px) { .shoppingProduct { min-height:auto; } .shoppingProductImage { width:90px; min-width:90px; } .shoppingProductBottom { align-items:flex-end; } .orderShoppingCartCompact .shoppingProductInfo { flex-direction:column; align-items:stretch; } }

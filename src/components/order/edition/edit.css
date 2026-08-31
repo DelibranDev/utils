@@ -481,3 +481,7 @@
     justify-content: stretch;
   }
 }
+
+@media (max-width: 992px) { .editOrderContent { max-width:100%; box-sizing:border-box; } }
+
+@media (max-width: 600px) { .editOrderContent { padding:12px; padding-top:48px; } }

@@ -80,3 +80,10 @@
   }
   
   
+@media (max-width: 992px) {
+  /* Tablet: el componente conserva el ancho del contenedor. */
+}
+
+@media (max-width: 600px) {
+  /* Móvil: evita desbordamientos dentro de contenedores estrechos. */
+}

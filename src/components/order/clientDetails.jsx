@@ -1,64 +1,40 @@
 import React from "react";
 import { MapLocation } from "./../mapLocation";
 import { getFullAddress } from "../../function";
+import "./clientDetails.css";
 
-export const ClientDetails = ({ data, size = "normal" }) => {
-  const client = data && data.Customer ? data.Customer : {};
-  const address = data && data.address ? data.address : [];
-
-  // Verificar si hay una dirección completa para pasar al componente MapLocation
+export const ClientDetails = ({ data = {}, size = "normal" }) => {
+  const client = data?.Customer || {};
+  const address = data?.address || {};
   const fullAddress = getFullAddress(address);
+  const email = client?.email || data?.email || "";
+  const phone = client?.phone || data?.phone || "";
+  const contact = (
+    <>
+      {email && <a className="clientContactLink" href={`mailto:${email}`}>{email}</a>}
+      {phone && <a className="clientContactLink" href={`tel:${String(phone).replace(/\s+/g, "")}`}>{phone}</a>}
+    </>
+  );
 
-  const NormalDetails = ({ client, address }) => {
-    return (
-      <>
-        <div className="client-details-container">
-          <div className="client-details-header">Cliente</div>
-          <div className="client-details-sub">{client.fullname}</div>
-          <div className="client-details-sub">0 pedidos</div>
-        </div>
-        <div className="client-details-container">
-          <div className="client-details-header">Información de contacto</div>
-          <div className="client-details-sub">{client.email}</div>
-          <div className="client-details-sub">{client.phone}</div>
-        </div>
-        <div className="client-details-container">
-          <div className="client-details-header">Dirección de envío</div>
-          <div className="client-details-address">
-            {fullAddress && <MapLocation address={fullAddress} height={"100px"} />}
-            <div className="client-details-address-container">
-              <div className="client-details-address-name">{address.name}</div>
-              <div className="client-details-header">{client.fullname}</div>
-              <div className="client-details-third">{fullAddress}</div>
-            </div>
-          </div>
-        </div>
-      </>
-    );
-  };
+  if (client.fullname === "Cliente contado") return <div className="clientDetails"><div className="clientDetailsContainer">Sin datos de cliente</div></div>;
 
-  const SmallDetails = ({ client, address }) => {
-    return (
-      <>
-        <div className="client-details-container">
-          <div className="client-details-header">{client.fullname}</div>
-          <div className="client-details-third">{fullAddress}</div>
-          <div className="client-details-third">{client.email}</div>
-          <div className="client-details-third">{client.phone}</div>
-        </div>
-      </>
-    );
-  };
+  if (size !== "normal") return (
+    <div className="clientDetails clientDetailsSmall">
+      <div className="clientDetailsContainer"><strong>{client.fullname}</strong><span>{fullAddress}</span>{contact}</div>
+    </div>
+  );
 
   return (
-    <div className="client-details">
-      {client.fullname === "Cliente contado" ? (
-        <div className="client-details-container">Sin datos de cliente</div>
-      ) : size === "normal" ? (
-        <NormalDetails client={client} address={address} />
-      ) : (
-        <SmallDetails client={client} address={address} />
-      )}
+    <div className="clientDetails">
+      <div className="clientDetailsContainer"><div className="clientDetailsHeader">Cliente</div><div className="clientDetailsSub">{client.fullname}</div></div>
+      <div className="clientDetailsContainer"><div className="clientDetailsHeader">Información de contacto</div>{contact}</div>
+      <div className="clientDetailsContainer">
+        <div className="clientDetailsHeader">Dirección de envío</div>
+        <div className="clientDetailsAddress">
+          {fullAddress && <div className="clientDetailsMap"><MapLocation address={fullAddress} height="100px" /></div>}
+          <div className="clientDetailsAddressText"><div>{address.name}</div><strong>{client.fullname}</strong><div>{fullAddress}</div></div>
+        </div>
+      </div>
     </div>
   );
 };

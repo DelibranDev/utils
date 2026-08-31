@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useMemo, useState } from "react";
 import { MdAdd } from "react-icons/md";
 import { Button } from "../../../button";
+import "./AddProductCard.css";
 
 const capitalize = (str = "") => str.charAt(0).toUpperCase() + str.slice(1);
 

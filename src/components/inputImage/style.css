@@ -1,3 +1,5 @@
+.inputImageFile { display:none; }
+
 .inputImage{
     cursor: pointer;
     width: 100%;
@@ -7,3 +9,10 @@
     background-repeat: no-repeat;
     display: block;
 }
+@media (max-width: 992px) { .inputImageFile { display:none; }
+
+.inputImage{ max-width:100%; } }
+
+@media (max-width: 600px) { .inputImageFile { display:none; }
+
+.inputImage{ max-width:100%; min-height:120px; } }

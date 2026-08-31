@@ -1,0 +1,6 @@
+.datatable { height:fit-content; width:100%; min-width:0; position:relative; display:flex; flex-direction:column; align-items:center; gap:20px; }
+.datatable .adminPanel { width:100%; min-width:0; box-sizing:border-box; }
+.headerDatatable { width:100%; display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.datatableFooterInfo { width:100%; display:flex; justify-content:flex-start; padding:0 5px; font-size:.9rem; opacity:.75; }
+@media (max-width: 992px) { .headerDatatable { flex-wrap:wrap; align-items:flex-start; } }
+@media (max-width: 600px) { .datatable { gap:12px; } .datatable .adminPanel { padding:8px; } .datatableFooterInfo { font-size:.8rem; } }

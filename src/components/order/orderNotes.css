@@ -1,0 +1,3 @@
+.orderNotes { overflow-wrap:anywhere; }
+@media (max-width: 992px) { .orderNotes { line-height:1.45; } }
+@media (max-width: 600px) { .orderNotes { font-size:.8rem; } }

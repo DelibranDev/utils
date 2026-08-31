@@ -1,0 +1,9 @@
+.orderInfo { display:flex; justify-content:space-between; align-items:center; gap:15px; font-size:.8rem; min-width:0; }
+.orderHeaderStatus { display:flex; align-items:center; gap:10px; min-width:0; }
+.orderNumber, .orderInfoTime { display:flex; flex-direction:column; gap:2px; min-width:0; }
+.orderInfoTime { text-align:right; }
+.orderLabel { color:var(--color-terciary); }
+.orderValue { font-weight:700; overflow-wrap:anywhere; }
+.orderInfoSmall .orderValue { font-size:1rem; }
+@media (max-width: 992px) { .orderInfo { gap:10px; } }
+@media (max-width: 600px) { .orderInfo { align-items:flex-start; flex-direction:column; } .orderInfoTime { text-align:left; } .orderHeaderStatus { width:100%; justify-content:space-between; } }
