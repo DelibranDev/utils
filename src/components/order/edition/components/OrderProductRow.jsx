@@ -70,14 +70,14 @@ export const OrderProductRow = ({
       <div className="editOrderProductMain">
         <div className="editOrderProductThumb">
           {product.images?.[0] ? (
-            <img src={product.images[0]} alt={product.name} />
+            <img src={product.images[0]} alt={product.shortName ?? product.name} />
           ) : (
             <div className="editOrderProductThumbPlaceholder">Sin imagen</div>
           )}
         </div>
 
         <div className="editOrderProductData">
-          <h4>{product.name}</h4>
+          <h4>{product.shortName ?? product.name}</h4>
           <p>Precio: {product.price ?? "-"}</p>
           {getVariant()}
           {getAttributes()}

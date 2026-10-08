@@ -359,7 +359,7 @@ export const AddProductCard = ({
               <option value="">Selecciona un producto</option>
               {availableProducts.map((product) => (
                 <option key={product.productId} value={product.productId}>
-                  {product.name} {product.price !== null ? `- ${product.price}€` : ""}
+                  {product.shortName ?? product.name} {product.price !== null ? `- ${product.price}€` : ""}
                 </option>
               ))}
             </select>
@@ -429,7 +429,7 @@ export const AddProductCard = ({
       <div className="editOrderSelectedProduct">
         {selectedProduct ? (
           <div className="editOrderSelectedProductInfo">
-            <div className="editOrderSelectedProductName">{selectedProduct.name}</div>
+            <div className="editOrderSelectedProductName">{selectedProduct.shortName ?? selectedProduct.name}</div>
             <div>Precio base: {selectedProduct.price ?? "-"}</div>
             <div>VariantId: {addProductForm.variantId || "-"}</div>
             <div>ItemIds: {addProductForm.itemIds?.length ? addProductForm.itemIds.join(", ") : "-"}</div>

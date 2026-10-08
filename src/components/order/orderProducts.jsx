@@ -28,7 +28,7 @@ export const OrderProducts = ({ data = {}, size = "normal", variants = [], atrib
             <div className="orderProductSmallMain">
               <strong>{product?.quantity}</strong>
               <div>
-                <div>{product?.name}</div>
+                <div>{product?.shortName ?? product?.name}</div>
                 {details.map((detail) => <div key={detail} className="orderProductMeta">{detail}</div>)}
               </div>
             </div>
@@ -42,7 +42,7 @@ export const OrderProducts = ({ data = {}, size = "normal", variants = [], atrib
           <div className="orderProductLeft">
             <div className="orderProductImage" style={{ backgroundImage: product?.images?.[0] ? `url('${product.images[0]}')` : "none" }} />
             <div className="orderProductInfo">
-              <div className="orderProductName">{product?.name}</div>
+              <div className="orderProductName">{product?.shortName ?? product?.name}</div>
               {details.map((detail) => <div key={detail} className="orderProductMeta">{detail}</div>)}
             </div>
           </div>
