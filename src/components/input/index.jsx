@@ -83,7 +83,7 @@ export const Input = ({
             defaultValue={defaultValue}
             disabled={disabled}
             onChange={(e) => onWritting(e.target.value)}
-            autocomplete="off"
+            autoComplete="off"
           />
           <div className={classIcon + iconAction} onClick={handleIcon}>
             {icon}
